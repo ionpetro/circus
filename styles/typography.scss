@@ -1,0 +1,44 @@
+@import './colors.scss';
+
+@font-face {
+  font-family: Carnevalee;
+  font-style: normal;
+  src: url('/fonts/Carnevalee Freakshow.ttf') format('opentype');
+}
+
+body {
+  font-family: 'Roboto Thin', sans-serif;
+  color: $white;
+}
+
+h1 {
+  font-family: Carnevalee, sans-serif;
+  color: $white;
+  margin: 0;
+  letter-spacing: 20px;
+  font-size: 48px;
+}
+
+h2 {
+  font-family: Carnevalee, sans-serif;
+  color: $white;
+  letter-spacing: 10px;
+  margin: 0;
+  font-size: 36px;
+}
+
+h3 {
+  font-family: Carnevalee, sans-serif;
+  color: $white;
+  letter-spacing: 4px;
+  margin: 0;
+  font-size: 28px;
+}
+
+p {
+  letter-spacing: 2px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

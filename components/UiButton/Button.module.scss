@@ -1,0 +1,122 @@
+@import '../../styles/colors.scss';
+@import '../../styles/variables.scss';
+
+$mobile-button-width: 150px;
+$mobile-button-height: 30px;
+$desktop-button-width: 220px;
+$desktop-button-height: 50px;
+
+.wrapper {
+  width: $mobile-button-width;
+  position: relative;
+
+  @media #{$desktop-medium} {
+    width: $desktop-button-width;
+  }
+
+  .hoverBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-image: url('https://i.ibb.co/Km36hzm/lines.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: $mobile-button-width;
+    height: $mobile-button-height;
+    clip-path: polygon(0 0, 94% 0, 100% 30%, 100% 100%, 6% 100%, 0 70%);
+    transition: transform 0.5s ease;
+
+    @media #{$desktop-medium} {
+      width: $desktop-button-width;
+      height: $desktop-button-height;
+    }
+  }
+
+  .button {
+    z-index: 2;
+    cursor: pointer;
+    overflow: hidden;
+    border: none;
+    position: relative;
+    width: $mobile-button-width;
+    height: $mobile-button-height;
+    box-sizing: border-box;
+    background: white;
+    clip-path: polygon(0 0, 94% 0, 100% 30%, 100% 100%, 6% 100%, 0 70%);
+
+    @media #{$desktop-medium} {
+      width: $desktop-button-width;
+      height: $desktop-button-height;
+    }
+
+    .border {
+      position: absolute;
+      top: 1px; /* equal to border thickness */
+      left: 1px; /* equal to border thickness */
+      width: calc(
+        #{$mobile-button-width} - 2px
+      ); /* container height - (border thickness * 2) */
+      height: calc(
+        #{$mobile-button-height} - 2px
+      ); /* container height - (border thickness * 2) */
+      clip-path: polygon(0 0, 94% 0, 100% 30%, 100% 100%, 6% 100%, 0 70%);
+      background: $grey;
+
+      @media #{$desktop-medium} {
+        top: 2px;
+        left: 2px;
+        width: calc(#{$desktop-button-width} - 4px);
+        height: calc(#{$desktop-button-height} - 4px);
+      }
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+      color: $white;
+      @media #{$desktop-medium} {
+        font-size: 20px;
+      }
+    }
+
+    &:focus {
+      background: $yellow;
+
+      .text {
+        color: $yellow;
+      }
+    }
+  }
+
+  &:hover {
+    .hoverBack {
+      transform: translate(-5px, 8px);
+
+      @media #{$desktop-medium} {
+        transform: translate(-10px, 15px);
+      }
+    }
+
+    .button {
+      background: $red;
+
+      .text {
+        color: $red;
+      }
+    }
+  }
+
+  &:active {
+    .button {
+      .border {
+        background: $red;
+      }
+      .text {
+        color: black;
+        font-weight: bold;
+      }
+    }
+  }
+}

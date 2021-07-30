@@ -1,0 +1,26 @@
+@import './typography.scss';
+@import './colors.scss';
+@import './variables.scss';
+@import './carousel.scss';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: $grey;
+}
+
+a {
+  color: $yellow;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
