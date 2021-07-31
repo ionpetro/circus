@@ -22,7 +22,7 @@ const Contact = () => {
               target={'_blank'}
               rel={'noreferrer'}
             >
-              View on map
+              Open in maps
             </a>
           </div>
           <h2 className={styles.heading}>Telephone</h2>
