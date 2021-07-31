@@ -1,12 +1,13 @@
 @import '../../styles/colors.scss';
 @import '../../styles/variables.scss';
 
-$desktop-button-width: 100%;
-$desktop-button-height: 300px;
-
 .compWrap {
   max-width: 992px;
-  margin: auto;
+  margin: 40px 20px;
+
+  @media #{$desktop-large} {
+    margin: 40px auto;
+  }
 }
 
 .header {
@@ -27,57 +28,13 @@ $desktop-button-height: 300px;
   }
 }
 
-.cardWrap {
-  margin: 100px auto;
-  width: $desktop-button-width;
-  position: relative;
+.festivals {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 40px;
 
-  .container {
-    position: relative;
-    background: $red;
-    border: none;
-    width: $desktop-button-width;
-    height: $desktop-button-height;
-    z-index: 2;
-    overflow: hidden;
-    clip-path: polygon(0 0, 96% 0, 100% 10%, 100% 100%, 4% 100%, 0 90%);
-
-    .border {
-      position: absolute;
-      top: 2px;
-      left: 2px;
-      width: calc(#{$desktop-button-width} - 4px);
-      height: calc(#{$desktop-button-height} - 4px);
-      clip-path: polygon(0 0, 96% 0, 100% 10%, 100% 100%, 4% 100%, 0 90%);
-      background: $grey;
-    }
-
-    .content {
-      position: relative;
-      display: flex;
-      padding: 36px;
-      align-items: start;
-      z-index: 1;
-      color: $white;
-      height: 100%;
-    }
+  @media #{$desktop-medium} {
+    grid-template-columns: 1fr 1fr;
   }
-}
-
-.image {
-  min-width: 25%;
-}
-
-.date {
-  margin-top: 0;
-}
-
-.title {
-  color: $red;
-}
-
-.button {
-  position: absolute;
-  right: 40px;
-  bottom: 40px;
 }
