@@ -8,9 +8,7 @@ import Drums from '../../public/assets/svgs/Drums.svg';
 import image1 from '../../public/assets/images/image1.png';
 import image2 from '../../public/assets/images/image2.png';
 import image3 from '../../public/assets/images/image3.png';
-// import Lottie from 'react-lottie-player';
-//
-// import lottieJson from '../../public/assets/json/lottie.json';
+
 const History = () => {
   const hypes = [
     {
