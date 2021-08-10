@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 import styles from '../FestivalCard/FestivalCard.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
 import UiButton from '../UiButton/UiButton';
 import Circus from '../../public/assets/svgs/Circus.svg';
-import linesFestival from '../../public/assets/images/linesFestival.png';
+import transformDate from '../../utils/utilities';
 
 const FestivalCard = ({ festival }) => {
   const { active } = festival;
+  const [date, setDate] = useState('');
+
+  useMemo(() => setDate(transformDate(festival.date)), [festival.date]);
 
   if (active) {
     return (
@@ -14,9 +18,9 @@ const FestivalCard = ({ festival }) => {
         <div className={styles.borderActive} />
         <div className={`${styles.content} ${styles.contentRow}`}>
           <div className={`${styles.image} ${styles.imageActiveSvg}`}>
-            {festival.imageSrc ? (
+            {festival.image ? (
               <Image
-                src={festival.imageSrc}
+                src={festival.image.url}
                 width={'300px'}
                 height={'300px'}
                 alt={'festival'}
@@ -26,16 +30,28 @@ const FestivalCard = ({ festival }) => {
             )}
           </div>
           <div>
-            {festival.date && <p className={styles.date}>{festival.date}</p>}
+            {festival.date && <p className={styles.date}>{date}</p>}
             <h3 className={`uppercase ${styles.redColor}`}>{festival.title}</h3>
             <p>{festival.description}</p>
-            <a href={festival.readMore} target={'_blank'} rel="noreferrer">
-              READ MORE
-            </a>
+            {festival.readMoreLink && (
+              <a
+                href={festival.readMoreLink}
+                target={'_blank'}
+                rel="noreferrer"
+              >
+                READ MORE
+              </a>
+            )}
             <div className={styles.spacing} />
-            <div className={styles.button}>
-              <UiButton>COMPETE</UiButton>
-            </div>
+            {festival.competeLink && (
+              <div className={styles.button}>
+                <Link href={festival.competeLink}>
+                  <a target="_blank" rel="noreferrer">
+                    <UiButton>COMPETE</UiButton>
+                  </a>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -50,9 +66,9 @@ const FestivalCard = ({ festival }) => {
           </div>
           <div className={styles.header}>
             <div className={styles.image}>
-              {festival.imageSrc ? (
+              {festival.image ? (
                 <Image
-                  src={festival.imageSrc}
+                  src={festival.image.url}
                   width={'100px'}
                   height={'100px'}
                   alt={'festival'}
@@ -72,9 +88,15 @@ const FestivalCard = ({ festival }) => {
           </div>
           <div>
             <p>{festival.description}</p>
-            <a href={festival.readMore} target={'_blank'} rel="noreferrer">
-              READ MORE
-            </a>
+            {festival.readMoreLink && (
+              <a
+                href={festival.readMoreLink}
+                target={'_blank'}
+                rel="noreferrer"
+              >
+                READ MORE
+              </a>
+            )}
           </div>
         </div>
       </div>
