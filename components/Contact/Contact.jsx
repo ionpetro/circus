@@ -13,7 +13,7 @@ const Contact = () => {
     <section className={styles.compWrap}>
       <div className={styles.header}>
         <Tent />
-        <h1>CONTACT</h1>
+        <h1>contact</h1>
       </div>
       <div className={styles.content}>
         <div className={styles.info}>
