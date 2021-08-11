@@ -7,7 +7,11 @@ module.exports = withPlugins([], {
     includePaths: [path.join(__dirname, 'styles')],
   },
   images: {
-    domains: ['res.cloudinary.com'],
+    domains: [
+      'res.cloudinary.com',
+      'scontent.cdninstagram.com',
+      'video.cdninstagram.com',
+    ],
   },
   webpack(config) {
     config.module.rules.push({

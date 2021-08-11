@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axiosInstance from '../../utils/http-client';
 import styles from './Contests.module.scss';
 import Stars from '../../public/assets/svgs/stars.svg';
 import FestivalCard from '../FestivalCard/FestivalCard';
@@ -8,11 +9,10 @@ const Contests = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_DEV}/contests?_sort=date:DESC`
+      const response = await axiosInstance.get(
+        `${process.env.NEXT_PUBLIC_BACKEND_DEV}/contests?_sort=date:ASC`
       );
-      const data = await response.json();
-      setFestivals(data);
+      setFestivals(response);
     };
     getData().catch((e) => console.log(e));
   }, []);

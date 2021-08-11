@@ -1,0 +1,149 @@
+@import '../../styles/colors.scss';
+@import '../../styles/variables.scss';
+
+.compWrap {
+  padding: 40px 0;
+  position: relative;
+}
+
+.filter {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  opacity: 0.6;
+  height: 100%;
+  background-color: $grey;
+}
+
+.transitionTop {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(to top, transparent 0%, $grey 100%);
+}
+
+.transitionBot {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent 0%, $grey 100%);
+}
+
+.content {
+  max-width: 992px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+
+  :nth-child(1) {
+    margin: auto 12px;
+  }
+
+  h1 {
+    letter-spacing: 10px;
+  }
+}
+
+.image {
+  z-index: 1;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.insta {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+
+.account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.instaLogo {
+  border: solid 2px $white !important;
+  border-radius: 50%;
+}
+
+.handle {
+  margin-top: 12px;
+
+  a {
+    text-decoration: none;
+    text-transform: lowercase;
+    color: $white;
+  }
+}
+
+.error {
+  text-align: center;
+  padding: 20px;
+  margin: auto;
+}
+
+.media {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+
+  @media #{$tablet} {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media #{$desktop-medium} {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+  }
+}
+
+// loading spinner
+
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 10em;
+  height: 10em;
+}
+
+.loader {
+  margin: 60px auto;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+  border-left: 1.1em solid #ffffff;
+  transform: translateZ(0);
+  animation: load8 1.1s infinite linear;
+}
+
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

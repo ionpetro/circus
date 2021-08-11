@@ -9,4 +9,10 @@ const transformDate = (date) => {
   }
 };
 
+export const isThreeDaysAgo = (d) => {
+  const date = new Date(d).getTime();
+  const threeDaysAgo = new Date().getTime() - 3 * (1000 * 60 * 60 * 24);
+  return date < threeDaysAgo;
+};
+
 export default transformDate;

@@ -1,11 +1,11 @@
 @import '../../styles/colors.scss';
 @import '../../styles/variables.scss';
 
-$desktop-button-width: 250px;
-$desktop-button-height: 380px;
+$desktop-card-width: 250px;
+$desktop-card-height: 380px;
 
 .compWrap {
-  width: $desktop-button-width;
+  width: $desktop-card-width;
   position: relative;
 
   .hoverBack {
@@ -16,8 +16,8 @@ $desktop-button-height: 380px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    width: $desktop-button-width;
-    height: $desktop-button-height;
+    width: $desktop-card-width;
+    height: $desktop-card-height;
     clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
     transition: transform 0.5s ease;
   }
@@ -26,8 +26,8 @@ $desktop-button-height: 380px;
     position: relative;
     background: white;
     border: none;
-    width: $desktop-button-width;
-    height: $desktop-button-height;
+    width: $desktop-card-width;
+    height: $desktop-card-height;
     z-index: 2;
     cursor: pointer;
     overflow: hidden;
@@ -37,8 +37,8 @@ $desktop-button-height: 380px;
       position: absolute;
       top: 2px;
       left: 2px;
-      width: calc(#{$desktop-button-width} - 4px);
-      height: calc(#{$desktop-button-height} - 4px);
+      width: calc(#{$desktop-card-width} - 4px);
+      height: calc(#{$desktop-card-height} - 4px);
       clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
       background: $grey;
     }

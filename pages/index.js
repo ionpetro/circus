@@ -6,6 +6,7 @@ import Marquee from '../components/Marquee/Marquee';
 import Equipment from '../components/Equipment/Equipment';
 import Contests from '../components/Contests/Contests';
 import Contact from '../components/Contact/Contact';
+import Social from '../components/Social/Social';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <History />
       <Equipment />
       <Contests />
+      <Social />
       <Contact />
     </>
   );

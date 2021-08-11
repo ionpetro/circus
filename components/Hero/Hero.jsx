@@ -1,6 +1,6 @@
 import React from 'react';
 import UiButton from '../UiButton/UiButton';
-import facilities from '../../public/assets/images/facilities.jpg';
+import facilities from '../../public/assets/images/facilities.jpeg';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
 
@@ -9,7 +9,6 @@ const Hero = () => {
     <div className={styles.compWrap}>
       <Image
         alt={'facilities'}
-        className={styles.image}
         src={facilities.src}
         layout={'fill'}
         objectFit={'cover'}
