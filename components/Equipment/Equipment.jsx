@@ -5,7 +5,7 @@ import Dumbbell from '../../public/assets/svgs/dumbbell.svg';
 import equipment from '../../public/assets/images/equipment.png';
 import UiCarousel from '../UiCarousel/UiCarousel';
 
-const Equipment = () => {
+const Equipment = ({ description }) => {
   return (
     <section className={styles.compWrap}>
       <Image
@@ -20,10 +20,7 @@ const Equipment = () => {
       <div className={styles.content}>
         <Dumbbell className={styles.dumbbell} />
         <h1 className={styles.heading}>Equipment</h1>
-        <p className={styles.description}>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry.
-        </p>
+        <p className={styles.description}>{description}</p>
         <div className={styles.carousel}>
           <UiCarousel />
         </div>
