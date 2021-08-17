@@ -36,13 +36,12 @@ export default function Home({ cmsData, error }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const cmsData = await instance(`${strapiUrl}/home-page`);
     return {
       props: {
         cmsData,
-        revalidate: 1,
       },
     };
   } catch (err) {
