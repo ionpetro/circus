@@ -35,15 +35,23 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 100px 0;
+  margin: 40px 0;
 
   @media #{$desktop-large} {
+    margin: 100px 0;
     flex-direction: row;
   }
 }
 
 .info {
   margin-bottom: 36px;
+  text-align: center;
+
+  @media #{$desktop-large} {
+    text-align: left;
+    margin-right: 24px;
+  }
+
   h2 {
     color: $red;
   }
@@ -51,6 +59,12 @@
 
 .infoBlock {
   padding-bottom: 20px;
+
+  @media #{$desktop-large} {
+    & > div {
+      margin: 0;
+    }
+  }
 }
 
 .heading {
@@ -64,7 +78,7 @@
   border: solid 2px $red;
 
   @media #{$desktop-large} {
-    width: 500px;
+    width: 700px;
     height: 500px;
   }
 
@@ -82,7 +96,7 @@
   border: solid 2px $red;
 
   @media #{$desktop-large} {
-    width: 500px;
+    width: 700px;
     height: 500px;
   }
 }

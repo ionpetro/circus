@@ -44,7 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
 
   :nth-child(1) {
     margin: auto 12px;
@@ -86,7 +86,7 @@
   margin-top: 12px;
 
   a {
-    text-decoration: none;
+    font-weight: bold;
     text-transform: lowercase;
     color: $white;
   }
@@ -120,8 +120,8 @@
 .loader,
 .loader:after {
   border-radius: 50%;
-  width: 10em;
-  height: 10em;
+  width: 6em;
+  height: 6em;
 }
 
 .loader {

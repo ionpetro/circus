@@ -33,6 +33,7 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 40px;
+  width: 100%;
 
   @media #{$desktop-medium} {
     grid-template-columns: 1fr 1fr;

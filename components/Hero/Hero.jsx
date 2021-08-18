@@ -18,11 +18,20 @@ const Hero = () => {
       <div className={styles.transition} />
       <div className={styles.content}>
         <div className={styles.info}>
-          <h1 className={styles.heading}>CIRCUS</h1>
+          <div className={styles.button}>
+            <UiButton>contact us</UiButton>
+          </div>
           <span className={`uppercase ${styles.subheading}`}>
             Strongman Experience
           </span>
-          <UiButton>contact us</UiButton>
+          <h1 className={styles.heading}>
+            <span>C</span>
+            <span>I</span>
+            <span>R</span>
+            <span>C</span>
+            <span>U</span>
+            <span>S</span>
+          </h1>
         </div>
       </div>
     </div>

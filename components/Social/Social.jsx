@@ -5,7 +5,6 @@ import ThreeStars from '../../public/assets/svgs/threeStars.svg';
 import socialBack from '../../public/assets/images/socialBack.jpg';
 import logo from '../../public/assets/images/logo.jpg';
 import Image from 'next/image';
-import Link from 'next/link';
 import SocialCard from '../SocialCard/SocialCard';
 
 const Social = () => {
@@ -54,20 +53,14 @@ const Social = () => {
         </div>
         <div className={styles.insta}>
           <div className={styles.account}>
-            <Link
-              href={'https://www.instagram.com/circus.strongman.experience/'}
-            >
-              <a target={'_blank'} rel={'noreferrer'}>
-                <Image
-                  alt={'circus instagram logo'}
-                  className={styles.instaLogo}
-                  width={80}
-                  height={80}
-                  src={logo.src}
-                />
-              </a>
-            </Link>
-            <div className={styles.handle}>
+            <Image
+              alt={'circus instagram logo'}
+              className={styles.instaLogo}
+              width={80}
+              height={80}
+              src={logo.src}
+            />
+            <em className={styles.handle}>
               <a
                 href={'https://www.instagram.com/circus.strongman.experience/'}
                 target={'_blank'}
@@ -75,7 +68,7 @@ const Social = () => {
               >
                 @circus.strongman.experience
               </a>
-            </div>
+            </em>
           </div>
         </div>
         <div className={styles.main}>

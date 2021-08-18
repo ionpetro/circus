@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import UiButton from '../UiButton/UiButton';
 import Circus from '../../public/assets/svgs/Circus.svg';
+import Live from '../../public/assets/svgs/Live.svg';
 import transformDate from '../../utils/utilities';
 
 const FestivalCard = ({ festival }) => {
@@ -17,7 +18,11 @@ const FestivalCard = ({ festival }) => {
       <div className={`${styles.containerActive}`}>
         <div className={styles.borderActive} />
         <div className={`${styles.content} ${styles.contentRow}`}>
-          <div className={`${styles.image} ${styles.imageActiveSvg}`}>
+          <div className={`${styles.label} ${styles.activeLabel}`}>
+            <Live />
+            <span className={'uppercase'}>OPEN</span>
+          </div>
+          <div className={`${styles.image} ${styles.imageActiveImage}`}>
             {festival.image ? (
               <Image
                 src={festival.image.url}
@@ -61,7 +66,7 @@ const FestivalCard = ({ festival }) => {
       <div className={`${styles.containerExpired}`}>
         <div className={styles.borderExpired} />
         <div className={`${styles.content}`}>
-          <div className={styles.label}>
+          <div className={`${styles.label} ${styles.finishedLabel}`}>
             <span className={'uppercase'}>FINISHED</span>
           </div>
           <div className={styles.header}>
@@ -86,7 +91,7 @@ const FestivalCard = ({ festival }) => {
               {festival.title}
             </h3>
           </div>
-          <div>
+          <div className={styles.description}>
             <p>{festival.description}</p>
             {festival.readMoreLink && (
               <a

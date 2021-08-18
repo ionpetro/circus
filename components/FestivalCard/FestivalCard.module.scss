@@ -70,13 +70,34 @@ $desktop-container-height: 100%;
   left: 0;
   padding: 4px 16px;
   display: flex;
-  background: $white;
+  font-size: 0.8em;
 
-  span {
-    letter-spacing: 2px;
-    font-weight: bold;
+  & > span {
+    font-weight: 900;
+    letter-spacing: 1px;
     color: black;
   }
+}
+
+.activeLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $red;
+
+  svg {
+    margin-right: 4px;
+    width: 18px;
+    height: 100%;
+  }
+
+  span {
+    color: $white;
+  }
+}
+
+.finishedLabel {
+  background: $white;
 }
 
 .header {
@@ -93,10 +114,6 @@ $desktop-container-height: 100%;
   align-items: center;
   margin: 0 20px 0 0;
 
-  @media #{$desktop-medium} {
-    margin: 0 20px 0 0;
-  }
-
   img {
     min-width: 100px;
     filter: grayscale(1);
@@ -110,12 +127,17 @@ $desktop-container-height: 100%;
     }
   }
 
-  &ActiveSvg {
+  &ActiveImage {
+    margin: 20px 20px 0 0;
+
     img {
       width: 100px;
       filter: grayscale(1);
+    }
+    @media #{$desktop-medium} {
+      margin: 0 20px 0 0;
 
-      @media #{$desktop-medium} {
+      img {
         min-width: 200px;
       }
     }
@@ -142,7 +164,8 @@ $desktop-container-height: 100%;
   bottom: 40px;
 }
 
-.containerShort {
+.description {
+  margin-bottom: 16px;
 }
 
 .redColor {
