@@ -34,7 +34,7 @@ const Social = () => {
   }, []);
 
   return (
-    <section className={styles.compWrap}>
+    <section className={styles.compWrap} id={'social'}>
       <Image
         alt={'circus facilities'}
         src={socialBack.src}

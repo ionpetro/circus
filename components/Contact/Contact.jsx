@@ -10,7 +10,7 @@ const Contact = () => {
   const instaUrl = 'https://www.instagram.com/circus.strongman.experience/';
 
   return (
-    <section className={styles.compWrap}>
+    <section className={styles.compWrap} id={'contact'}>
       <div className={styles.header}>
         <Tent />
         <h1>contact</h1>

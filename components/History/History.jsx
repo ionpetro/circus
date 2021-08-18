@@ -37,7 +37,7 @@ const History = ({ history }) => {
     },
   ];
   return (
-    <div className={styles.compWrap}>
+    <div className={styles.compWrap} id={'history'}>
       <div className={styles.title}>
         <h2 className={`uppercase ${styles.heading}`}>History</h2>
         <Banner />

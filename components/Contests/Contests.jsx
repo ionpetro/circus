@@ -5,7 +5,7 @@ import FestivalCard from '../FestivalCard/FestivalCard';
 
 const Contests = ({ description, contests }) => {
   return (
-    <section className={styles.compWrap}>
+    <section className={styles.compWrap} id={'contests'}>
       <div className={styles.header}>
         <Stars />
         <h1>Contests</h1>

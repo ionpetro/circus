@@ -7,7 +7,7 @@ import UiCarousel from '../UiCarousel/UiCarousel';
 
 const Equipment = ({ description, media }) => {
   return (
-    <section className={styles.compWrap}>
+    <section className={styles.compWrap} id={'equipment'}>
       <Image
         alt={'equipment'}
         className={styles.image}

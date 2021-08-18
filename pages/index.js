@@ -9,6 +9,7 @@ import Contact from '../components/Contact/Contact';
 import Social from '../components/Social/Social';
 import instance from '../utils/http-client';
 import Error from 'next/error';
+import Navbar from '../components/Navbar/Navbar';
 
 const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
@@ -22,6 +23,7 @@ export default function Home({ cmsData, error }) {
       <Head>
         <title>Circus strongman experience</title>
       </Head>
+      <Navbar />
       <Hero />
       <Marquee />
       <History history={cmsData.history} />
