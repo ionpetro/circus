@@ -8,6 +8,14 @@
   border: solid 2px $white !important;
 }
 
+.thumbs-wrapper {
+  display: flex !important;
+
+  & > ul {
+    margin: auto;
+  }
+}
+
 .carousel.carousel-slider {
   max-width: 668px;
   outline: 1px solid $white;

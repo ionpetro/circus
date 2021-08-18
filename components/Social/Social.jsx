@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../utils/http-client';
 import styles from './Social.module.scss';
-import ThreeStars from '../../public/assets/svgs/threeStars.svg';
+import Stars from '../../public/assets/svgs/stars.svg';
 import socialBack from '../../public/assets/images/socialBack.jpg';
 import logo from '../../public/assets/images/logo.jpg';
 import Image from 'next/image';
 import SocialCard from '../SocialCard/SocialCard';
+import { instaUrl } from '../../utils/links';
 
 const Social = () => {
   const mediaCount = 8;
@@ -47,9 +48,8 @@ const Social = () => {
       <div className={styles.transitionTop} />
       <div className={styles.content}>
         <div className={styles.header}>
-          <ThreeStars />
+          <Stars />
           <h1>Instagram</h1>
-          <ThreeStars />
         </div>
         <div className={styles.insta}>
           <div className={styles.account}>
@@ -61,11 +61,7 @@ const Social = () => {
               src={logo.src}
             />
             <em className={styles.handle}>
-              <a
-                href={'https://www.instagram.com/circus.strongman.experience/'}
-                target={'_blank'}
-                rel={'noreferrer'}
-              >
+              <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>
                 @circus.strongman.experience
               </a>
             </em>

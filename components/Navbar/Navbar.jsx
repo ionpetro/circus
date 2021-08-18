@@ -1,21 +1,30 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Navbar.module.scss';
 import Circus from '../../public/assets/svgs/Circus.svg';
 import Link from 'next/link';
+import Image from 'next/image';
+import navBack from '../../public/assets/svgs/navBack.svg';
+import Stars from '../../public/assets/svgs/stars.svg';
+import Tent from '../../public/assets/svgs/tent.svg';
+import Clawn from '../../public/assets/svgs/Clawn.svg';
+import Dumbbell from '../../public/assets/svgs/dumbbell.svg';
+import Banner from '../../public/assets/svgs/banner.svg';
+import Tickets from '../../public/assets/svgs/Tickets.svg';
+import { instaUrl, mapUrl } from '../../utils/links';
 
 const menuItems = [
-  'history',
-  'equipment',
-  'contests',
-  'social',
-  'personnel',
-  'contact',
+  { href: 'history', icon: <Banner />, direction: 'left' },
+  { href: 'equipment', icon: <Dumbbell />, direction: 'right' },
+  { href: 'contests', icon: <Tickets />, direction: 'left' },
+  { href: 'social', icon: <Stars />, direction: 'right' },
+  { href: 'personnel', icon: <Clawn />, direction: 'left' },
+  { href: 'contact', icon: <Tent />, direction: 'right' },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     open
       ? (document.body.style.overflow = 'hidden')
       : (document.body.style.overflow = 'auto');
@@ -23,11 +32,13 @@ const Navbar = () => {
 
   return (
     <div className={styles.compWrap}>
-      <Link href={'/'}>
-        <a>
-          <Circus />
-        </a>
-      </Link>
+      <div className={styles.logo}>
+        <Link href={'/'}>
+          <a>
+            <Circus />
+          </a>
+        </Link>
+      </div>
       <div className={styles.menu} onClick={() => setOpen(!open)}>
         <span className={open ? styles.isOpen : null} />
       </div>
@@ -38,19 +49,39 @@ const Navbar = () => {
             : styles.container
         }
       >
+        <Image
+          alt={navBack.Alt}
+          src={'/assets/svgs/navBack.svg'}
+          layout={'fill'}
+          objectFit={'cover'}
+          objectPosition={'center'}
+        />
         <ul className={styles.sections}>
           {menuItems.map((item) => (
-            <li key={item}>
-              <a onClick={() => setOpen(false)} href={`#${item}`}>
-                {item}
+            <li key={item.href}>
+              <a
+                onClick={() => setOpen(false)}
+                href={`#${item.href}`}
+                className={styles[item.direction]}
+              >
+                {item.icon}
+                <span className={styles.text}>{item.href}</span>
               </a>
             </li>
           ))}
         </ul>
         <ul className={styles.footer}>
-          <li>INSTAGRAM</li>
+          <li>
+            <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>
+              INSTAGRAM
+            </a>
+          </li>
           <span className={styles.bullet} />
-          <li>MAP</li>
+          <li>
+            <a href={mapUrl} target={'_blank'} rel={'noreferrer'}>
+              LOCATION IN MAPS
+            </a>
+          </li>
         </ul>
       </div>
     </div>

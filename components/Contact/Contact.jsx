@@ -4,11 +4,9 @@ import RightWay from '../../public/assets/svgs/RightWay.svg';
 import Tent from '../../public/assets/svgs/tent.svg';
 import styles from './Contact.module.scss';
 import UiButton from '../UiButton/UiButton';
+import { instaUrl, mapUrl } from '../../utils/links';
 
 const Contact = () => {
-  const mapUrl = 'https://goo.gl/maps/UUAgxPJfU8RfGhA18';
-  const instaUrl = 'https://www.instagram.com/circus.strongman.experience/';
-
   return (
     <section className={styles.compWrap} id={'contact'}>
       <div className={styles.header}>
