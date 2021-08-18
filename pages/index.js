@@ -10,7 +10,7 @@ import Social from '../components/Social/Social';
 import instance from '../utils/http-client';
 import Error from 'next/error';
 
-const strapiUrl = process.env.NEXT_PUBLIC_BACKEND || 'http://localhost:1337';
+const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
 export default function Home({ cmsData, error }) {
   if (error) {
@@ -25,7 +25,10 @@ export default function Home({ cmsData, error }) {
       <Hero />
       <Marquee />
       <History history={cmsData.history} />
-      <Equipment description={cmsData.equipmentDescription} />
+      <Equipment
+        description={cmsData.equipmentDescription}
+        media={cmsData.galleries}
+      />
       <Contests
         description={cmsData.contestsDescription}
         contests={cmsData.contests}

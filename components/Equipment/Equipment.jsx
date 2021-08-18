@@ -5,7 +5,7 @@ import Dumbbell from '../../public/assets/svgs/dumbbell.svg';
 import equipment from '../../public/assets/images/equipment.png';
 import UiCarousel from '../UiCarousel/UiCarousel';
 
-const Equipment = ({ description }) => {
+const Equipment = ({ description, media }) => {
   return (
     <section className={styles.compWrap}>
       <Image
@@ -22,7 +22,7 @@ const Equipment = ({ description }) => {
         <h1 className={styles.heading}>Equipment</h1>
         <p className={styles.description}>{description}</p>
         <div className={styles.carousel}>
-          <UiCarousel />
+          <UiCarousel media={media} />
         </div>
       </div>
       <div className={styles.transitionBot} />
