@@ -5,10 +5,27 @@
   width: 100%;
   position: fixed;
   z-index: 10;
-  margin: 1em 2em;
+  margin: 0.5em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logoLink {
+  text-decoration: none !important;
+}
+
+.logoContainer {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    .logoName {
+      opacity: 1;
+      margin-left: 12px;
+    }
+  }
 }
 
 .logo {
@@ -17,6 +34,14 @@
   path {
     fill: $white;
   }
+}
+
+.logoName {
+  margin-left: 0;
+  letter-spacing: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  opacity: 0;
 }
 
 .menu {
@@ -99,7 +124,7 @@
   list-style: none;
 
   @media #{$desktop-medium} {
-    top: -100px;
+    top: 0;
   }
 
   &::before {
@@ -121,8 +146,8 @@
     -webkit-text-stroke-color: $white;
 
     @media #{$desktop-medium} {
-      font-size: 65px;
-      line-height: 65px;
+      font-size: 50px;
+      line-height: 50px;
     }
 
     & > a {

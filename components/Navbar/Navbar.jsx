@@ -32,13 +32,16 @@ const Navbar = () => {
 
   return (
     <div className={styles.compWrap}>
-      <div className={styles.logo}>
-        <Link href={'/'}>
-          <a>
-            <Circus />
-          </a>
-        </Link>
-      </div>
+      <Link href={'/'}>
+        <a className={styles.logoLink}>
+          <div className={styles.logoContainer}>
+            <div className={styles.logo}>
+              <Circus />
+            </div>
+            <h3 className={styles.logoName}>CIRCUS</h3>
+          </div>
+        </a>
+      </Link>
       <div className={styles.menu} onClick={() => setOpen(!open)}>
         <span className={open ? styles.isOpen : null} />
       </div>
