@@ -6,7 +6,7 @@ $desktop-container-height: 100%;
 
 .containerActive {
   position: relative;
-  background: $red;
+  background: linear-gradient(to right, $red, $yellow);
   height: $desktop-container-height;
   clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
   grid-column: 1/-1;
