@@ -1,0 +1,141 @@
+@import '/styles/colors.scss';
+@import '/styles/variables.scss';
+
+.compWrap {
+  max-width: 992px;
+  margin: 30px 20px;
+
+  @media #{$desktop-large} {
+    margin: 80px auto 0 auto;
+  }
+}
+
+.title {
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: lighter;
+  text-align: center;
+  @media #{$desktop-medium} {
+    text-align: unset;
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  @media #{$desktop-medium} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.actions {
+  svg {
+    width: 24px;
+    height: 24px;
+    margin: 12px 12px 12px 0;
+
+    &:hover {
+      path {
+        fill: $yellow;
+      }
+    }
+  }
+}
+
+.menuItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  margin: 20px auto 20px auto;
+  cursor: pointer;
+
+  @media #{$desktop-large} {
+    margin: -24px 0 0 0;
+    grid-gap: 0;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
+  margin-bottom: 16px;
+
+  @media #{$desktop-medium} {
+    margin-bottom: unset;
+  }
+
+  &:hover {
+    & > svg {
+      transition: transform 0.3s ease;
+      transform: rotate(30deg);
+    }
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+}
+
+.link {
+  text-transform: lowercase;
+  color: $white;
+  letter-spacing: 2px;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.legal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px auto;
+
+  & > span:nth-child(1) {
+    margin-bottom: 8px;
+  }
+
+  @media #{$desktop-medium} {
+    flex-direction: row;
+    align-items: unset;
+
+    & > span:nth-child(1) {
+      margin-bottom: unset;
+    }
+  }
+}
+
+.copyWrite {
+  font-weight: lighter;
+}
+
+.inscription {
+  a {
+    text-transform: unset;
+  }
+}
+
+.bored {
+  color: $red;
+}
+
+.end {
+  padding: 6px;
+  background: linear-gradient(to right, $red, $yellow);
+}

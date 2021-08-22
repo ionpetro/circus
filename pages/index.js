@@ -11,6 +11,7 @@ import instance from '../utils/http-client';
 import Error from 'next/error';
 import Navbar from '../components/Navbar/Navbar';
 import Personnel from '../components/Personnel/Personnel';
+import Footer from '../components/Footer/Footer';
 
 const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
@@ -39,6 +40,7 @@ export default function Home({ cmsData, error }) {
       <Social />
       <Personnel />
       <Contact />
+      <Footer />
     </>
   );
 }

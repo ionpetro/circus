@@ -4,7 +4,7 @@ import RightWay from '../../public/assets/svgs/RightWay.svg';
 import Tent from '../../public/assets/svgs/tent.svg';
 import styles from './Contact.module.scss';
 import UiButton from '../UiButton/UiButton';
-import { instaUrl, mapUrl } from '../../utils/links';
+import { instaUrl, mapUrl, phone } from '../../utils/links';
 
 const Contact = () => {
   return (
@@ -24,9 +24,9 @@ const Contact = () => {
           </div>
           <h2 className={styles.heading}>Telephone</h2>
 
-          <a href="tel:6988617790">
+          <a href={`tel:${phone}`}>
             <div className={styles.infoBlock}>
-              <UiButton>6984102701</UiButton>
+              <UiButton>{phone}</UiButton>
             </div>
           </a>
 

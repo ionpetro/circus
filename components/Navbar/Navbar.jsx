@@ -12,7 +12,7 @@ import Banner from '../../public/assets/svgs/banner.svg';
 import Tickets from '../../public/assets/svgs/Tickets.svg';
 import { instaUrl, mapUrl } from '../../utils/links';
 
-const menuItems = [
+export const menuItems = [
   { href: 'history', icon: <Banner />, direction: 'left' },
   { href: 'equipment', icon: <Dumbbell />, direction: 'right' },
   { href: 'contests', icon: <Tickets />, direction: 'left' },
