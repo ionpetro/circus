@@ -10,6 +10,7 @@ import Social from '../components/Social/Social';
 import instance from '../utils/http-client';
 import Error from 'next/error';
 import Navbar from '../components/Navbar/Navbar';
+import Personnel from '../components/Personnel/Personnel';
 
 const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
@@ -36,6 +37,7 @@ export default function Home({ cmsData, error }) {
         contests={cmsData.contests}
       />
       <Social />
+      <Personnel />
       <Contact />
     </>
   );

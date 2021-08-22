@@ -23,9 +23,13 @@ const Contact = () => {
             </a>
           </div>
           <h2 className={styles.heading}>Telephone</h2>
-          <div className={styles.infoBlock}>
-            <UiButton>2212212212</UiButton>
-          </div>
+
+          <a href="tel:6988617790">
+            <div className={styles.infoBlock}>
+              <UiButton>6984102701</UiButton>
+            </div>
+          </a>
+
           <h2 className={styles.heading}>More Info</h2>
           <p>
             Pm on{' '}

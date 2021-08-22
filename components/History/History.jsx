@@ -30,7 +30,7 @@ const History = ({ history }) => {
     {
       id: 3,
       icon: <Drums />,
-      p: 'Enjoy our marvelous',
+      p: 'enjoy our marvelous',
       imgSrc: image3.src,
       hype: 'extravaganza',
       color: 'beige',
