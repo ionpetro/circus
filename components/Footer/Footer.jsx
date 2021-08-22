@@ -41,7 +41,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <hr />
+        <hr className={styles.line} />
         <div className={styles.legal}>
           <span className={styles.copyWrite}>
             © 2021 Circus. All rights reserved.

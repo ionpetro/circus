@@ -38,12 +38,19 @@
     transition: all 2s ease;
 
     @media #{$tablet} {
-      letter-spacing: 30px;
-      font-size: 60px;
+      letter-spacing: 20px;
+      font-size: 50px;
     }
 
     .name {
-      padding: 0 20px;
+      margin: 0 10px 0 10px;
+
+      &:before {
+        content: '\2022';
+        margin-right: 16px;
+        vertical-align: -30%;
+      }
+
       &:hover {
         span:nth-child(1) {
           color: $red;
