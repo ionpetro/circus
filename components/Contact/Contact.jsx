@@ -11,18 +11,19 @@ const Contact = () => {
     <section className={styles.compWrap} id={'contact'}>
       <div className={styles.header}>
         <Tent />
-        <h1>contact</h1>
+        <h1>CONTACT</h1>
+        <p className={styles.description}>Lorem ipsum</p>
       </div>
       <div className={styles.content}>
         <div className={styles.info}>
-          <h2>Location</h2>
+          <h3>Location</h3>
           <div className={styles.infoBlock}>
             <p>Dimitrakopoulou 18, Athina 111 41</p>
             <a href={mapUrl} target={'_blank'} rel={'noreferrer'}>
               Open in maps
             </a>
           </div>
-          <h2 className={styles.heading}>Telephone</h2>
+          <h3 className={styles.heading}>Telephone</h3>
 
           <a href={`tel:${phone}`}>
             <div className={styles.infoBlock}>
@@ -30,7 +31,7 @@ const Contact = () => {
             </div>
           </a>
 
-          <h2 className={styles.heading}>More Info</h2>
+          <h3 className={styles.heading}>More Info</h3>
           <p>
             Pm on{' '}
             <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>

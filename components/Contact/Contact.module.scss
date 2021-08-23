@@ -28,8 +28,11 @@
   & > svg {
     width: 100px;
     height: 63px;
-    margin-bottom: 10px;
   }
+}
+
+.description {
+  margin-top: 12px;
 }
 
 .content {
@@ -54,7 +57,7 @@
     margin-right: 24px;
   }
 
-  h2 {
+  h3 {
     color: $red;
   }
 }

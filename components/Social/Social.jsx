@@ -49,7 +49,7 @@ const Social = () => {
       <div className={styles.content}>
         <div className={styles.header}>
           <Stars />
-          <h1>Instagram</h1>
+          <h1>INSTAGRAM</h1>
         </div>
         <div className={styles.insta}>
           <div className={styles.account}>
@@ -60,11 +60,11 @@ const Social = () => {
               height={80}
               src={logo.src}
             />
-            <em className={styles.handle}>
+            <span className={styles.handle}>
               <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>
                 @circus.strongman.experience
               </a>
-            </em>
+            </span>
           </div>
         </div>
         <div className={styles.main}>

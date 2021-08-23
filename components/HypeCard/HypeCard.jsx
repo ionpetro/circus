@@ -20,7 +20,7 @@ const HypeCard = ({ hype }) => {
           <div className={styles.info}>
             {hype.icon}
             <p>{hype.p}</p>
-            <h3 className={'uppercase'}>{hype.hype}</h3>
+            <h3 className={`uppercase ${styles.hype}`}>{hype.hype}</h3>
           </div>
         </div>
       </div>

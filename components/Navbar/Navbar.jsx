@@ -10,7 +10,7 @@ import Clawn from '../../public/assets/svgs/Clawn.svg';
 import Dumbbell from '../../public/assets/svgs/dumbbell.svg';
 import Banner from '../../public/assets/svgs/banner.svg';
 import Tickets from '../../public/assets/svgs/Tickets.svg';
-import { instaUrl, mapUrl } from '../../utils/links';
+import { instaUrl, mapUrl, phone } from '../../utils/links';
 
 export const menuItems = [
   { href: 'history', icon: <Banner />, direction: 'left' },
@@ -38,7 +38,7 @@ const Navbar = () => {
             <div className={styles.logo}>
               <Circus />
             </div>
-            <h3 className={styles.logoName}>CIRCUS</h3>
+            <h2 className={styles.logoName}>CIRCUS</h2>
           </div>
         </a>
       </Link>
@@ -82,8 +82,12 @@ const Navbar = () => {
           <span className={styles.bullet} />
           <li>
             <a href={mapUrl} target={'_blank'} rel={'noreferrer'}>
-              LOCATION IN MAPS
+              MAPS
             </a>
+          </li>
+          <span className={styles.bullet} />
+          <li>
+            <a href={`tel:${phone}`}>PHONE</a>
           </li>
         </ul>
       </div>

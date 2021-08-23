@@ -23,7 +23,7 @@ export default function Home({ cmsData, error }) {
   return (
     <>
       <Head>
-        <title>Circus strongman experience</title>
+        <title>Circus Strongman Experience</title>
       </Head>
       <Navbar />
       <Hero />

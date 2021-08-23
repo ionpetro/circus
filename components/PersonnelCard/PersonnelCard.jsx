@@ -23,7 +23,7 @@ const PersonnelCard = ({
           </a>
         </div>
       </div>
-      <h2 className={styles.name}>{name}</h2>
+      <h3 className={`uppercase ${styles.name}`}>{name}</h3>
       <div className={`${styles.position} ${styles[color]}`}>
         <span>{position}</span>
       </div>

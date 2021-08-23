@@ -8,7 +8,7 @@ const Contests = ({ description, contests }) => {
     <section className={styles.compWrap} id={'contests'}>
       <div className={styles.header}>
         <Tickets />
-        <h1>Contests</h1>
+        <h1>CONTESTS</h1>
         <p>{description}</p>
         <div className={styles.festivals}>
           {contests.map((contest) => (
