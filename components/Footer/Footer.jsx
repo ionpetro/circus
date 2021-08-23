@@ -7,10 +7,10 @@ import { menuItems } from '../Navbar/Navbar';
 import styles from './Footer.module.scss';
 import Marquee from '../Marquee/Marquee';
 
-const Footer = () => {
+const Footer = ({ hasMarquee }) => {
   return (
     <>
-      <Marquee />
+      {hasMarquee && <Marquee />}
       <section className={styles.compWrap}>
         <h1 className={styles.title}>CIRCUS</h1>
         <span className={styles.subtitle}>strongman experience</span>

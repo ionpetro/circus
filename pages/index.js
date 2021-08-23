@@ -8,7 +8,7 @@ import Contests from '../components/Contests/Contests';
 import Contact from '../components/Contact/Contact';
 import Social from '../components/Social/Social';
 import instance from '../utils/http-client';
-import Error from 'next/error';
+import Error from './_error';
 import Navbar from '../components/Navbar/Navbar';
 import Personnel from '../components/Personnel/Personnel';
 import Footer from '../components/Footer/Footer';
@@ -40,7 +40,7 @@ export default function Home({ cmsData, error }) {
       <Social />
       <Personnel />
       <Contact />
-      <Footer />
+      <Footer hasMarquee={true} />
     </>
   );
 }

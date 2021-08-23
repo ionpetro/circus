@@ -1,0 +1,40 @@
+@import '/styles/colors';
+
+.compWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.error {
+  margin: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 236px;
+    height: 236px;
+  }
+}
+
+.paragraph {
+  text-align: center;
+  line-height: 28px;
+
+  span {
+    font-weight: 900;
+    color: $red;
+  }
+}
+
+.footer {
+  width: 100%;
+
+  & > section {
+    margin-top: 0;
+  }
+}
