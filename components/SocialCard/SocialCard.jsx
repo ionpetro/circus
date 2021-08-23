@@ -24,7 +24,7 @@ const SocialCard = ({ media }) => {
                 layout={'fill'}
                 objectFit={'cover'}
                 objectPosition={'center'}
-                alt={media.id}
+                alt={`instagram image ${media.id}`}
                 src={
                   media.media_type === 'VIDEO'
                     ? media.thumbnail_url

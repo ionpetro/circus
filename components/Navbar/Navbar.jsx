@@ -3,7 +3,6 @@ import styles from './Navbar.module.scss';
 import Circus from '../../public/assets/svgs/Circus.svg';
 import Link from 'next/link';
 import Image from 'next/image';
-import navBack from '../../public/assets/svgs/navBack.svg';
 import Stars from '../../public/assets/svgs/stars.svg';
 import Tent from '../../public/assets/svgs/tent.svg';
 import Clawn from '../../public/assets/svgs/Clawn.svg';
@@ -53,7 +52,7 @@ const Navbar = () => {
         }
       >
         <Image
-          alt={navBack.Alt}
+          alt={'navbar background overlay'}
           src={'/assets/svgs/navBack.svg'}
           layout={'fill'}
           objectFit={'cover'}
