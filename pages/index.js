@@ -25,6 +25,7 @@ export default function Home({ cmsData, error }) {
     <>
       <Head>
         <title>Circus Strongman Experience</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Seo />
       <Navbar />

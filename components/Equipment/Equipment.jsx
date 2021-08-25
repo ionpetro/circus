@@ -19,7 +19,7 @@ const Equipment = ({ description, media }) => {
       <div className={styles.transitionTop} />
       <div className={styles.content}>
         <Dumbbell className={styles.dumbbell} />
-        <h1 className={styles.heading}>EQUIPMENT</h1>
+        <h2>EQUIPMENT</h2>
         <p className={styles.description}>{description}</p>
         <div className={styles.carousel}>
           <UiCarousel media={media} />

@@ -152,6 +152,7 @@ $desktop-container-height: 100%;
 
 .date {
   margin: 20px 0 4px 0;
+  font-weight: 300;
 
   @media #{$desktop-medium} {
     margin-top: 0;

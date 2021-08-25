@@ -49,7 +49,7 @@ const Social = () => {
       <div className={styles.content}>
         <div className={styles.header}>
           <Stars />
-          <h1>INSTAGRAM</h1>
+          <h2>INSTAGRAM</h2>
         </div>
         <div className={styles.insta}>
           <div className={styles.account}>

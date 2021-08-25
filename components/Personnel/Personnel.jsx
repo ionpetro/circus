@@ -41,7 +41,7 @@ const Personnel = () => {
     <section className={styles.compWrap} id={'personnel'}>
       <div className={styles.heading}>
         <Clawn />
-        <h1>PERSONNEL</h1>
+        <h2>PERSONNEL</h2>
         <p>Lorem Ipsum is simply dummy text</p>
       </div>
       <div className={styles.members}>

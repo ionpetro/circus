@@ -11,7 +11,7 @@ const Contact = () => {
     <section className={styles.compWrap} id={'contact'}>
       <div className={styles.header}>
         <Tent />
-        <h1>CONTACT</h1>
+        <h2>CONTACT</h2>
         <p className={styles.description}>Lorem ipsum</p>
       </div>
       <div className={styles.content}>
