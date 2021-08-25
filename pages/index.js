@@ -12,6 +12,7 @@ import Error from './_error';
 import Navbar from '../components/Navbar/Navbar';
 import Personnel from '../components/Personnel/Personnel';
 import Footer from '../components/Footer/Footer';
+import Seo from '../components/Seo/Seo';
 
 const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
@@ -25,6 +26,7 @@ export default function Home({ cmsData, error }) {
       <Head>
         <title>Circus Strongman Experience</title>
       </Head>
+      <Seo />
       <Navbar />
       <Hero />
       <Marquee />
