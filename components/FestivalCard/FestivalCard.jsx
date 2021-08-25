@@ -3,9 +3,10 @@ import styles from '../FestivalCard/FestivalCard.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import UiButton from '../UiButton/UiButton';
+import transformDate from '../../utils/utilities';
 import Circus from '../../public/assets/svgs/Circus.svg';
 import Live from '../../public/assets/svgs/Live.svg';
-import transformDate from '../../utils/utilities';
+import marked from 'marked';
 
 const FestivalCard = ({ festival }) => {
   const { active } = festival;
@@ -37,7 +38,10 @@ const FestivalCard = ({ festival }) => {
           <div>
             {festival.date && <p className={styles.date}>{date}</p>}
             <h3 className={`uppercase ${styles.redColor}`}>{festival.title}</h3>
-            <p>{festival.description}</p>
+            <div
+              className={styles.description}
+              dangerouslySetInnerHTML={{ __html: marked(festival.description) }}
+            />
             {festival.readMoreLink && (
               <a
                 href={festival.readMoreLink}
