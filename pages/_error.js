@@ -1,5 +1,3 @@
-import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
 import UiError from '../components/UiError/UiError';
 
 function Error({ statusCode }) {

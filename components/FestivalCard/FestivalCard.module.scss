@@ -8,7 +8,12 @@ $desktop-container-height: 100%;
   position: relative;
   background: linear-gradient(to right, $red, $yellow);
   height: $desktop-container-height;
-  clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
+  clip-path: unset;
+
+  @media #{$desktop-medium} {
+    clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
+  }
+
   grid-column: 1/-1;
 }
 
@@ -16,7 +21,11 @@ $desktop-container-height: 100%;
   position: relative;
   height: $desktop-container-height;
   background: $white;
-  clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  clip-path: unset;
+
+  @media #{$desktop-medium} {
+    clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  }
 }
 
 .borderActive {
@@ -25,7 +34,7 @@ $desktop-container-height: 100%;
   left: 2px;
   width: calc(#{$desktop-container-width} - 4px);
   height: calc(#{$desktop-container-height} - 4px);
-  clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
+  clip-path: unset;
   background: $grey;
 
   @media #{$desktop-medium} {
@@ -33,6 +42,7 @@ $desktop-container-height: 100%;
     left: 6px;
     width: calc(#{$desktop-container-width} - 12px);
     height: calc(#{$desktop-container-height} - 12px);
+    clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
   }
 }
 
@@ -42,8 +52,12 @@ $desktop-container-height: 100%;
   left: 2px;
   width: calc(#{$desktop-container-width} - 4px);
   height: calc(#{$desktop-container-height} - 4px);
-  clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  clip-path: unset;
   background: $grey;
+
+  @media #{$desktop-medium} {
+    clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  }
 }
 
 .content {
@@ -178,5 +192,5 @@ $desktop-container-height: 100%;
 }
 
 .spacing {
-  padding: 16px;
+  padding: 32px;
 }

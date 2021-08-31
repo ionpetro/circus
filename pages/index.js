@@ -13,6 +13,7 @@ import Navbar from '../components/Navbar/Navbar';
 import Personnel from '../components/Personnel/Personnel';
 import Footer from '../components/Footer/Footer';
 import Seo from '../components/Seo/Seo';
+import Topbar from '../components/Topbar/Topbar';
 
 const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
@@ -28,6 +29,7 @@ export default function Home({ cmsData, error }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Seo />
+      <Topbar news={cmsData.news} />
       <Navbar />
       <Hero />
       <Marquee />
