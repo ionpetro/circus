@@ -22,7 +22,7 @@ const Social = () => {
           `https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=${process.env.NEXT_PUBLIC_INSTAGRAM_TOKEN}`
         );
         const { data } = await axiosInstance.get(
-          `https://graph.instagram.com/17841400268974292/media?fields=media_type,thumbnail_url,media_url,timestamp,permalink,id&access_token=${access_token}`
+          `https://graph.instagram.com/${process.env.NEXT_PUBLIC_INSTAGRAM_ID}/media?fields=media_type,thumbnail_url,media_url,timestamp,permalink,id&access_token=${access_token}`
         );
         setLoading(false);
         setMediaArray(data);
