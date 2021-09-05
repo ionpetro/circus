@@ -130,7 +130,6 @@ $desktop-container-height: 100%;
 
   img {
     min-width: 100px;
-    filter: grayscale(1);
   }
 
   svg {
@@ -146,7 +145,6 @@ $desktop-container-height: 100%;
 
     img {
       width: 100px;
-      filter: grayscale(1);
     }
     @media #{$desktop-medium} {
       margin: 0 20px 0 0;
