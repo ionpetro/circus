@@ -7,41 +7,45 @@ import { menuItems } from '../Navbar/Navbar';
 import styles from './Footer.module.scss';
 import Marquee from '../Marquee/Marquee';
 
-const Footer = ({ hasMarquee }) => {
+const Footer = ({ hasMarquee, simple = false }) => {
   return (
-    <>
+    <footer>
       {hasMarquee && <Marquee />}
-      <section className={styles.compWrap}>
-        <h1 className={styles.title}>CIRCUS</h1>
-        <span className={styles.subtitle}>strongman experience</span>
-        <div className={styles.container}>
-          <div className={styles.actions}>
-            <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>
-              <Insta />
-            </a>
-            <a href={mapUrl} target={'_blank'} rel={'noreferrer'}>
-              <Map />
-            </a>
-            <a href={`tel:${phone}`}>
-              <Phone />
-            </a>
-          </div>
-          <div className={styles.menuItems}>
-            {menuItems.map((item) => (
-              <a
-                key={item.href}
-                href={`/#${item.href}`}
-                className={styles.link}
-              >
-                <div className={styles.menuItem}>
-                  {item.icon}
-                  {item.href}
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-        <hr className={styles.line} />
+      <div className={styles.compWrap}>
+        {!simple && (
+          <>
+            <h1 className={styles.title}>CIRCUS</h1>
+            <span className={styles.subtitle}>strongman experience</span>
+            <div className={styles.container}>
+              <div className={styles.actions}>
+                <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>
+                  <Insta />
+                </a>
+                <a href={mapUrl} target={'_blank'} rel={'noreferrer'}>
+                  <Map />
+                </a>
+                <a href={`tel:${phone}`}>
+                  <Phone />
+                </a>
+              </div>
+              <div className={styles.menuItems}>
+                {menuItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={`/#${item.href}`}
+                    className={styles.link}
+                  >
+                    <div className={styles.menuItem}>
+                      {item.icon}
+                      {item.href}
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <hr className={styles.line} />
+          </>
+        )}
         <div className={styles.legal}>
           <span className={styles.copyWrite}>
             © 2021 Circus. All rights reserved.
@@ -65,9 +69,9 @@ const Footer = ({ hasMarquee }) => {
             </a>
           </span>
         </div>
-      </section>
+      </div>
       <div className={styles.end} />
-    </>
+    </footer>
   );
 };
 

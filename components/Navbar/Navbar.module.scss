@@ -19,13 +19,6 @@
   text-decoration: none;
   display: flex;
   align-items: center;
-
-  &:hover {
-    .logoName {
-      opacity: 1;
-      margin-left: 12px;
-    }
-  }
 }
 
 .logo {
@@ -36,12 +29,18 @@
   }
 }
 
-.logoName {
-  margin-left: 0;
-  letter-spacing: 5px;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  opacity: 0;
+.actions {
+  display: flex;
+  align-items: center;
+
+  & > div {
+    margin-left: 22px;
+  }
+}
+
+.login {
+  text-transform: unset;
+  color: $white;
 }
 
 .menu {
@@ -51,7 +50,7 @@
   height: 50px;
   position: relative;
   z-index: 15;
-  margin-top: 20px;
+  margin-top: 32px;
   margin-right: 64px;
   cursor: pointer;
 

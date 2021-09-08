@@ -25,6 +25,9 @@ const moduleExports = {
       'video.cdninstagram.com',
     ],
   },
+  env: {
+    SECRET_CODE: process.env.SECRET_CODE,
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,

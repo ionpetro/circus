@@ -1,0 +1,68 @@
+@import 'styles/variables';
+
+.compWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content {
+  margin: 100px 20px 0 20px;
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+  & > svg {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 24px;
+  }
+
+  @media #{$desktop-medium} {
+    flex-direction: row;
+    margin: 100px auto 0 auto;
+
+    & > svg {
+      width: 292px;
+      height: 335px;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+.wrapper {
+  @media #{$desktop-medium} {
+    margin-left: 36px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+.subtitle {
+  font-weight: 300;
+  margin-top: 8px;
+
+  a {
+    font-weight: 500;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+
+  & > * {
+    width: 100%;
+    margin-bottom: 22px;
+  }
+}
+
+.error {
+  color: red;
+}

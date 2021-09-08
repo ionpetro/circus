@@ -19,7 +19,7 @@ const UiError = ({ statusCode }) => {
         {statusCode === 404 && (
           <Link href={'/'}>
             <a>
-              <UiButton>Back to website</UiButton>
+              <UiButton>Back to site</UiButton>
             </a>
           </Link>
         )}

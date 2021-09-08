@@ -15,8 +15,8 @@ body {
   scroll-behavior: smooth;
 }
 
-::selection {
-  background-color: $yellow;
+::placeholder {
+  font-weight: 300;
 }
 
 a {
