@@ -1,25 +1,15 @@
-import React, { useContext } from 'react';
-import UserContext from '../contexts/UserContext';
-import Cookie from 'js-cookie';
-import Router from 'next/router';
+import React from 'react';
 import Navbar from '../components/Navbar/Navbar';
+import Profile from '../components/Profile/Profile';
+import Auth from '../components/Auth/Auth';
 
 const ProfilePage = () => {
-  const { setUser } = useContext(UserContext);
-
-  // TODO: fix
-  const logout = () => {
-    Cookie.remove('token');
-    setUser(null);
-    Router.push('login');
-  };
-
   return (
     <div>
       <Navbar />
-      <button onClick={logout}>logout</button>{' '}
+      <Profile />
     </div>
   );
 };
 
-export default ProfilePage;
+export default Auth(ProfilePage);

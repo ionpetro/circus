@@ -1,5 +1,10 @@
 @import './styles/colors';
 
+.compWrap {
+  display: flex;
+  flex-direction: column;
+}
+
 .label {
   font-weight: 300;
   margin-left: 0;

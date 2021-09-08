@@ -1,0 +1,65 @@
+@import 'styles/colors';
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  & > select,
+  input {
+    margin-bottom: 32px;
+  }
+}
+
+.notice {
+  margin: 12px 0;
+  color: $dark-grey;
+}
+
+.statuses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    margin: 8px 8px 8px 8px;
+  }
+
+  & > svg:nth-child(2) {
+    path {
+      fill: green;
+    }
+  }
+
+  & > svg:nth-child(3) {
+    path {
+      fill: red;
+    }
+  }
+}
+
+.inputs {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.select {
+  margin-right: 12px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  & > div {
+    margin: 0 0 0 20px;
+  }
+}
+
+.cancel {
+  font-size: 20px;
+  font-weight: 300;
+  color: $white;
+  text-transform: unset;
+}

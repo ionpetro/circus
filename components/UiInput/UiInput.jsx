@@ -11,7 +11,7 @@ const UiInput = ({
   label = true,
 }) => {
   return (
-    <>
+    <div className={styles.compWrap}>
       <label
         className={`${styles.label} ${label ? '' : styles.hide}`}
         htmlFor={type}
@@ -27,7 +27,7 @@ const UiInput = ({
         value={value}
         onChange={onChange}
       />
-    </>
+    </div>
   );
 };
 

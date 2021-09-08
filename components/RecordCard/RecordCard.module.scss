@@ -1,0 +1,24 @@
+@import 'styles/colors';
+
+.compWrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid $white;
+  padding: 16px;
+
+  & > svg {
+    margin-right: 16px;
+  }
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.score {
+  font-weight: 300;
+}
