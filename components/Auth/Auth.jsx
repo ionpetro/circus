@@ -2,6 +2,7 @@ import Router from 'next/router';
 import Cookie from 'js-cookie';
 
 const Auth = (WrappedComponent) => {
+  // eslint-disable-next-line react/display-name
   return (props) => {
     // checks whether we are on client / browser or server.
     if (typeof window !== 'undefined') {

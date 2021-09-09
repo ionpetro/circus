@@ -21,7 +21,7 @@ const Login = () => {
     if (userContext.user) {
       Router.push('/profile');
     }
-  }, []);
+  }, [userContext]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
