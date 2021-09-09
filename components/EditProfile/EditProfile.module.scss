@@ -1,0 +1,87 @@
+@import '/styles/colors';
+@import '/styles/variables';
+
+.compWrap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 26px;
+
+  @media #{$desktop-large} {
+    margin: unset;
+  }
+}
+
+.title {
+  color: $yellow;
+}
+
+.hide {
+  display: none;
+}
+
+.form {
+  margin-top: 26px;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 18px;
+
+  & > :nth-child(2) {
+    margin-top: 18px;
+    @media #{$desktop-large} {
+      margin-top: unset;
+    }
+  }
+
+  @media #{$desktop-large} {
+    flex-direction: row;
+  }
+}
+
+.category {
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+
+.tags {
+  padding-top: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 0 24px 0;
+
+  @media #{$desktop-large} {
+    justify-content: flex-end;
+  }
+
+  & > div {
+    margin: 0 0 0 20px;
+  }
+
+  a {
+    font-size: 20px;
+    font-weight: 300;
+    color: $white;
+    text-transform: unset;
+  }
+}
+
+.success {
+  margin-top: 16px;
+  color: green;
+}
+
+.error {
+  margin-top: 16px;
+  color: red;
+}

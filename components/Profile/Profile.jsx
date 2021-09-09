@@ -6,6 +6,7 @@ import Cookie from 'js-cookie';
 import Router from 'next/router';
 import User from '/public/assets/svgs/user.svg';
 import Records from '../Records/Records';
+import EditProfile from '../EditProfile/EditProfile';
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
@@ -34,7 +35,8 @@ const Profile = () => {
               </div>
             </div>
           </div>
-          <Records userId={user?.id} />
+          {/*<Records userId={user?.id} />*/}
+          <EditProfile setShowForm={() => {}} />
         </div>
       </div>
       <Footer simple />
