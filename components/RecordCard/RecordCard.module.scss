@@ -1,4 +1,5 @@
 @import 'styles/colors';
+@import 'styles/variables';
 
 .compWrap {
   display: flex;
@@ -6,8 +7,28 @@
   border: 1px solid $white;
   padding: 16px;
 
+  @media #{$desktop-medium} {
+    //min-width: 300px;
+  }
+
   & > svg {
     margin-right: 16px;
+  }
+}
+
+.approved {
+  & > svg {
+    path {
+      fill: green;
+    }
+  }
+}
+
+.rejected {
+  & > svg {
+    path {
+      fill: red;
+    }
   }
 }
 
@@ -20,5 +41,9 @@
 }
 
 .score {
+  font-weight: 300;
+}
+
+.date {
   font-weight: 300;
 }

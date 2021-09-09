@@ -13,7 +13,7 @@ const Profile = () => {
   const logout = () => {
     Cookie.remove('token');
     setUser(null);
-    Router.push('login');
+    Router.push('/');
   };
 
   return (
@@ -22,11 +22,17 @@ const Profile = () => {
         <div className={styles.content}>
           <div className={styles.profile}>
             <h1>PROFILE</h1>
-            <div className={styles.avatar}>
-              <User />
+            <div className={styles.userProfile}>
+              <div className={styles.avatar}>
+                <User />
+              </div>
+              <div className={styles.userInfo}>
+                <h4>@{user?.username}</h4>
+                <a className={styles.logout} onClick={logout}>
+                  Logout
+                </a>
+              </div>
             </div>
-            <h4>@{user?.username}</h4>
-            <button onClick={logout}>logout</button>
           </div>
           <Records userId={user?.id} />
         </div>

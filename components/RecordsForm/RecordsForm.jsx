@@ -7,8 +7,9 @@ import styles from './RecordsForm.module.scss';
 import Medal from '/public/assets/svgs/Medal.svg';
 import UserContext from '../../contexts/UserContext';
 
-const RecordsForm = ({ options, setShowForm, setRecords }) => {
+const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
   const { user } = useContext(UserContext);
+  const [error, setError] = useState('');
 
   const gameId = (gameTitle) => {
     const game = options.find((option) => option.title === gameTitle);
@@ -22,24 +23,36 @@ const RecordsForm = ({ options, setShowForm, setRecords }) => {
 
   const [form, setForm] = useState({ game: gameId(options[0].title) });
 
-  const addRecord = async (e) => {
+  const addOrUpdateRecord = async (e) => {
     e.preventDefault();
+    let response;
+    const [record] = records.filter((record) => record.game.id === form.game);
 
     try {
-      const response = await axiosInstance.post(
-        `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?user=${user.id}`,
-        { ...form, user: user.id }
-      );
-      console.log(response);
+      if (record) {
+        // the game already exists, so we update it
+        response = await axiosInstance.put(
+          `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users/${record.id}?user=${user.id}`,
+          { score: form.score, accepted: null }
+        );
+      } else {
+        // the game doesn't exist, so we create it
+        response = await axiosInstance.post(
+          `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?user=${user.id}`,
+          { ...form, user: user.id }
+        );
+      }
       setRecords(response);
+      setError('');
       setShowForm(false);
     } catch (e) {
+      setError('Something went wrong');
       console.log(e);
     }
   };
 
   return (
-    <form className={styles.form} onSubmit={(e) => addRecord(e)}>
+    <form className={styles.form} onSubmit={(e) => addOrUpdateRecord(e)}>
       <div className={styles.notice}>
         When you submit a new personal record, the circus owners will be
         notified in order to review the PR. You can find the following statuses
@@ -47,12 +60,13 @@ const RecordsForm = ({ options, setShowForm, setRecords }) => {
       </div>
       <div className={styles.statuses}>
         <Medal />
-        Under review
-        <Medal />
         Approved
+        <Medal />
+        Under review
         <Medal />
         Rejected
       </div>
+      {error && <div className={styles.error}>{error}</div>}
       <div className={styles.inputs}>
         <UiSelect
           onChange={(e) => setForm({ ...form, game: gameId(e.target.value) })}
@@ -62,7 +76,10 @@ const RecordsForm = ({ options, setShowForm, setRecords }) => {
         />
         <UiInput
           name={`score (${getUnitByGameId(form.game)})`}
+          required
           label={true}
+          step={0.01}
+          min={0}
           type={'number'}
           placeholder={'Please be honest'}
           onChange={(e) => setForm({ ...form, score: e.target.value })}

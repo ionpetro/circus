@@ -9,7 +9,7 @@
 }
 
 .center {
-  margin-top: 82px;
+  margin-top: 120px;
   display: flex;
   flex-grow: 1;
   flex-direction: column;
@@ -18,20 +18,35 @@
 }
 
 .content {
-  margin: 0 auto 0 auto;
+  margin: 0 26px 0 26px;
   display: flex;
-  width: 992px;
+  flex-direction: column;
+
+  @media #{$desktop-large} {
+    width: 100%;
+    max-width: 992px;
+    margin: 0 auto 0 auto;
+    flex-direction: row;
+  }
 }
 
 .profile {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   justify-content: flex-start;
-  margin-right: 100px;
+
+  @media #{$desktop-large} {
+    margin-right: 100px;
+  }
 
   h1 {
     margin-bottom: 26px;
+    letter-spacing: 4px;
+  }
+
+  h4 {
+    letter-spacing: 1px;
   }
 
   & > div,
@@ -48,4 +63,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 16px;
+
+  @media #{$desktop-large} {
+    margin-right: unset;
+  }
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media #{$desktop-large} {
+    flex-direction: column;
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  @media #{$desktop-large} {
+    align-items: center;
+    margin-top: 12px;
+  }
+}
+
+.logout {
+  color: $white;
+  font-weight: 300;
+  text-transform: unset;
 }

@@ -4,9 +4,11 @@ import axiosInstance from '../../utils/http-client';
 import UiButton from '../UiButton/UiButton';
 import RecordsList from '../RecordsList/RecordsList';
 import RecordsForm from '../RecordsForm/RecordsForm';
+import UiSpinner from '../UiSpinner/UiSpinner';
 
 const Records = ({ userId }) => {
   const [records, setRecords] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [options, setOptions] = useState([]);
   const [showForm, setShowForm] = useState(false);
 
@@ -35,7 +37,9 @@ const Records = ({ userId }) => {
   useEffect(() => {
     try {
       fetchRecords();
+      setLoading(false);
     } catch (e) {
+      setLoading(false);
       console.error(e);
     }
   }, [userId]);
@@ -53,10 +57,13 @@ const Records = ({ userId }) => {
       </div>
       {showForm ? (
         <RecordsForm
+          records={records}
           setRecords={setRecords}
           options={options}
           setShowForm={setShowForm}
         />
+      ) : loading ? (
+        <UiSpinner />
       ) : (
         <RecordsList records={records} />
       )}

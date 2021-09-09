@@ -13,8 +13,14 @@ const transformDate = (date) => {
       .split(',')
       .join('');
   }
-
   return null;
+};
+
+export const transformRecordDate = (date) => {
+  return new Date(date).toLocaleDateString('en-us', {
+    month: 'short',
+    day: 'numeric',
+  });
 };
 
 export const isThreeDaysAgo = (d) => {

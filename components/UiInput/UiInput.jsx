@@ -8,6 +8,8 @@ const UiInput = ({
   onChange,
   value,
   required,
+  min,
+  step,
   label = true,
 }) => {
   return (
@@ -20,6 +22,8 @@ const UiInput = ({
       </label>
       <input
         required={required}
+        min={min}
+        step={step}
         className={styles.input}
         placeholder={placeholder}
         type={type}
