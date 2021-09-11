@@ -25,30 +25,22 @@
 }
 
 .inputs {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin-bottom: 18px;
-
-  & > :nth-child(2) {
-    margin-top: 18px;
-    @media #{$desktop-large} {
-      margin-top: unset;
-    }
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 
   @media #{$desktop-large} {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 .category {
+  color: $dark-grey;
   font-weight: 300;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .tags {
-  padding-top: 4px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;

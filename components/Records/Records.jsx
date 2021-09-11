@@ -36,7 +36,9 @@ const Records = ({ userId }) => {
 
   useEffect(() => {
     try {
-      fetchRecords();
+      if (userId) {
+        fetchRecords();
+      }
       setLoading(false);
     } catch (e) {
       setLoading(false);

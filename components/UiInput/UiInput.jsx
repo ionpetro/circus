@@ -2,11 +2,13 @@ import React from 'react';
 import styles from './UiInput.module.scss';
 
 const UiInput = ({
+  className,
   placeholder,
   type,
   name,
   onChange,
   value,
+  forwardRef,
   required,
   min,
   step,
@@ -24,7 +26,8 @@ const UiInput = ({
         required={required}
         min={min}
         step={step}
-        className={styles.input}
+        ref={forwardRef}
+        className={`${className} ${styles.input}`}
         placeholder={placeholder}
         type={type}
         name={name}

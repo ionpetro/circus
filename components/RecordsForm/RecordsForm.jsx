@@ -6,6 +6,7 @@ import axiosInstance from '../../utils/http-client';
 import styles from './RecordsForm.module.scss';
 import Medal from '/public/assets/svgs/Medal.svg';
 import UserContext from '../../contexts/UserContext';
+import Cookie from 'js-cookie';
 
 const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
   const { user } = useContext(UserContext);
@@ -26,6 +27,7 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
   const addOrUpdateRecord = async (e) => {
     e.preventDefault();
     let response;
+    const token = Cookie.get('token');
     const [record] = records.filter((record) => record.game.id === form.game);
 
     try {
@@ -33,13 +35,15 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
         // the game already exists, so we update it
         response = await axiosInstance.put(
           `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users/${record.id}?user=${user.id}`,
-          { score: form.score, accepted: null }
+          { score: form.score, accepted: null },
+          { headers: { Authorization: `Bearer ${token}` } }
         );
       } else {
         // the game doesn't exist, so we create it
         response = await axiosInstance.post(
           `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?user=${user.id}`,
-          { ...form, user: user.id }
+          { ...form, user: user.id },
+          { headers: { Authorization: `Bearer ${token}` } }
         );
       }
       setRecords(response);
