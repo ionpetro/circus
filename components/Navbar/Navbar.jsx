@@ -11,6 +11,7 @@ import Banner from '../../public/assets/svgs/banner.svg';
 import Tickets from '../../public/assets/svgs/Tickets.svg';
 import { instaUrl, mapUrl, phone } from '../../utils/links';
 import UserContext from '../../contexts/UserContext';
+import UiAvatar from '../UiAvatar/UiAvatar';
 
 export const menuItems = [
   { href: 'history', icon: <Banner />, direction: 'left' },
@@ -39,13 +40,16 @@ const Navbar = () => {
             <div className={styles.logo}>
               <Circus />
             </div>
-            {/*<h2 className={styles.logoName}>CIRCUS</h2>*/}
           </div>
         </a>
       </Link>
       <div className={styles.actions}>
         {user ? (
-          user.username
+          <Link href={'/profile'}>
+            <a>
+              <UiAvatar size={'small'} />
+            </a>
+          </Link>
         ) : (
           <Link href={'/login'}>
             <a className={styles.login}>Login</a>

@@ -4,10 +4,9 @@ import styles from './Profile.module.scss';
 import UserContext from '../../contexts/UserContext';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
-import User from '/public/assets/svgs/user.svg';
-import Image from 'next/image';
 import Records from '../Records/Records';
 import EditProfile from '../EditProfile/EditProfile';
+import UiAvatar from '../UiAvatar/UiAvatar';
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
@@ -25,19 +24,7 @@ const Profile = () => {
           <div className={styles.profile}>
             <h1>PROFILE</h1>
             <div className={styles.userProfile}>
-              <div className={styles.avatar}>
-                {user?.imageUrl ? (
-                  <Image
-                    layout={'fill'}
-                    objectFit={'cover'}
-                    alt={'user avatar'}
-                    src={user?.imageUrl}
-                    onError={() => <User />}
-                  />
-                ) : (
-                  <User />
-                )}
-              </div>
+              <UiAvatar size={'large'} />
               <div className={styles.userInfo}>
                 <h4>@{user?.username}</h4>
                 <a className={styles.logout} onClick={logout}>
