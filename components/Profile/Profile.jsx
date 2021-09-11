@@ -8,6 +8,7 @@ import Pencil from '/public/assets/svgs/pencil.svg';
 import Records from '../Records/Records';
 import EditProfile from '../EditProfile/EditProfile';
 import UiAvatar from '../UiAvatar/UiAvatar';
+import Navbar from '../Navbar/Navbar';
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
@@ -21,6 +22,8 @@ const Profile = () => {
 
   return (
     <div className={styles.compWrap}>
+      <Navbar />
+
       <div className={styles.center}>
         <div className={styles.content}>
           <div className={styles.profile}>

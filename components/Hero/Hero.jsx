@@ -3,10 +3,12 @@ import UiButton from '../UiButton/UiButton';
 import facilities from '../../public/assets/images/facilities.jpeg';
 import styles from './Hero.module.scss';
 import Image from 'next/image';
+import Navbar from '../Navbar/Navbar';
 
 const Hero = () => {
   return (
     <div className={styles.compWrap}>
+      <Navbar />
       <Image
         alt={'facilities'}
         src={facilities.src}
@@ -19,7 +21,10 @@ const Hero = () => {
       <div className={styles.content}>
         <div className={styles.info}>
           <div className={styles.button}>
-            <UiButton>contact us</UiButton>
+            <a href={'/#contact'}>
+              {' '}
+              <UiButton>contact us</UiButton>
+            </a>
           </div>
           <span className={`uppercase ${styles.subheading}`}>
             Strongman Experience

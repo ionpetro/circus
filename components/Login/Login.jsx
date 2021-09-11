@@ -10,6 +10,7 @@ import { isValidEmail } from '../../utils/validations';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 import UserContext from '../../contexts/UserContext';
+import Navbar from '../Navbar/Navbar';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -49,6 +50,8 @@ const Login = () => {
   return (
     <>
       <div className={styles.compWrap}>
+        <Navbar />
+
         <div className={styles.content}>
           <LoginMan />
           <div className={styles.wrapper}>

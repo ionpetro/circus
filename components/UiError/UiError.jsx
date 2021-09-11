@@ -25,7 +25,7 @@ const UiError = ({ statusCode }) => {
         )}
       </div>
       <div className={styles.footer}>
-        <Footer hasMarquee={false} />
+        <Footer hasMarquee={false} simple={true} />
       </div>
     </div>
   );

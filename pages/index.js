@@ -30,7 +30,6 @@ export default function Home({ cmsData, error }) {
       </Head>
       <Seo />
       <Topbar news={cmsData.news} />
-      <Navbar />
       <Hero />
       <Marquee />
       <History history={cmsData.history} />

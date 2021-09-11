@@ -3,15 +3,15 @@
 
 .compWrap {
   width: 100%;
-  position: fixed;
+  position: relative;
   z-index: 10;
-  margin: 0.5em 2em;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logoLink {
+  margin-left: 24px;
   text-decoration: none !important;
 }
 
@@ -33,8 +33,8 @@
   display: flex;
   align-items: center;
 
-  & > div {
-    margin-left: 22px;
+  & > * {
+    margin-right: 24px;
   }
 }
 
@@ -51,7 +51,6 @@
   position: relative;
   z-index: 15;
   margin-top: 32px;
-  margin-right: 64px;
   cursor: pointer;
 
   span::before,
@@ -112,7 +111,7 @@
 
 .sections {
   z-index: 12;
-  height: 500px;
+  height: 400px;
   padding: 0;
   top: 0;
   position: absolute;
@@ -135,10 +134,10 @@
   li {
     margin-bottom: 16px;
     font-weight: 900;
-    letter-spacing: 10px;
+    letter-spacing: 8px;
     text-transform: uppercase;
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 30px;
+    line-height: 30px;
     cursor: pointer;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1.5px;
@@ -154,12 +153,17 @@
       text-decoration: none;
 
       & > svg {
-        width: 80px;
-        height: 60px;
+        width: 60px;
+        height: 40px;
         opacity: 0;
         position: absolute;
         top: 0;
         transition: all 0.5s ease;
+
+        @media #{$desktop-medium} {
+          width: 80px;
+          height: 60px;
+        }
       }
 
       &:hover {
@@ -183,14 +187,22 @@
 .left {
   svg {
     transform: rotate(-25deg);
-    left: -100px;
+    left: -80px;
+
+    @media #{$desktop-medium} {
+      left: -100px;
+    }
   }
 }
 
 .right {
   svg {
     transform: rotate(25deg);
-    right: -100px;
+    right: -80px;
+
+    @media #{$desktop-medium} {
+      right: -100px;
+    }
   }
 }
 

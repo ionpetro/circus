@@ -5,8 +5,9 @@
   height: 100vh;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .filter {
@@ -19,6 +20,10 @@
 }
 
 .content {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-self: center;
   z-index: 2;
 }
 
@@ -31,7 +36,7 @@
 }
 
 .info {
-  margin-top: -100px;
+  margin-top: -200px;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
@@ -40,17 +45,23 @@
 .heading {
   transform: scale(1);
   transition: transform 0.5s ease;
-  line-height: 1.05;
-  font-weight: 100;
+  line-height: 1.2;
+  font-weight: lighter;
   font-size: 25vmin;
+  @media #{$tablet} {
+    font-size: 20vmin;
+    line-height: 1;
+  }
 }
 
 .subheading {
-  font-size: 5.5vmin;
+  font-size: 6vmin;
+  line-height: 1.2;
   font-weight: 300;
   margin-bottom: 12px;
-  @media #{$desktop-medium} {
-    font-size: 5vmin;
+  @media #{$tablet} {
+    font-size: 4.3vmin;
+    line-height: 1;
   }
 }
 

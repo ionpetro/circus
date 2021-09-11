@@ -78,7 +78,7 @@ const Navbar = () => {
             <li key={item.href}>
               <a
                 onClick={() => setOpen(false)}
-                href={`#${item.href}`}
+                href={`/#${item.href}`}
                 className={styles[item.direction]}
               >
                 {item.icon}

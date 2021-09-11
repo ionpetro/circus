@@ -11,6 +11,7 @@ import Router from 'next/router';
 import UserContext from '../../contexts/UserContext';
 import Cookie from 'js-cookie';
 import UiTag from '../UiTag/UiTag';
+import Navbar from '../Navbar/Navbar';
 
 const Register = () => {
   const [form, setForm] = useState({});
@@ -71,6 +72,7 @@ const Register = () => {
   return (
     <>
       <div className={styles.compWrap}>
+        <Navbar />
         <div className={styles.content}>
           <RegisterMan />
           <div className={styles.wrapper}>
