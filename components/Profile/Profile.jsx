@@ -1,15 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Footer from '../Footer/Footer';
 import styles from './Profile.module.scss';
 import UserContext from '../../contexts/UserContext';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
+import Pencil from '/public/assets/svgs/pencil.svg';
 import Records from '../Records/Records';
 import EditProfile from '../EditProfile/EditProfile';
 import UiAvatar from '../UiAvatar/UiAvatar';
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
+  const [showRecords, setShowRecords] = useState(true);
 
   const logout = () => {
     Cookie.remove('token');
@@ -24,17 +26,32 @@ const Profile = () => {
           <div className={styles.profile}>
             <h1>PROFILE</h1>
             <div className={styles.userProfile}>
-              <UiAvatar size={'large'} />
+              <div className={styles.avatarWrapper}>
+                <UiAvatar size={'large'} />
+                {showRecords && (
+                  <div
+                    className={styles.editWrapper}
+                    onClick={() => setShowRecords(false)}
+                  >
+                    <Pencil className={styles.edit} />
+                  </div>
+                )}
+              </div>
               <div className={styles.userInfo}>
                 <h4>@{user?.username}</h4>
-                <a className={styles.logout} onClick={logout}>
-                  Logout
-                </a>
+                {!showRecords && (
+                  <a className={styles.logout} onClick={logout}>
+                    Logout
+                  </a>
+                )}
               </div>
             </div>
           </div>
-          {/*<Records userId={user?.id} />*/}
-          <EditProfile setShowForm={() => {}} />
+          {showRecords ? (
+            <Records userId={user?.id} />
+          ) : (
+            <EditProfile setShowRecords={setShowRecords} />
+          )}
         </div>
       </div>
       <Footer simple />

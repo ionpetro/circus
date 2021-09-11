@@ -7,9 +7,10 @@ import UiTag from '../UiTag/UiTag';
 import UiButton from '../UiButton/UiButton';
 import Cookie from 'js-cookie';
 import UiUpload from '../UiUpload/UiUpload';
+import Back from '/public/assets/svgs/back.svg';
 import UiSpinner from '../UiSpinner/UiSpinner';
 
-const EditProfile = ({ setShowForm }) => {
+const EditProfile = ({ setShowRecords }) => {
   const { user, setUser } = useContext(UserContext);
   const [form, setForm] = useState({});
   const [loading, setLoading] = useState(false);
@@ -101,7 +102,10 @@ const EditProfile = ({ setShowForm }) => {
 
   return (
     <div className={styles.compWrap}>
-      <h3 className={styles.title}>Edit Profile</h3>
+      <div className={styles.header}>
+        <Back onClick={() => setShowRecords(true)} />
+        <h3 className={styles.title}>Edit Profile</h3>
+      </div>
       {message.text && (
         <div className={styles[message.status]}>{message.text}</div>
       )}
@@ -168,7 +172,7 @@ const EditProfile = ({ setShowForm }) => {
             </div>
           </div>
           <div className={styles.actions}>
-            <a onClick={() => setShowForm(false)}>Cancel</a>
+            <a onClick={() => setShowRecords(true)}>Cancel</a>
             <UiButton>Save</UiButton>
           </div>
         </form>

@@ -12,6 +12,20 @@
   }
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 12px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    path {
+      fill: $white;
+    }
+  }
+}
+
 .title {
   color: $yellow;
 }
