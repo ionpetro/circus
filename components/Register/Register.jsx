@@ -54,7 +54,6 @@ const Register = () => {
       return;
     }
 
-    console.log(matchSecretCode(form.code));
     try {
       const { jwt, user } = await axiosInstance.post(
         `${process.env.NEXT_PUBLIC_BACKEND}/auth/local/register`,
@@ -65,8 +64,11 @@ const Register = () => {
       setForm({});
       Router.push('/profile');
     } catch (e) {
-      setError('Something went wrong, try again later!');
-      console.log(e);
+      setError(
+        e?.response?.data.message[0].messages[0].message
+          ? 'Email or username already taken'
+          : 'Something went wrong! Try again later'
+      );
     }
   };
   return (
