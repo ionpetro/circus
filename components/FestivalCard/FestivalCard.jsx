@@ -1,9 +1,9 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import styles from '../FestivalCard/FestivalCard.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import UiButton from '../UiButton/UiButton';
-import transformDate from '../../utils/utilities';
+import transformDate, { calculateCountdown } from '../../utils/utilities';
 import Circus from '../../public/assets/svgs/Circus.svg';
 import Live from '../../public/assets/svgs/Live.svg';
 import marked from 'marked';
@@ -11,8 +11,18 @@ import marked from 'marked';
 const FestivalCard = ({ festival }) => {
   const { active } = festival;
   const [date, setDate] = useState('');
+  const [countdown, setCountdown] = useState({});
 
   useMemo(() => setDate(transformDate(festival.date)), [festival.date]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const time = calculateCountdown(festival.date);
+      setCountdown({ ...time });
+    }, 1000);
+
+    return () => clearInterval(interval);
+  });
 
   if (active) {
     return (
@@ -26,9 +36,9 @@ const FestivalCard = ({ festival }) => {
           <div className={`${styles.image} ${styles.imageActiveImage}`}>
             {festival.image ? (
               <Image
+                width={festival.image.width}
+                height={festival.image.height}
                 src={festival.image.url}
-                width={'300px'}
-                height={'300px'}
                 alt={'festival'}
               />
             ) : (
@@ -36,6 +46,20 @@ const FestivalCard = ({ festival }) => {
             )}
           </div>
           <div>
+            <p className={styles.countdown}>
+              {countdown.expired ? (
+                <span>Expired</span>
+              ) : (
+                <span>
+                  {countdown.days} <span className={styles.identifier}>d</span>{' '}
+                  {countdown.hours} <span className={styles.identifier}>h</span>{' '}
+                  {countdown.minutes}{' '}
+                  <span className={styles.identifier}>m</span>{' '}
+                  {countdown.seconds}{' '}
+                  <span className={styles.identifier}>s</span>
+                </span>
+              )}
+            </p>
             {festival.date && <p className={styles.date}>{date}</p>}
             <h3 className={`uppercase ${styles.redColor}`}>{festival.title}</h3>
             <div

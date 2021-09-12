@@ -141,13 +141,15 @@ $desktop-container-height: 100%;
   }
 
   &ActiveImage {
+    position: relative;
     margin: 20px 20px 0 0;
 
     img {
       width: 100px;
     }
+
     @media #{$desktop-medium} {
-      margin: 0 20px 0 0;
+      margin: 4px 20px 0 0;
 
       img {
         min-width: 200px;
@@ -162,13 +164,25 @@ $desktop-container-height: 100%;
   }
 }
 
-.date {
-  margin: 20px 0 4px 0;
-  font-weight: 300;
+.countdown {
+  font-family: 'Carnivalee Freakshow', sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+  margin: 8px 0;
 
   @media #{$desktop-medium} {
-    margin-top: 0;
+    margin: 0 0 8px 0;
   }
+}
+
+.identifier {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6em;
+}
+
+.date {
+  font-weight: 300;
+  margin: 0 0 8px 0;
 }
 
 .button {
