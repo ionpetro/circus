@@ -8,6 +8,7 @@ import Drums from '../../public/assets/svgs/Drums.svg';
 import image1 from '../../public/assets/images/image1.png';
 import image2 from '../../public/assets/images/image2.png';
 import image3 from '../../public/assets/images/image3.png';
+import marked from 'marked';
 
 const History = ({ history }) => {
   const hypes = [
@@ -42,7 +43,10 @@ const History = ({ history }) => {
         <h2 className={styles.heading}>HISTORY</h2>
         <Banner />
       </div>
-      <p className={styles.paragraph}>{history}</p>
+      <div
+        className={styles.paragraph}
+        dangerouslySetInnerHTML={{ __html: marked(history) }}
+      />
       <h3 className={`uppercase ${styles.hype}`}>Become the next monster</h3>
       <div className={styles.hypes}>
         {hypes.map((hype) => (
