@@ -12,7 +12,7 @@ const members = [
     name: 'John Boursinos',
     position: 'Co-owner',
     imageSrc: boursi.src,
-    slogan: 'Lorem Ipsum is simply dummy text',
+    slogan: '💪 Strongman\n' + '🌱 Vegan',
     instaLink: 'https://www.instagram.com/johnboursi/',
     color: 'red',
   },
@@ -21,7 +21,9 @@ const members = [
     name: 'Paraskeuh Stamatopoulou',
     position: 'Co-owner',
     imageSrc: paraskeuh.src,
-    slogan: 'Lorem Ipsum is simply dummy text',
+    slogan:
+      'Berry eater. BV player. Art history student.\n' +
+      'Funny when in a room with notsofunny people. Still counts.',
     instaLink: 'https://instagram.com/paraskevyo',
     color: 'red',
   },
@@ -30,7 +32,7 @@ const members = [
     name: 'Nikos Protogyros',
     position: 'Trainer',
     imageSrc: nikos.src,
-    slogan: 'Lorem Ipsum is simply dummy text',
+    slogan: "If you're gonna be dumb, you gotta be tough",
     instaLink: 'https://instagram.com/redstachetrash',
     color: 'yellow',
   },
