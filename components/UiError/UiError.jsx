@@ -19,13 +19,13 @@ const UiError = ({ statusCode }) => {
         {statusCode === 404 && (
           <Link href={'/'}>
             <a>
-              <UiButton>Back to website</UiButton>
+              <UiButton>Back to site</UiButton>
             </a>
           </Link>
         )}
       </div>
       <div className={styles.footer}>
-        <Footer hasMarquee={false} />
+        <Footer hasMarquee={false} simple={true} />
       </div>
     </div>
   );

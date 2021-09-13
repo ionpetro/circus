@@ -1,11 +1,7 @@
 import UiError from '../components/UiError/UiError';
 
 function Error({ statusCode }) {
-  return (
-    <>
-      <UiError statusCode={statusCode} />
-    </>
-  );
+  return <UiError statusCode={statusCode} />;
 }
 
 Error.getInitialProps = ({ res, err }) => {

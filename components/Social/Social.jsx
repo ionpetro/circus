@@ -7,6 +7,7 @@ import logo from '../../public/assets/images/logo.jpg';
 import Image from 'next/image';
 import SocialCard from '../SocialCard/SocialCard';
 import { instaUrl } from '../../utils/links';
+import UiSpinner from '../UiSpinner/UiSpinner';
 
 const Social = () => {
   const mediaCount = 8;
@@ -69,7 +70,7 @@ const Social = () => {
         </div>
         <div className={styles.main}>
           {loading ? (
-            <div className={styles.loader} />
+            <UiSpinner />
           ) : error ? (
             <div className={styles.error}>
               Something went wrong with Instagram 😔 Click the insta handle

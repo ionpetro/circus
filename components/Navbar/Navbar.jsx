@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './Navbar.module.scss';
 import Circus from '../../public/assets/svgs/Circus.svg';
 import Link from 'next/link';
@@ -10,6 +10,8 @@ import Dumbbell from '../../public/assets/svgs/dumbbell.svg';
 import Banner from '../../public/assets/svgs/banner.svg';
 import Tickets from '../../public/assets/svgs/Tickets.svg';
 import { instaUrl, mapUrl, phone } from '../../utils/links';
+import UserContext from '../../contexts/UserContext';
+import UiAvatar from '../UiAvatar/UiAvatar';
 
 export const menuItems = [
   { href: 'history', icon: <Banner />, direction: 'left' },
@@ -22,6 +24,7 @@ export const menuItems = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     open
@@ -37,12 +40,24 @@ const Navbar = () => {
             <div className={styles.logo}>
               <Circus />
             </div>
-            <h2 className={styles.logoName}>CIRCUS</h2>
           </div>
         </a>
       </Link>
-      <div className={styles.menu} onClick={() => setOpen(!open)}>
-        <span className={open ? styles.isOpen : null} />
+      <div className={styles.actions}>
+        {user ? (
+          <Link href={'/profile'}>
+            <a>
+              <UiAvatar size={'small'} />
+            </a>
+          </Link>
+        ) : (
+          <Link href={'/login'}>
+            <a className={styles.login}>Login</a>
+          </Link>
+        )}
+        <div className={styles.menu} onClick={() => setOpen(!open)}>
+          <span className={open ? styles.isOpen : null} />
+        </div>
       </div>
       <div
         className={
@@ -63,7 +78,7 @@ const Navbar = () => {
             <li key={item.href}>
               <a
                 onClick={() => setOpen(false)}
-                href={`#${item.href}`}
+                href={`/#${item.href}`}
                 className={styles[item.direction]}
               >
                 {item.icon}

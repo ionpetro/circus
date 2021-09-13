@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './Button.module.scss';
 
-const UiButton = ({ children, onClick }) => {
+const UiButton = ({ children, onClick, type, className }) => {
   return (
-    <div className={styles.wrapper}>
-      <button onClick={onClick} className={styles.button}>
+    <div className={`${className} ${styles.wrapper}`}>
+      <button onClick={onClick} type={type} className={styles.button}>
         <div className={styles.border} />
         <span className={`uppercase ${styles.text}`}>{children}</span>
       </button>

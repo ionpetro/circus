@@ -110,7 +110,6 @@ const FestivalCard = ({ festival }) => {
                 <Circus />
               )}
             </div>
-            {festival.date && <p className={styles.date}>{festival.date}</p>}
             <h3
               className={`uppercase ${
                 active ? styles.redColor : styles.whiteColor
@@ -120,7 +119,10 @@ const FestivalCard = ({ festival }) => {
             </h3>
           </div>
           <div className={styles.description}>
-            <p>{festival.description}</p>
+            <div
+              className={styles.description}
+              dangerouslySetInnerHTML={{ __html: marked(festival.description) }}
+            />
             {festival.readMoreLink && (
               <a
                 href={festival.readMoreLink}

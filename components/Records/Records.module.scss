@@ -1,0 +1,32 @@
+@import '/styles/colors';
+@import '/styles/variables';
+
+.compWrap {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-top: 26px;
+
+  @media #{$desktop-medium} {
+    margin: unset;
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h3 {
+    padding-right: 26px;
+    color: $yellow;
+  }
+
+  & > div {
+    margin: unset;
+  }
+}
+
+.hide {
+  display: none;
+}
