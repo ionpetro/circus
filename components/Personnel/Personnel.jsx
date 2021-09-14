@@ -44,7 +44,7 @@ const Personnel = () => {
       <div className={styles.heading}>
         <Clawn />
         <h2>PERSONNEL</h2>
-        <p>Lorem Ipsum is simply dummy text</p>
+        <p>Train next to these monsters</p>
       </div>
       <div className={styles.members}>
         {members.map((member) => (
