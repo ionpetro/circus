@@ -67,6 +67,7 @@ const Navbar = () => {
         }
       >
         <Image
+          unoptimized
           alt={'navbar background overlay'}
           src={'/assets/svgs/navBack.svg'}
           layout={'fill'}

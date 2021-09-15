@@ -15,7 +15,13 @@ const PersonnelCard = ({
     <div className={styles.compWrap}>
       <div className={styles.container}>
         <div className={styles.border}>
-          <Image alt={name} src={imageSrc} width={260} height={260} />
+          <Image
+            unoptimized
+            alt={name}
+            src={imageSrc}
+            width={260}
+            height={260}
+          />
         </div>
         <div className={styles.instagram}>
           <a href={instaLink} target={'_blank'} rel={'noreferrer'}>

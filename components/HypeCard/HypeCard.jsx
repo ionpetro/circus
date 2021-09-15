@@ -11,6 +11,7 @@ const HypeCard = ({ hype }) => {
         <div className={styles.content}>
           <div className={styles.backImage}>
             <Image
+              unoptimized
               width={'270px'}
               height={'384px'}
               src={hype.imgSrc}

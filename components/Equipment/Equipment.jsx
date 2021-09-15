@@ -9,6 +9,7 @@ const Equipment = ({ description, media }) => {
   return (
     <section className={styles.compWrap} id={'equipment'}>
       <Image
+        unoptimized
         alt={'equipment'}
         className={styles.image}
         src={equipment.src}

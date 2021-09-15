@@ -20,6 +20,7 @@ const SocialCard = ({ media }) => {
           <a target={'_blank'} rel={'noreferrer'}>
             <div className={styles.image}>
               <Image
+                unoptimized
                 key={media.id}
                 layout={'fill'}
                 objectFit={'cover'}

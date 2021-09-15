@@ -11,6 +11,7 @@ const UiAvatar = ({ size }) => {
     <div className={`${styles.avatar} ${styles[size]}`}>
       {user?.imageUrl ? (
         <Image
+          unoptimized
           layout={'fill'}
           objectFit={'cover'}
           alt={'user avatar'}

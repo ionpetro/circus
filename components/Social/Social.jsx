@@ -38,6 +38,7 @@ const Social = () => {
   return (
     <section className={styles.compWrap} id={'social'}>
       <Image
+        unoptimized
         alt={'circus facilities'}
         src={socialBack.src}
         className={styles.image}
@@ -55,6 +56,7 @@ const Social = () => {
         <div className={styles.insta}>
           <div className={styles.account}>
             <Image
+              unoptimized
               alt={'circus instagram logo'}
               className={styles.instaLogo}
               width={80}

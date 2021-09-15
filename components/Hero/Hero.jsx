@@ -10,6 +10,7 @@ const Hero = () => {
     <div className={styles.compWrap}>
       <Navbar />
       <Image
+        unoptimized
         alt={'facilities'}
         src={facilities.src}
         layout={'fill'}

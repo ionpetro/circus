@@ -36,6 +36,7 @@ const FestivalCard = ({ festival }) => {
           <div className={`${styles.image} ${styles.imageActiveImage}`}>
             {festival.image ? (
               <Image
+                unoptimized
                 width={festival.image.width}
                 height={festival.image.height}
                 src={festival.image.url}
@@ -101,6 +102,7 @@ const FestivalCard = ({ festival }) => {
             <div className={styles.image}>
               {festival.image ? (
                 <Image
+                  unoptimized
                   src={festival.image.url}
                   width={'100px'}
                   height={'100px'}
