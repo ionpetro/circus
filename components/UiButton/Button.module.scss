@@ -44,7 +44,7 @@ $desktop-button-height: 50px;
     width: $mobile-button-width;
     height: $mobile-button-height;
     box-sizing: border-box;
-    background: white;
+    background: $white;
     clip-path: polygon(0 0, 94% 0, 100% 30%, 100% 100%, 6% 100%, 0 70%);
 
     @media #{$desktop-medium} {
@@ -73,13 +73,18 @@ $desktop-button-height: 50px;
       }
     }
 
+    .content {
+      display: inline-flex;
+      align-items: center;
+    }
+
     .text {
-      font-size: 18px;
+      font-size: 16px;
       position: relative;
       z-index: 1;
       color: $white;
       @media #{$desktop-medium} {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
 
@@ -88,6 +93,16 @@ $desktop-button-height: 50px;
 
       .text {
         color: $yellow;
+      }
+    }
+
+    .icon {
+      position: relative;
+      z-index: 1;
+
+      svg {
+        margin-right: 4px;
+        width: 25px;
       }
     }
   }

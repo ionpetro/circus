@@ -93,7 +93,7 @@ const Leaderboard = () => {
               />
             </div>
           </div>
-          {events.length && (
+          {events.length > 0 && (
             <div className={styles.filters}>
               <UiSelect
                 className={styles.filter}
@@ -114,7 +114,7 @@ const Leaderboard = () => {
           {records.length === 0 && (
             <span className={styles.empty}>Where is everybody?</span>
           )}
-          {records.length !== 0 && (
+          {records.length > 0 && (
             <div className={styles.notice}>
               The records shown above 👆 have been approved by the{' '}
               <a
