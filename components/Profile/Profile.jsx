@@ -30,7 +30,7 @@ const Profile = () => {
             <h1>PROFILE</h1>
             <div className={styles.userProfile}>
               <div className={styles.avatarWrapper}>
-                <UiAvatar size={'large'} />
+                <UiAvatar size={'large'} imgUrl={user?.imageUrl} />
                 {showRecords && (
                   <div
                     className={styles.editWrapper}

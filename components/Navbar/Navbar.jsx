@@ -47,7 +47,7 @@ const Navbar = () => {
         {/* {user ? (
           <Link href={'/profile'}>
             <a>
-              <UiAvatar size={'small'} />
+              <UiAvatar size={'small'} imgUrl={user?.imageUrl} />
             </a>
           </Link>
         ) : (
