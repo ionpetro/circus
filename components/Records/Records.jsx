@@ -13,17 +13,25 @@ const Records = ({ userId }) => {
   const [showForm, setShowForm] = useState(false);
 
   const fetchRecords = async () => {
-    const response = await axiosInstance.get(
-      `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?user=${userId}`
-    );
-    setRecords(response);
+    try {
+      const response = await axiosInstance.get(
+        `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?user=${userId}`
+      );
+      setRecords(response);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   const fetchOptions = async () => {
-    const response = await axiosInstance.get(
-      `${process.env.NEXT_PUBLIC_BACKEND}/games`
-    );
-    setOptions(response);
+    try {
+      const response = await axiosInstance.get(
+        `${process.env.NEXT_PUBLIC_BACKEND}/games`
+      );
+      setOptions(response);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   useEffect(() => {

@@ -33,6 +33,14 @@
   display: flex;
   align-items: center;
 
+  & > a {
+    margin: 16px;
+
+    @media #{$desktop-medium} {
+      margin-right: 22px;
+    }
+  }
+
   & > * {
     margin-right: 24px;
   }

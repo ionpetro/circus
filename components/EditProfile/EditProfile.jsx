@@ -37,7 +37,7 @@ const EditProfile = ({ setShowRecords }) => {
       process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET
     );
     data.append('cloud_name', process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME);
-    data.append('folder', user?.id);
+    data.append('folder', `${process.env.NODE_ENV}/users/${user?.id}`);
 
     try {
       const { secure_url } = await axiosInstance.post(

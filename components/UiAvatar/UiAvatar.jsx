@@ -1,21 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from './UiAvatar.module.scss';
 import Image from 'next/image';
 import User from '../../public/assets/svgs/user.svg';
-import UserContext from '../../contexts/UserContext';
 
-const UiAvatar = ({ size }) => {
-  const { user } = useContext(UserContext);
+// size can be small, large
 
+const UiAvatar = ({ size, imgUrl }) => {
   return (
     <div className={`${styles.avatar} ${styles[size]}`}>
-      {user?.imageUrl ? (
+      {imgUrl ? (
         <Image
           unoptimized
           layout={'fill'}
           objectFit={'cover'}
           alt={'user avatar'}
-          src={user?.imageUrl}
+          src={imgUrl}
           onError={() => <User />}
         />
       ) : (

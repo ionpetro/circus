@@ -3,6 +3,7 @@ import styles from './UiInput.module.scss';
 
 const UiInput = ({
   className,
+  checked,
   placeholder,
   type,
   name,
@@ -24,6 +25,7 @@ const UiInput = ({
       </label>
       <input
         required={required}
+        checked={checked}
         min={min}
         step={step}
         ref={forwardRef}

@@ -10,8 +10,8 @@ import Dumbbell from '../../public/assets/svgs/dumbbell.svg';
 import Banner from '../../public/assets/svgs/banner.svg';
 import Tickets from '../../public/assets/svgs/Tickets.svg';
 import { instaUrl, mapUrl, phone } from '../../utils/links';
-// import UserContext from '../../contexts/UserContext';
-// import UiAvatar from '../UiAvatar/UiAvatar';
+import UserContext from '../../contexts/UserContext';
+import UiAvatar from '../UiAvatar/UiAvatar';
 
 export const menuItems = [
   { href: 'history', icon: <Banner />, direction: 'left' },
@@ -24,7 +24,7 @@ export const menuItems = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  // const { user } = useContext(UserContext);
+  const { user } = useContext(UserContext);
 
   useEffect(() => {
     open
@@ -44,17 +44,17 @@ const Navbar = () => {
         </a>
       </Link>
       <div className={styles.actions}>
-        {/* {user ? (
+        {user ? (
           <Link href={'/profile'}>
             <a>
-              <UiAvatar size={'small'} />
+              <UiAvatar size={'small'} imgUrl={user?.imageUrl} />
             </a>
           </Link>
         ) : (
           <Link href={'/login'}>
             <a className={styles.login}>Login</a>
           </Link>
-        )} */}
+        )}
         <div className={styles.menu} onClick={() => setOpen(!open)}>
           <span className={open ? styles.isOpen : null} />
         </div>
