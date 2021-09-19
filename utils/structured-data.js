@@ -1,9 +1,10 @@
 const structuredData = {
-  '@context': 'http://schema.org/',
-  '@type': 'WebPage',
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://www.circus-strongman.com',
   url: 'https://www.circus-strongman.com',
   name: 'Circus Strongman Experience',
-  description: 'The number 1 destination for strongman in Greece',
+  description: 'Number 1 destination for strongman in Greece',
   inLanguage: 'en',
 };
 

@@ -37,11 +37,14 @@ const Seo = () => {
       <meta name="twitter:site" content="https://www.circus-strongman.com" />
 
       <meta name="twitter:creator" content="@ionpetropoulos" />
+      <meta
+        name="google-site-verification"
+        content="cYjsX4XnUs7jlSgYllMB6VFcS3DZ4UJrbJ9-PzzlZDM"
+      />
       <script
-        key={`gymJSON`}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+      ></script>
     </Head>
   );
 };
