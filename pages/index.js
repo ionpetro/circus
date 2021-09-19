@@ -9,7 +9,6 @@ import Contact from '../components/Contact/Contact';
 import Social from '../components/Social/Social';
 import instance from '../utils/http-client';
 import Error from './_error';
-import Navbar from '../components/Navbar/Navbar';
 import Personnel from '../components/Personnel/Personnel';
 import Footer from '../components/Footer/Footer';
 import Seo from '../components/Seo/Seo';
@@ -49,7 +48,7 @@ export default function Home({ cmsData, error }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps(context) {
   try {
     const cmsData = await instance(`${strapiUrl}/home-page`);
     return {
