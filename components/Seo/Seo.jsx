@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import structuredData from '../../utils/structured-data';
 
 const Seo = () => {
   return (
@@ -36,6 +37,11 @@ const Seo = () => {
       <meta name="twitter:site" content="https://www.circus-strongman.com" />
 
       <meta name="twitter:creator" content="@ionpetropoulos" />
+      <script
+        key={`gymJSON`}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </Head>
   );
 };
