@@ -1,7 +1,7 @@
 import React from 'react';
 import UiButton from '../UiButton/UiButton';
-// import Link from 'next/link';
-// import LeaderboardIcon from '/public/assets/svgs/leaderboard.svg';
+import Link from 'next/link';
+import LeaderboardIcon from '/public/assets/svgs/leaderboard.svg';
 import facilities from '../../public/assets/images/facilities.jpeg';
 import styles from './Hero.module.scss';
 import Tent from '/public/assets/svgs/tent.svg';
@@ -25,9 +25,9 @@ const Hero = () => {
       <div className={styles.content}>
         <div className={styles.info}>
           <div className={styles.actions}>
-            {/*<Link href={'/leaderboard'}>*/}
-            {/*  <UiButton icon={<LeaderboardIcon />}>records</UiButton>*/}
-            {/*</Link>*/}
+            <Link href={'/leaderboard'}>
+              <UiButton icon={<LeaderboardIcon />}>records</UiButton>
+            </Link>
             <div className={styles.button}>
               <a href={'/#contact'}>
                 {' '}
