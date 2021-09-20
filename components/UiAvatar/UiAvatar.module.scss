@@ -11,6 +11,24 @@
   justify-content: center;
   margin-right: 16px;
 
+  width: 30px;
+  height: 30px;
+
+  svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  @media #{$desktop-large} {
+    width: 45px;
+    height: 45px;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
   img {
     border-radius: 50%;
   }

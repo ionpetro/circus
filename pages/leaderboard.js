@@ -5,7 +5,7 @@ export default function LeaderboardPage() {
   return (
     <>
       <Head>
-        <title>Circus | Login</title>
+        <title>Circus | Leaderboard</title>
       </Head>
       <Leaderboard />
     </>
