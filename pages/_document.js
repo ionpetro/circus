@@ -23,11 +23,6 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="canonical" href="https://www.circus-strongman.com" />
-          <script
-            data-ad-client="ca-pub-4679435091180829"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          ></script>
         </Head>
         <body>
           <Main />

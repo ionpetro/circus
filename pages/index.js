@@ -24,7 +24,7 @@ export default function Home({ cmsData, error }) {
   return (
     <>
       <Head>
-        <title>Circus Strongman Experience</title>
+        <title>Circus Strongman</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <Seo />

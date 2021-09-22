@@ -26,14 +26,12 @@ const Seo = () => {
       <meta name="twitter:title" content="CIRCUS STRONGMAN EXPERIENCE" />
       <meta
         name="twitter:description"
-        content="The official circus strongman experience website. See our equipment, meet our personnel and come join us to become the next monster"
+        content="The official circus strongman experience website. Circus strongman is the number 1 strongman destination in Athens, Greece. See our equipment, meet our personnel, view leaderboards and come join us to become the next monster"
       />
-
       <meta
         name="twitter:image"
         content="https://res.cloudinary.com/ionpetro/image/upload/v1629745325/Screenshot_2021-08-23_at_10.01.34_PM_ljmttl.png"
       />
-
       <meta name="twitter:site" content="https://www.circus-strongman.com" />
 
       <meta name="twitter:creator" content="@ionpetropoulos" />
