@@ -1,0 +1,46 @@
+@import 'styles/variables';
+@import 'styles/colors';
+
+.svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  path {
+    fill: $white;
+  }
+
+  @media #{$desktop-large} {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.hosts {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+
+  @media #{$desktop-large} {
+    justify-content: space-evenly;
+  }
+}
+
+.host {
+  flex: 1 1 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & > * {
+    margin: 4px;
+  }
+
+  @media #{$desktop-large} {
+    flex: unset;
+  }
+}
+
+.hostName {
+  font-weight: 600;
+  font-size: 1.2em;
+}
