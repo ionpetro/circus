@@ -6,10 +6,14 @@ import CircusClassicAbout from './CircusClassicAbout/CircusClassicAbout';
 import CircusClassicHosts from './CircusClassicHosts/CircusClassicHosts';
 import CircusClassicHeader from './CircusClassicHeader/CircusClassicHeader';
 import CircusClassicResults from './CircusClassicResults/CircusClassicResults';
+import Navbar from '../../Navbar/Navbar';
 
 const CircusClassic = () => {
   return (
     <div className={styles.compWrap}>
+      <div className={styles.navbar}>
+        <Navbar />
+      </div>
       <div>
         <div className={styles.image}>
           <div className={styles.filter} />

@@ -86,6 +86,15 @@ const FestivalCard = ({ festival }) => {
                 </Link>
               </div>
             )}
+            {festival.resultsLink && (
+              <div className={styles.button}>
+                <Link href={festival.resultsLink}>
+                  <a target="_blank" rel="noreferrer">
+                    <UiButton>RESULTS</UiButton>
+                  </a>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
