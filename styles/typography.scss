@@ -62,6 +62,19 @@ h4 {
   }
 }
 
+h5 {
+  font-family: 'Lato', sans-serif;
+  color: $white;
+  letter-spacing: 2px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+
+  @media #{$desktop-medium} {
+    font-size: 18px;
+  }
+}
+
 p {
   letter-spacing: 1.2px;
 }
