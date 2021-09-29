@@ -16,7 +16,7 @@ const categories = {
 
 const CircusClassicResults = () => {
   const [records, setRecords] = useState([]);
-  const [category, setCategory] = useState('total');
+  const [category, setCategory] = useState('a');
   const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/circus-classics?_sort=score:DESC,category:ASC`;
 
   const getRank = (index) => {
@@ -34,10 +34,9 @@ const CircusClassicResults = () => {
 
   const fetchRecords = async () => {
     try {
-      const response =
-        category === 'total'
-          ? await axiosInstance.get(`${recordsApi}`)
-          : await axiosInstance.get(`${recordsApi}&category=${category}`);
+      const response = await axiosInstance.get(
+        `${recordsApi}&category=${category}`
+      );
       setRecords(response);
     } catch (e) {
       console.log(e);
@@ -53,7 +52,7 @@ const CircusClassicResults = () => {
   };
 
   // empty state
-  if (records.length === 0 && category === 'total') {
+  if (records.length === 0) {
     return (
       <>
         <h4>RESULTS</h4>
@@ -69,13 +68,6 @@ const CircusClassicResults = () => {
       <h4>RESULTS</h4>
       <p className={styles.category}>Categories</p>
       <div className={styles.tags}>
-        <UiTag
-          key={'f'}
-          onClick={() => setCategory('total')}
-          selected={category === 'total'}
-        >
-          total
-        </UiTag>
         {Object.entries(categories).map(([key, value]) => (
           <UiTag
             key={key}
