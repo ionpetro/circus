@@ -78,6 +78,18 @@ const CircusClassicResults = () => {
           </UiTag>
         ))}
       </div>
+      <div className={styles.empty}>
+        For more info, see the{' '}
+        <a
+          href={
+            'https://docs.google.com/spreadsheets/d/17cln2l7ljBZIzVrJaSE9AInHE5Mx3dlp/edit#gid=1264135899'
+          }
+          target={'_blank'}
+          rel={'noreferrer'}
+        >
+          detailed version
+        </a>
+      </div>
       <table className={styles.table}>
         <tr className={styles.head}>
           <th>#</th>
