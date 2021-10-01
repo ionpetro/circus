@@ -21,7 +21,9 @@ const Leaderboard = () => {
   // initial load
   useEffect(() => {
     fetchEvents();
-    fetchRecords();
+    if (events) {
+      fetchRecords();
+    }
   }, []);
 
   // filter apply
