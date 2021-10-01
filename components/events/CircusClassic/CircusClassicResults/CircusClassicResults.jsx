@@ -82,7 +82,7 @@ const CircusClassicResults = () => {
         For more info, see the{' '}
         <a
           href={
-            'https://docs.google.com/spreadsheets/d/17cln2l7ljBZIzVrJaSE9AInHE5Mx3dlp/edit#gid=1264135899'
+            'https://docs.google.com/spreadsheets/d/1gjxzPMfnslDscCmfHO31b0OHl9T2aQEK/edit#gid=1245438782'
           }
           target={'_blank'}
           rel={'noreferrer'}
