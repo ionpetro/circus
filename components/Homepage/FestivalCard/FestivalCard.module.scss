@@ -1,0 +1,208 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+$desktop-container-width: 100%;
+$desktop-container-height: 100%;
+
+.containerActive {
+  position: relative;
+  background: linear-gradient(to right, $red, $yellow);
+  height: $desktop-container-height;
+  clip-path: unset;
+
+  @media #{$desktop-medium} {
+    clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
+  }
+
+  grid-column: 1/-1;
+}
+
+.containerExpired {
+  position: relative;
+  height: $desktop-container-height;
+  background: $white;
+  clip-path: unset;
+
+  @media #{$desktop-medium} {
+    clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  }
+}
+
+.borderActive {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(#{$desktop-container-width} - 4px);
+  height: calc(#{$desktop-container-height} - 4px);
+  clip-path: unset;
+  background: $grey;
+
+  @media #{$desktop-medium} {
+    top: 6px;
+    left: 6px;
+    width: calc(#{$desktop-container-width} - 12px);
+    height: calc(#{$desktop-container-height} - 12px);
+    clip-path: polygon(0 0, 97% 0, 100% 10%, 100% 100%, 3% 100%, 0 90%);
+  }
+}
+
+.borderExpired {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(#{$desktop-container-width} - 4px);
+  height: calc(#{$desktop-container-height} - 4px);
+  clip-path: unset;
+  background: $grey;
+
+  @media #{$desktop-medium} {
+    clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+  }
+}
+
+.content {
+  position: relative;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  color: $white;
+  height: 100%;
+
+  &Row {
+    @media #{$desktop-medium} {
+      flex-direction: row;
+      padding: 36px;
+    }
+  }
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 4px 16px;
+  display: flex;
+  font-size: 0.8em;
+
+  & > span {
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: black;
+  }
+}
+
+.activeLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $red;
+
+  svg {
+    margin-right: 4px;
+    width: 18px;
+    height: 100%;
+  }
+
+  span {
+    color: $white;
+  }
+}
+
+.finishedLabel {
+  background: $white;
+}
+
+.header {
+  display: flex;
+  margin-top: 20px;
+
+  @media #{$desktop-medium} {
+    margin-top: 20px;
+  }
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  margin: 0 20px 0 0;
+
+  img {
+    min-width: 100px;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+    path {
+      fill: $white;
+    }
+  }
+
+  &ActiveImage {
+    position: relative;
+    margin: 20px 20px 0 0;
+
+    img {
+      width: 100px;
+    }
+
+    @media #{$desktop-medium} {
+      margin: 4px 20px 0 0;
+
+      img {
+        min-width: 200px;
+      }
+    }
+
+    svg {
+      path {
+        fill: $red;
+      }
+    }
+  }
+}
+
+.countdown {
+  font-family: Carnevalee, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.5em;
+  margin: 8px 0;
+
+  @media #{$desktop-medium} {
+    margin: 0 0 8px 0;
+  }
+}
+
+.identifier {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.6em;
+}
+
+.date {
+  font-weight: 300;
+  margin: 0 0 8px 0;
+}
+
+.button {
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+}
+
+.description {
+  margin-bottom: 16px;
+}
+
+.redColor {
+  color: $red;
+}
+
+.whiteColor {
+  color: $white;
+}
+
+.spacing {
+  padding: 32px;
+}

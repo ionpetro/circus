@@ -1,6 +1,6 @@
 import React from 'react';
 import Profile from '../components/Profile/Profile';
-import Auth from '../components/Auth/Auth';
+import Auth from '../components/Shared/Auth/Auth';
 import Head from 'next/head';
 
 const ProfilePage = () => {

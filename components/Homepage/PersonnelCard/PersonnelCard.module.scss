@@ -1,0 +1,98 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+$desktop-social-card-width: 260px;
+$desktop-social-card-height: 260px;
+
+$mobile-social-card-width: 200px;
+$mobile-social-card-height: 200px;
+
+.compWrap {
+  margin-bottom: 24px;
+  padding: 0 12px;
+}
+
+.container {
+  margin: auto;
+  position: relative;
+  background: white;
+  border: none;
+  width: $mobile-social-card-width;
+  height: $mobile-social-card-height;
+  z-index: 2;
+  overflow: hidden;
+  clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+
+  @media #{$desktop-large} {
+    width: $desktop-social-card-width;
+    height: $desktop-social-card-height;
+  }
+}
+
+.border {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(#{$mobile-social-card-width} - 4px);
+  height: calc(#{$mobile-social-card-height} - 4px);
+  background: $grey;
+  clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+
+  @media #{$desktop-large} {
+    width: calc(#{$desktop-social-card-width} - 4px);
+    height: calc(#{$desktop-social-card-height} - 4px);
+  }
+}
+
+.instagram {
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+  bottom: 12px;
+  right: 12px;
+  width: 28px;
+  height: 28px;
+
+  &:hover {
+    svg {
+      path {
+        fill: $yellow;
+      }
+    }
+  }
+}
+
+.name {
+  margin: 20px auto;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.position {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 4px;
+  font-weight: bold;
+
+  span {
+    flex-grow: 0;
+  }
+}
+
+.slogan {
+  text-align: center;
+  margin: 20px auto;
+  color: $light-grey;
+}
+
+.red {
+  background-color: $red;
+  color: $white;
+}
+
+.yellow {
+  background-color: $yellow;
+  color: $grey;
+}

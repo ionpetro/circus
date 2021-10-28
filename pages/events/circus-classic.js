@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import CircusClassic from '../../components/events/CircusClassic/CircusClassic';
+import CircusClassic from '../../components/Events/CircusClassic/CircusClassic';
 
 const CircusClassicPage = () => {
   return (

@@ -1,0 +1,235 @@
+@import '../../../styles/variables';
+@import '../../../styles/colors';
+
+.compWrap {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoLink {
+  margin-left: 24px;
+  text-decoration: none !important;
+}
+
+.logoContainer {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  path {
+    fill: $white;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+
+  & > a {
+    margin: 16px;
+
+    @media #{$desktop-medium} {
+      margin-right: 22px;
+    }
+  }
+
+  & > * {
+    margin-right: 24px;
+  }
+}
+
+.login {
+  text-transform: unset;
+  color: $white;
+}
+
+.menu {
+  float: right;
+  display: block;
+  width: 30px;
+  height: 50px;
+  position: relative;
+  z-index: 15;
+  margin-top: 32px;
+  cursor: pointer;
+
+  span::before,
+  span::after {
+    content: '';
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    top: 4px;
+    display: block;
+    left: 0;
+    position: absolute;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.4);
+    transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  span::after {
+    transform: translateY(8px);
+  }
+
+  &:hover {
+    span::before {
+      transform: translateY(-6px);
+    }
+
+    span::after {
+      transform: translateY(6px);
+    }
+  }
+
+  .isOpen {
+    &::before {
+      transform: translateY(0) rotate(45deg) !important;
+    }
+    &::after {
+      transform: translateY(0) rotate(-45deg) !important;
+    }
+  }
+}
+
+.container {
+  pointer-events: none;
+  position: fixed;
+  background-color: $grey;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+
+  &Active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.sections {
+  z-index: 12;
+  height: 400px;
+  padding: 0;
+  top: 0;
+  position: absolute;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  list-style: none;
+
+  @media #{$desktop-medium} {
+    top: 0;
+  }
+
+  &::before {
+    content: '';
+    clear: both;
+    display: table;
+  }
+
+  li {
+    margin-bottom: 16px;
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 30px;
+    cursor: pointer;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: $white;
+
+    @media #{$desktop-medium} {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    & > a {
+      position: relative;
+      text-decoration: none;
+
+      & > svg {
+        width: 60px;
+        height: 40px;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: all 0.5s ease;
+
+        @media #{$desktop-medium} {
+          width: 80px;
+          height: 60px;
+        }
+      }
+
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:hover {
+      color: $red;
+      text-shadow: -1px -1px 0 $red;
+    }
+  }
+}
+
+.text {
+  position: relative;
+}
+
+.left {
+  svg {
+    transform: rotate(-25deg);
+    left: -80px;
+
+    @media #{$desktop-medium} {
+      left: -100px;
+    }
+  }
+}
+
+.right {
+  svg {
+    transform: rotate(25deg);
+    right: -80px;
+
+    @media #{$desktop-medium} {
+      right: -100px;
+    }
+  }
+}
+
+.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 50px 0;
+  list-style: none;
+
+  li {
+    text-align: center;
+    display: inline-block;
+    font-weight: bold;
+  }
+}
+
+.bullet::before {
+  content: '\2022';
+  margin: 0 20px;
+  pointer-events: none;
+}

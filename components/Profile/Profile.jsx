@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
-import Footer from '../Footer/Footer';
+import Footer from '../Shared/Footer/Footer';
 import styles from './Profile.module.scss';
 import UserContext from '../../contexts/UserContext';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 import Pencil from '/public/assets/svgs/pencil.svg';
-import Records from '../Records/Records';
-import EditProfile from '../EditProfile/EditProfile';
-import UiAvatar from '../UiAvatar/UiAvatar';
-import Navbar from '../Navbar/Navbar';
+import Records from './Records/Records';
+import EditProfile from './EditProfile/EditProfile';
+import UiAvatar from '../Ui/UiAvatar/UiAvatar';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);

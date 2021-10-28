@@ -1,4 +1,4 @@
-import UiError from '../components/UiError/UiError';
+import UiError from '../components/Ui/UiError/UiError';
 
 function Error({ statusCode }) {
   return <UiError statusCode={statusCode} />;

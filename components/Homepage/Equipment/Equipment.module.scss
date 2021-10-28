@@ -1,0 +1,62 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.compWrap {
+  position: relative;
+}
+
+.image {
+  height: 600px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  margin: 0 16px;
+
+  & > * {
+    margin: auto;
+  }
+}
+
+.transitionTop {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(to top, transparent 0%, $grey 100%);
+}
+
+.transitionBot {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  height: 30%;
+  width: 100%;
+  background: linear-gradient(to bottom, transparent 0%, $grey 100%);
+}
+
+.dumbbell {
+  width: 92px;
+  height: 34px;
+  margin: 20px auto 12px auto;
+}
+
+.description {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.carousel {
+  margin: 20px auto 40px auto;
+  max-width: 992px;
+  width: 80%;
+
+  @media #{$desktop-medium} {
+    margin: 50px auto 50px auto;
+    width: 90%;
+  }
+}

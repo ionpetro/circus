@@ -1,0 +1,91 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  & > select,
+  input {
+    margin-bottom: 32px;
+  }
+}
+
+.notice {
+  margin: 12px 0;
+  color: $dark-grey;
+}
+
+.statuses {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+
+  @media #{$desktop-medium} {
+    font-size: unset;
+  }
+
+  & > svg {
+    margin: 8px 8px 8px 8px;
+  }
+
+  & > svg:nth-child(1) {
+    path {
+      fill: green;
+    }
+  }
+
+  & > svg:nth-child(3) {
+    path {
+      fill: red;
+    }
+  }
+}
+
+.error {
+  color: red;
+}
+
+.inputs {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media #{$desktop-large} {
+    flex-direction: row;
+  }
+}
+
+.select {
+  margin-right: 12px;
+  margin-bottom: 16px;
+
+  @media #{$desktop-large} {
+    margin-bottom: unset;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  @media #{$desktop-large} {
+    justify-content: flex-end;
+  }
+
+  & > div {
+    margin: 0 0 0 20px;
+  }
+}
+
+.cancel {
+  font-size: 20px;
+  font-weight: 300;
+  color: $white;
+  text-transform: unset;
+}

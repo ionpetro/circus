@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../utils/http-client';
 import styles from './Leaderboard.module.scss';
-import Navbar from '../Navbar/Navbar';
-import UiSelect from '../UiSelect/UiSelect';
-import Footer from '../Footer/Footer';
-import UiToggle from '../UiToggle/UiToggle';
-import LeaderboardTable from '../LeaderboardTable/LeaderboardTable';
+import Navbar from '../Shared/Navbar/Navbar';
+import UiSelect from '../Ui/UiSelect/UiSelect';
+import Footer from '../Shared/Footer/Footer';
+import UiToggle from '../Ui/UiToggle/UiToggle';
+import LeaderboardTable from './LeaderboardTable/LeaderboardTable';
 import categories from '../../utils/categories';
 
 const Leaderboard = () => {

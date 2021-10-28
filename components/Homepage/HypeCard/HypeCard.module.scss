@@ -1,0 +1,95 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+$desktop-card-width: 250px;
+$desktop-card-height: 380px;
+
+.compWrap {
+  width: $desktop-card-width;
+  position: relative;
+
+  .hoverBack {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: $desktop-card-width;
+    height: $desktop-card-height;
+    clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+    transition: transform 0.5s ease;
+  }
+
+  .container {
+    position: relative;
+    background: white;
+    border: none;
+    width: $desktop-card-width;
+    height: $desktop-card-height;
+    z-index: 2;
+    cursor: pointer;
+    overflow: hidden;
+    clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+
+    .border {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: calc(#{$desktop-card-width} - 4px);
+      height: calc(#{$desktop-card-height} - 4px);
+      clip-path: polygon(0 0, 94% 0, 100% 10%, 100% 100%, 6% 100%, 0 90%);
+      background: $grey;
+    }
+
+    .content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      color: $white;
+      height: 100%;
+    }
+  }
+
+  &:hover {
+    .hoverBack {
+      transform: translate(-10px, 15px);
+    }
+
+    .container {
+      background: $red;
+      .content {
+        h3 {
+          color: $red;
+        }
+        svg {
+          path {
+            fill: $red;
+          }
+        }
+      }
+    }
+  }
+}
+
+.backImage {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.info {
+  margin: 120px auto auto auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hype {
+  font-size: 1.4em;
+}

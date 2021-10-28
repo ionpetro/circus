@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+
+// left right icons
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    .arrow {
+      opacity: 1;
+    }
+  }
+
+  .arrow {
+    background: none;
+    border: none;
+    position: absolute;
+    top: calc(50% - 10px);
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+
+    svg {
+      width: 30px;
+      height: 10px;
+    }
+
+    @media #{$desktop-medium} {
+      opacity: 0.3;
+      top: calc(50% - 20px);
+
+      svg {
+        width: 40px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .right {
+    right: -40px;
+    @media #{$desktop-medium} {
+      right: -90px;
+    }
+  }
+
+  .left {
+    left: -40px;
+    @media #{$desktop-medium} {
+      left: -90px;
+    }
+
+    svg {
+      transform: scaleX(-1);
+    }
+  }
+}

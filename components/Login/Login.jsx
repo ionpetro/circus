@@ -2,15 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import LoginMan from '/public/assets/svgs/loginman.svg';
 import styles from './Login.module.scss';
 import Link from 'next/link';
-import Footer from '../Footer/Footer';
-import UiInput from '../UiInput/UiInput';
-import UiButton from '../UiButton/UiButton';
+import Footer from '../Shared/Footer/Footer';
+import UiInput from '../Ui/UiInput/UiInput';
+import UiButton from '../Ui/UiButton/UiButton';
 import axiosInstance from '../../utils/http-client';
 import { isValidEmail } from '../../utils/validations';
 import Cookie from 'js-cookie';
 import Router from 'next/router';
 import UserContext from '../../contexts/UserContext';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const Login = () => {
   const [email, setEmail] = useState('');

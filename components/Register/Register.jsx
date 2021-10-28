@@ -2,16 +2,16 @@ import React, { useContext, useEffect, useState } from 'react';
 import RegisterMan from '/public/assets/svgs/registerMan.svg';
 import styles from './Register.module.scss';
 import Link from 'next/link';
-import Footer from '../Footer/Footer';
-import UiInput from '../UiInput/UiInput';
-import UiButton from '../UiButton/UiButton';
+import Footer from '../Shared/Footer/Footer';
+import UiInput from '../Ui/UiInput/UiInput';
+import UiButton from '../Ui/UiButton/UiButton';
 import axiosInstance from '../../utils/http-client';
 import { isValidEmail, matchSecretCode } from '../../utils/validations';
 import Router from 'next/router';
 import UserContext from '../../contexts/UserContext';
 import Cookie from 'js-cookie';
-import UiTag from '../UiTag/UiTag';
-import Navbar from '../Navbar/Navbar';
+import UiTag from '../Ui/UiTag/UiTag';
+import Navbar from '../Shared/Navbar/Navbar';
 
 const Register = () => {
   const [form, setForm] = useState({});

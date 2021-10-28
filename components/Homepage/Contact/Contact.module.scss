@@ -1,0 +1,107 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.compWrap {
+  max-width: 998px;
+  margin: 60px 20px 0 20px;
+  display: flex;
+  flex-direction: column;
+
+  @media #{$desktop-large} {
+    margin: 60px auto 0 auto;
+  }
+}
+
+.header {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+
+  & > * {
+    margin: auto;
+  }
+
+  & > h1 {
+    letter-spacing: 10px;
+  }
+
+  & > svg {
+    width: 100px;
+    height: 63px;
+  }
+}
+
+.description {
+  margin-top: 12px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0;
+
+  @media #{$desktop-large} {
+    margin: 80px 0;
+    flex-direction: row;
+  }
+}
+
+.info {
+  margin-bottom: 36px;
+  text-align: center;
+
+  @media #{$desktop-large} {
+    text-align: left;
+    margin-right: 24px;
+  }
+
+  h3 {
+    color: $red;
+  }
+}
+
+.infoBlock {
+  padding-bottom: 20px;
+
+  @media #{$desktop-large} {
+    & > div {
+      margin: 0;
+    }
+  }
+}
+
+.heading {
+  margin: 20px 0;
+}
+
+.mapWrapper {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  border: solid 2px $red;
+
+  @media #{$desktop-large} {
+    width: 700px;
+    height: 500px;
+  }
+
+  svg {
+    z-index: 1;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+  }
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  border: solid 2px $red;
+
+  @media #{$desktop-large} {
+    width: 700px;
+    height: 500px;
+  }
+}

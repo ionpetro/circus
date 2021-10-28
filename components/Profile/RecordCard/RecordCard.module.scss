@@ -1,0 +1,49 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.compWrap {
+  display: flex;
+  align-items: center;
+  border: 1px solid $white;
+  padding: 16px;
+
+  @media #{$desktop-medium} {
+    //min-width: 300px;
+  }
+
+  & > svg {
+    margin-right: 16px;
+  }
+}
+
+.approved {
+  & > svg {
+    path {
+      fill: green;
+    }
+  }
+}
+
+.rejected {
+  & > svg {
+    path {
+      fill: red;
+    }
+  }
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.score {
+  font-weight: 300;
+}
+
+.date {
+  font-weight: 300;
+}

@@ -1,0 +1,12 @@
+@import '../../../styles/variables';
+
+.list {
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media #{$desktop-large} {
+    grid-template-columns: 1fr 1fr;
+  }
+}
