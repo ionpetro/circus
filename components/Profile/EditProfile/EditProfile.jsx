@@ -9,8 +9,9 @@ import Cookie from 'js-cookie';
 import UiUpload from '../../Ui/UiUpload/UiUpload';
 import Back from '/public/assets/svgs/back.svg';
 import UiSpinner from '../../Ui/UiSpinner/UiSpinner';
+import pages from '../../../utils/profile-pages';
 
-const EditProfile = ({ setShowRecords }) => {
+const EditProfile = ({ setPage }) => {
   const { user, setUser } = useContext(UserContext);
   const [form, setForm] = useState({});
   const [loading, setLoading] = useState(false);
@@ -103,7 +104,7 @@ const EditProfile = ({ setShowRecords }) => {
   return (
     <div className={styles.compWrap}>
       <div className={styles.header}>
-        <Back onClick={() => setShowRecords(true)} />
+        <Back onClick={() => setPage(pages.PROGRAM)} />
         <h3 className={styles.title}>Edit Profile</h3>
       </div>
       {message.text && (
@@ -172,7 +173,7 @@ const EditProfile = ({ setShowRecords }) => {
             </div>
           </div>
           <div className={styles.actions}>
-            <a onClick={() => setShowRecords(true)}>Cancel</a>
+            <a onClick={() => setPage(pages.PROGRAM)}>Cancel</a>
             <UiButton>Save</UiButton>
           </div>
         </form>

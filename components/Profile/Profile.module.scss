@@ -14,16 +14,21 @@
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  @media #{$desktop-medium} {
+    margin-top: 60px;
+  }
 }
 
 .content {
-  margin: 0 26px 0 26px;
+  width: 100%;
+  padding: 0 26px 0 26px;
   display: flex;
   flex-direction: column;
 
   @media #{$desktop-large} {
-    width: 100%;
+    padding: 0;
     max-width: 992px;
     margin: 0 auto 0 auto;
     flex-direction: row;
@@ -113,6 +118,25 @@
     align-items: center;
     margin-top: 12px;
   }
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 24px;
+
+  @media #{$desktop-medium} {
+    margin-top: 16px;
+  }
+}
+
+.tab {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.activeTab {
+  color: #f2d15e;
+  text-decoration: underline;
 }
 
 .logout {
