@@ -9,10 +9,11 @@ import Records from './Records/Records';
 import EditProfile from './EditProfile/EditProfile';
 import UiAvatar from '../Ui/UiAvatar/UiAvatar';
 import Navbar from '../Shared/Navbar/Navbar';
+import pages from '../../utils/profile-pages';
 
 const Profile = () => {
   const { user, setUser } = useContext(UserContext);
-  const [showRecords, setShowRecords] = useState(true);
+  const [page, setPage] = useState(pages.PROGRAM);
 
   const logout = () => {
     Cookie.remove('token');
@@ -31,10 +32,10 @@ const Profile = () => {
             <div className={styles.userProfile}>
               <div className={styles.avatarWrapper}>
                 <UiAvatar size={'large'} imgUrl={user?.imageUrl} />
-                {showRecords && (
+                {page !== pages.USER && (
                   <div
                     className={styles.editWrapper}
-                    onClick={() => setShowRecords(false)}
+                    onClick={() => setPage(pages.USER)}
                   >
                     <Pencil className={styles.edit} />
                   </div>
@@ -42,19 +43,41 @@ const Profile = () => {
               </div>
               <div className={styles.userInfo}>
                 <h4>@{user?.username}</h4>
-                {!showRecords && (
-                  <a className={styles.logout} onClick={logout}>
-                    Logout
-                  </a>
-                )}
+                <a className={styles.logout} onClick={logout}>
+                  Logout
+                </a>
               </div>
             </div>
           </div>
-          {showRecords ? (
-            <Records userId={user?.id} />
-          ) : (
-            <EditProfile setShowRecords={setShowRecords} />
-          )}
+          <div>
+            {page !== pages.USER && (
+              <div className={styles.tabs}>
+                <h3
+                  className={`${styles.tab} ${
+                    page === pages.PROGRAM && styles.activeTab
+                  }`}
+                  onClick={() => {
+                    setPage(pages.PROGRAM);
+                  }}
+                >
+                  Program
+                </h3>
+                <h3
+                  className={`${styles.tab} ${
+                    page === pages.RECORDS && styles.activeTab
+                  }`}
+                  onClick={() => {
+                    setPage(pages.RECORDS);
+                  }}
+                >
+                  Records
+                </h3>
+              </div>
+            )}
+            {page === pages.RECORDS && <Records userId={user?.id} />}
+            {page === pages.PROGRAM && <div />}
+            {page === pages.USER && <EditProfile setPage={setPage} />}
+          </div>
         </div>
       </div>
       <Footer simple />

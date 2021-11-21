@@ -56,15 +56,12 @@ const Records = ({ userId }) => {
 
   return (
     <div className={styles.compWrap}>
-      <div className={styles.title}>
-        <h3>Personal Records</h3>
-        <UiButton
-          onClick={() => setShowForm(true)}
-          className={showForm ? styles.hide : ''}
-        >
-          Update
-        </UiButton>
-      </div>
+      <UiButton
+        onClick={() => setShowForm(true)}
+        className={showForm ? `${styles.button} ${styles.hide}` : styles.button}
+      >
+        Update
+      </UiButton>
       {showForm ? (
         <RecordsForm
           records={records}
