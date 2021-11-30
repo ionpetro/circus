@@ -14,7 +14,8 @@ const UiAvatar = ({ size, imgUrl }) => {
           layout={'fill'}
           objectFit={'cover'}
           alt={'user avatar'}
-          src={imgUrl}
+          // resize image with cloudinary
+          src={imgUrl.replace('upload', 'upload/w_200,c_scale')}
           onError={() => <User />}
         />
       ) : (
