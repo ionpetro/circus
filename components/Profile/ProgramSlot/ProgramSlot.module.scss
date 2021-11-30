@@ -1,0 +1,93 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.compWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  border: 1px solid $white;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px dashed $white;
+  }
+
+  @media #{$desktop-medium} {
+    max-width: 240px;
+  }
+}
+
+.activeOption {
+  border: 1px solid $red !important;
+
+  h5 {
+    color: $red;
+  }
+}
+
+.disabledOption {
+  cursor: not-allowed;
+  border: 1px solid $black-grey;
+
+  & > * {
+    opacity: 0.8;
+  }
+
+  &:hover {
+    border: 1px solid $black-grey;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h5 {
+    margin-right: 10px;
+    letter-spacing: 1px;
+  }
+}
+
+.time {
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.main,
+.subs {
+  margin-top: 12px;
+}
+
+.bookings,
+.substitutions {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 8px;
+
+  & > * {
+    display: flex;
+    margin: 6px;
+
+    & > div {
+      margin: 0;
+    }
+  }
+}
+
+.subText {
+  font-size: 16px;
+  font-style: italic;
+}
+
+.availableSlots {
+  text-align: right;
+  margin-top: 8px;
+}

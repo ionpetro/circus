@@ -95,7 +95,7 @@ const ProgramSlot = ({
     <div
       className={`${styles.compWrap} ${activeAppId && styles.activeOption} ${
         (disabled || planLocked) && styles.disabledOption
-      } `}
+      }`}
       role={'button'}
       tabIndex={0}
       onClick={handleSlotClick}

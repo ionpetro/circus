@@ -1,0 +1,38 @@
+@import '../../../styles/variables';
+
+.error {
+  color: red;
+  margin-bottom: 16px;
+}
+
+.dayWrapper {
+  margin-bottom: 28px;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+
+  svg {
+    margin-left: 12px;
+  }
+}
+
+.title {
+  font-weight: 300;
+}
+
+.slots {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+
+  @media #{$tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$desktop-medium} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
