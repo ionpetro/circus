@@ -65,7 +65,7 @@ const Register = () => {
       Router.push('/profile');
     } catch (e) {
       setError(
-        e?.response?.data.message[0].messages[0].message
+        e?.response?.data?.message[0]?.messages[0]?.message
           ? 'Email or username already taken'
           : 'Something went wrong! Try again later'
       );

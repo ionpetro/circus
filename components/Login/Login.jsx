@@ -76,6 +76,9 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              <Link href={'/forgotten-password'}>
+                <a className={styles.forgot}>Forgot Password? </a>
+              </Link>
               <UiButton type={'submit'}>Login</UiButton>
             </form>
           </div>
