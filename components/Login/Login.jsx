@@ -63,6 +63,7 @@ const Login = () => {
             {error && <span className={styles.error}>{error}</span>}
             <form onSubmit={onSubmit} className={styles.form}>
               <UiInput
+                name={'email'}
                 label={false}
                 placeholder={'email'}
                 type={'text'}
@@ -70,6 +71,7 @@ const Login = () => {
                 required
               />
               <UiInput
+                name={'password'}
                 label={false}
                 placeholder={'password'}
                 type={'password'}

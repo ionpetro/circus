@@ -11,7 +11,7 @@ const Program = () => {
   const currentDay = new Date().toLocaleDateString('en-us', {
     weekday: 'long',
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [slots, setSlots] = useState([]);
   const [appointments, setAppointments] = useState([]);
   const [appointmentsForUser, setAppointmentsForUser] = useState([]);
@@ -48,7 +48,6 @@ const Program = () => {
   };
 
   useEffect(() => {
-    setLoading(true);
     fetchSlots();
     fetchAppointments();
     setLoading(false);
