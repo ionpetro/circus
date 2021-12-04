@@ -4,14 +4,17 @@ import ProgramSlot from '../ProgramSlot/ProgramSlot';
 import HandIcon from '../../../public/assets/svgs/hand.svg';
 import UserContext from '../../../contexts/UserContext';
 import styles from './Program.module.scss';
-import ProgramInfo from '../ProgramInfo/ProgramInfo';
+// import ProgramInfo from '../ProgramInfo/ProgramInfo';
 import UiSpinner from '../../Ui/UiSpinner/UiSpinner';
+import ProgramDetails from '../ProgramDetails/ProgramDetails';
 
 const Program = () => {
   const currentDay = new Date().toLocaleDateString('en-us', {
     weekday: 'long',
   });
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
+  const [modalDay, setModalDay] = useState(undefined);
   const [slots, setSlots] = useState([]);
   const [appointments, setAppointments] = useState([]);
   const [appointmentsForUser, setAppointmentsForUser] = useState([]);
@@ -104,6 +107,11 @@ const Program = () => {
     }
   };
 
+  const detailsClicked = (day) => {
+    setModalDay(day);
+    setShowModal(true);
+  };
+
   return (
     <div>
       {error && <div className={styles.error}>{error}</div>}
@@ -111,9 +119,18 @@ const Program = () => {
       {slotsPerDay &&
         Object.entries(slotsPerDay).map(([day, slots]) => (
           <div key={day} className={styles.dayWrapper}>
-            <div className={styles.day}>
-              <div className={styles.title}>{day}</div>
-              {day === currentDay && <HandIcon />}
+            <div className={styles.header}>
+              <div className={styles.day}>
+                <div className={styles.title}>{day}</div>
+                {day === currentDay && <HandIcon />}
+              </div>
+              <div
+                tabIndex={0}
+                role={'button'}
+                onClick={() => detailsClicked(day)}
+              >
+                <span className={styles.details}>Details</span>
+              </div>
             </div>
             <div className={styles.slots}>
               {slots.map((slot) => (
@@ -131,6 +148,9 @@ const Program = () => {
             </div>
           </div>
         ))}
+      {showModal && (
+        <ProgramDetails setShowModal={setShowModal} modalDay={modalDay} />
+      )}
     </div>
   );
 };
