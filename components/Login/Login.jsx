@@ -67,7 +67,7 @@ const Login = () => {
                 label={false}
                 placeholder={'email'}
                 type={'text'}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value.trim())}
                 required
               />
               <UiInput
