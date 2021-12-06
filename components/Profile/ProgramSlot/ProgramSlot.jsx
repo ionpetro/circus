@@ -18,30 +18,21 @@ const ProgramSlot = ({
   const [bookings, setBookings] = useState([]);
   const [substitutions, setSubstitutions] = useState([]);
   const { user } = useContext(UserContext);
-  // basic plan,
+  // basic plan check
   const planLocked = planLockEnabled && !activeAppId;
   const token = Cookie.get('token');
 
-  const mapAppointmentsForSlot = () => {
-    const bookings = appointments
+  useEffect(() => {
+    const apps = appointments
       .filter((appointment) => appointment.slot.id === slot.id)
       .sort((a, b) => a.created_at > b.created_at);
-    findSubstitutions(bookings);
-  };
-
-  // divide bookings to main and substitutions
-  const findSubstitutions = (bookings) => {
-    setBookings(bookings.slice(0, bookingsPerSlotAllowed));
-    if (bookings.length > bookingsPerSlotAllowed) {
-      setSubstitutions(bookings.slice(bookingsPerSlotAllowed));
+    setBookings(apps.slice(0, bookingsPerSlotAllowed));
+    if (apps.length > bookingsPerSlotAllowed) {
+      setSubstitutions(apps.slice(bookingsPerSlotAllowed));
     } else {
       setSubstitutions([]);
     }
-  };
-
-  useEffect(() => {
-    mapAppointmentsForSlot();
-  }, [appointments]);
+  }, [appointments, slot.id]);
 
   const deleteSlot = async (id) => {
     let response;

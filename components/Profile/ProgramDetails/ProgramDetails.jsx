@@ -27,8 +27,6 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
     }
   }, [modalDay]);
 
-  console.log(appForDay);
-
   // map users per time
   // ex. { '11:00 - 13:00': [user1, user2] } etc
   const perSlotConverter = (appForDay) => {

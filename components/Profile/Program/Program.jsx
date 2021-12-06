@@ -35,7 +35,7 @@ const Program = () => {
   const fetchAppointments = async () => {
     try {
       const response = await axiosInstance.get(
-        `${process.env.NEXT_PUBLIC_BACKEND}/appointments`
+        `${process.env.NEXT_PUBLIC_BACKEND}/appointments?_limit=-1`
       );
       setAppointments(response);
     } catch (e) {}
