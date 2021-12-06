@@ -1,0 +1,52 @@
+@import '../../../styles/variables';
+@import '../../../styles/colors';
+
+.error {
+  color: red;
+  margin-bottom: 16px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.dayWrapper {
+  margin-bottom: 28px;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 12px;
+  }
+}
+
+.title {
+  font-weight: 300;
+}
+
+.details {
+  color: $yellow;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.slots {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+
+  @media #{$tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$desktop-medium} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

@@ -1,0 +1,107 @@
+@import 'styles/variables';
+@import 'styles/colors';
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media #{$desktop-large} {
+    flex-direction: column;
+  }
+}
+
+.avatarWrapper {
+  position: relative;
+}
+
+.editWrapper {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $grey;
+  border-radius: 50%;
+  border: 1px solid $white;
+  top: 55px;
+  right: 16px;
+  width: 26px;
+  height: 26px;
+
+  @media #{$desktop-large} {
+    top: 75px;
+    right: 8px;
+  }
+}
+
+.edit {
+  width: 12px;
+  height: 12px;
+  path {
+    fill: $white;
+  }
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+
+  & > div {
+    display: flex;
+    align-items: center;
+
+    @media #{$desktop-large} {
+      flex-direction: column;
+    }
+  }
+
+  h4 {
+    word-break: break-all;
+    margin: 0 !important;
+  }
+
+  @media #{$desktop-large} {
+    text-align: center;
+    align-items: center;
+    margin-top: 12px;
+  }
+}
+
+.plan {
+  padding: 2px 4px;
+  font-size: 14px;
+  border-radius: 4px;
+  margin: 0 12px;
+  @media #{$desktop-large} {
+    font-size: 16px;
+    padding: 4px 8px;
+    margin: 12px 0;
+  }
+}
+
+.basic {
+  color: $supa-dark-grey;
+  background-color: $yellow;
+}
+
+.pro {
+  color: $white;
+  background-color: $green;
+}
+
+.logout {
+  color: $white;
+  font-weight: 300;
+  text-transform: unset;
+}
+
+.mobileOnly {
+  display: none;
+  @media #{$desktop-large} {
+    display: unset;
+  }
+}

@@ -14,16 +14,21 @@
   flex-grow: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  @media #{$desktop-medium} {
+    margin-top: 60px;
+  }
 }
 
 .content {
-  margin: 0 26px 0 26px;
+  width: 100%;
+  padding: 0 26px 0 26px;
   display: flex;
   flex-direction: column;
 
   @media #{$desktop-large} {
-    width: 100%;
+    padding: 0;
     max-width: 992px;
     margin: 0 auto 0 auto;
     flex-direction: row;
@@ -37,7 +42,7 @@
   justify-content: flex-start;
 
   @media #{$desktop-large} {
-    margin-right: 100px;
+    margin-right: 60px;
   }
 
   h1 {
@@ -55,68 +60,25 @@
   }
 }
 
-.userProfile {
+.tabs {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 32px 0;
 
   @media #{$desktop-large} {
-    flex-direction: column;
+    margin: 12px 0 40px 0;
   }
 }
 
-.avatarWrapper {
-  position: relative;
-}
-
-.editWrapper {
+.tab {
+  margin-right: 20px;
   cursor: pointer;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: $grey;
-  border-radius: 50%;
-  border: 1px solid $white;
-  top: 55px;
-  right: 16px;
-  width: 26px;
-  height: 26px;
-
-  @media #{$desktop-large} {
-    top: 75px;
-    right: 8px;
-  }
 }
 
-.edit {
-  width: 12px;
-  height: 12px;
-  path {
-    fill: $white;
-  }
+.activeTab {
+  color: #f2d15e;
+  text-decoration: underline;
 }
 
-.userInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  text-align: left;
-
-  h4 {
-    word-break: break-all;
-  }
-  @media #{$desktop-large} {
-    text-align: center;
-
-    align-items: center;
-    margin-top: 12px;
-  }
-}
-
-.logout {
-  color: $white;
-  font-weight: 300;
-  text-transform: unset;
+.page {
+  width: 100%;
 }

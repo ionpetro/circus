@@ -63,13 +63,15 @@ const Login = () => {
             {error && <span className={styles.error}>{error}</span>}
             <form onSubmit={onSubmit} className={styles.form}>
               <UiInput
+                name={'email'}
                 label={false}
                 placeholder={'email'}
                 type={'text'}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value.trim())}
                 required
               />
               <UiInput
+                name={'password'}
                 label={false}
                 placeholder={'password'}
                 type={'password'}

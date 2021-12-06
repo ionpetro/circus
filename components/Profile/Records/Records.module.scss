@@ -12,19 +12,10 @@
   }
 }
 
-.title {
+.button {
+  margin: 0 0 0 auto !important;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  h3 {
-    padding-right: 26px;
-    color: $yellow;
-  }
-
-  & > div {
-    margin: unset;
-  }
+  justify-content: flex-end;
 }
 
 .hide {

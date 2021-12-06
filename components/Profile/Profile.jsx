@@ -1,24 +1,17 @@
 import React, { useContext, useState } from 'react';
 import Footer from '../Shared/Footer/Footer';
-import styles from './Profile.module.scss';
 import UserContext from '../../contexts/UserContext';
-import Cookie from 'js-cookie';
-import Router from 'next/router';
-import Pencil from '/public/assets/svgs/pencil.svg';
 import Records from './Records/Records';
 import EditProfile from './EditProfile/EditProfile';
-import UiAvatar from '../Ui/UiAvatar/UiAvatar';
 import Navbar from '../Shared/Navbar/Navbar';
+import pages from '../../utils/profile-pages';
+import Program from './Program/Program';
+import UserInfo from './UserInfo/UserInfo';
+import styles from './Profile.module.scss';
 
 const Profile = () => {
-  const { user, setUser } = useContext(UserContext);
-  const [showRecords, setShowRecords] = useState(true);
-
-  const logout = () => {
-    Cookie.remove('token');
-    setUser(null);
-    Router.push('/');
-  };
+  const { user } = useContext(UserContext);
+  const [page, setPage] = useState(pages.PROGRAM);
 
   return (
     <div className={styles.compWrap}>
@@ -28,33 +21,37 @@ const Profile = () => {
         <div className={styles.content}>
           <div className={styles.profile}>
             <h1>PROFILE</h1>
-            <div className={styles.userProfile}>
-              <div className={styles.avatarWrapper}>
-                <UiAvatar size={'large'} imgUrl={user?.imageUrl} />
-                {showRecords && (
-                  <div
-                    className={styles.editWrapper}
-                    onClick={() => setShowRecords(false)}
-                  >
-                    <Pencil className={styles.edit} />
-                  </div>
-                )}
-              </div>
-              <div className={styles.userInfo}>
-                <h4>@{user?.username}</h4>
-                {!showRecords && (
-                  <a className={styles.logout} onClick={logout}>
-                    Logout
-                  </a>
-                )}
-              </div>
-            </div>
+            <UserInfo page={page} setPage={setPage} />
           </div>
-          {showRecords ? (
-            <Records userId={user?.id} />
-          ) : (
-            <EditProfile setShowRecords={setShowRecords} />
-          )}
+          <div className={styles.page}>
+            {page !== pages.USER && (
+              <div className={styles.tabs}>
+                <h3
+                  className={`${styles.tab} ${
+                    page === pages.PROGRAM && styles.activeTab
+                  }`}
+                  onClick={() => {
+                    setPage(pages.PROGRAM);
+                  }}
+                >
+                  Program
+                </h3>
+                <h3
+                  className={`${styles.tab} ${
+                    page === pages.RECORDS && styles.activeTab
+                  }`}
+                  onClick={() => {
+                    setPage(pages.RECORDS);
+                  }}
+                >
+                  Records
+                </h3>
+              </div>
+            )}
+            {page === pages.RECORDS && <Records userId={user?.id} />}
+            {page === pages.PROGRAM && <Program />}
+            {page === pages.USER && <EditProfile setPage={setPage} />}
+          </div>
         </div>
       </div>
       <Footer simple />
