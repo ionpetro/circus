@@ -12,7 +12,7 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
   const fetchAppointmentsForDay = async () => {
     try {
       const response = await axiosInstance.get(
-        `${process.env.NEXT_PUBLIC_BACKEND}/appointments?slot.day=${modalDay}`
+        `${process.env.NEXT_PUBLIC_BACKEND}/appointments?slot.day=${modalDay}&_sort=slot.created_at`
       );
       setAppForDay(perSlotConverter(response));
       setLoading(false);
@@ -41,6 +41,13 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
     return map;
   };
 
+  const renderName = (user) => {
+    if (user?.firstname && user?.lastname) {
+      return `${user?.firstname} ${user.lastname}`;
+    }
+    return user?.username;
+  };
+
   return (
     <div className={styles.modal}>
       <div className={styles.header}>
@@ -61,7 +68,7 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
                 {users.map((user) => (
                   <div className={styles.user} key={user.id}>
                     <UiAvatar imgUrl={user.imageUrl} />
-                    <div>{user.username}</div>
+                    <div>{renderName(user)}</div>
                   </div>
                 ))}
               </div>

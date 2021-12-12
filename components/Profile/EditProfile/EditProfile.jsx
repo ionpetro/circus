@@ -21,6 +21,8 @@ const EditProfile = ({ setPage }) => {
   // initialize form
   useEffect(() => {
     setForm({
+      firstname: user?.firstname,
+      lastname: user?.lastname,
       username: user?.username,
       email: user?.email,
       category: user?.category,
@@ -113,6 +115,24 @@ const EditProfile = ({ setPage }) => {
       {user && (
         <form className={styles.form} onSubmit={(e) => submitForm(e)}>
           <div className={styles.inputs}>
+            <UiInput
+              required
+              label={true}
+              name={'firstname'}
+              value={form.firstname}
+              placeholder={'first name'}
+              type={'text'}
+              onChange={(e) => setForm({ ...form, firstname: e.target.value })}
+            />
+            <UiInput
+              required
+              label={true}
+              name={'lastname'}
+              placeholder={'last name'}
+              value={form.lastname}
+              type={'text'}
+              onChange={(e) => setForm({ ...form, lastname: e.target.value })}
+            />
             <UiInput
               required
               label={true}
