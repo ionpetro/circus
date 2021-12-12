@@ -48,4 +48,20 @@ export const calculateCountdown = (date) => {
   return { days, hours, minutes, seconds };
 };
 
+/**
+ * Return days until a date is reached
+ * Return positive if date is after today
+ * Return 0 if today is the date
+ * Return negative if date is before today (expired state)
+ * @param date
+ * @returns days passed {number}
+ */
+export const daysUntilDate = (date) => {
+  const givenDate = new Date(date).getTime();
+  const today = new Date().getTime();
+  const daysToExpiration = givenDate - today;
+
+  return Math.floor(daysToExpiration / (1000 * 3600 * 24));
+};
+
 export default transformDate;
