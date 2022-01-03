@@ -4,6 +4,7 @@ import PersonnelCard from '../PersonnelCard/PersonnelCard';
 import boursi from '/public/assets/images/boursi.png';
 import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
+import limperis from '/public/assets/images/limperis.jpg';
 import styles from './Personnel.module.scss';
 
 const members = [
@@ -34,6 +35,15 @@ const members = [
     imageSrc: nikos.src,
     slogan: "If you're gonna be dumb, you gotta be tough",
     instaLink: 'https://instagram.com/redstachetrash',
+    color: 'yellow',
+  },
+  {
+    id: 4,
+    name: 'Giannis Limperis',
+    position: 'Trainer',
+    imageSrc: limperis.src,
+    slogan: "If you park outside my front door, i'm lifting your car",
+    instaLink: 'https://www.instagram.com/giannis_limperis/',
     color: 'yellow',
   },
 ];
