@@ -32,7 +32,7 @@ const Program = () => {
   const fetchSlots = async () => {
     try {
       const response = await axiosInstance.get(
-        `${process.env.NEXT_PUBLIC_BACKEND}/slots`
+        `${process.env.NEXT_PUBLIC_BACKEND}/slots?&_sort=created_at`
       );
       setSlots(response);
     } catch (e) {}
