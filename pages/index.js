@@ -13,10 +13,11 @@ import Personnel from '../components/Homepage/Personnel/Personnel';
 import Footer from '../components/Shared/Footer/Footer';
 import Seo from '../components/Shared/Seo/Seo';
 import Topbar from '../components/Homepage/Topbar/Topbar';
+import ProgramInfo from '../components/Homepage/ProgramInfo/ProgramInfo';
 
 const strapiUrl = process.env.NEXT_PUBLIC_BACKEND;
 
-export default function Home({ cmsData, error }) {
+export default function Home({ cmsData, slots, error }) {
   if (error) {
     return <Error statusCode={error} />;
   }
@@ -32,6 +33,7 @@ export default function Home({ cmsData, error }) {
       <Hero />
       <Marquee />
       <History history={cmsData.history} />
+      <ProgramInfo slots={slots} />
       <Equipment
         description={cmsData.equipmentDescription}
         media={cmsData.galleries}
@@ -51,9 +53,11 @@ export default function Home({ cmsData, error }) {
 export async function getServerSideProps(context) {
   try {
     const cmsData = await instance(`${strapiUrl}/home-page`);
+    const slots = await instance(`${strapiUrl}/slots?_sort=created_at`);
     return {
       props: {
         cmsData,
+        slots,
       },
     };
   } catch (err) {

@@ -7,6 +7,7 @@ import Stars from '../../../public/assets/svgs/stars.svg';
 import Tent from '../../../public/assets/svgs/tent.svg';
 import Clawn from '../../../public/assets/svgs/Clawn.svg';
 import Dumbbell from '../../../public/assets/svgs/dumbbell.svg';
+import DateIcon from '../../../public/assets/svgs/date.svg';
 import Banner from '../../../public/assets/svgs/banner.svg';
 import Tickets from '../../../public/assets/svgs/Tickets.svg';
 import { instaUrl, mapUrl, phone } from '../../../utils/links';
@@ -15,11 +16,12 @@ import UiAvatar from '../../Ui/UiAvatar/UiAvatar';
 
 export const menuItems = [
   { href: 'history', icon: <Banner />, direction: 'left' },
-  { href: 'equipment', icon: <Dumbbell />, direction: 'right' },
-  { href: 'contests', icon: <Tickets />, direction: 'left' },
-  { href: 'social', icon: <Stars />, direction: 'right' },
-  { href: 'personnel', icon: <Clawn />, direction: 'left' },
-  { href: 'contact', icon: <Tent />, direction: 'right' },
+  { href: 'program', icon: <DateIcon />, direction: 'right' },
+  { href: 'equipment', icon: <Dumbbell />, direction: 'left' },
+  { href: 'contests', icon: <Tickets />, direction: 'right' },
+  { href: 'social', icon: <Stars />, direction: 'left' },
+  { href: 'personnel', icon: <Clawn />, direction: 'right' },
+  { href: 'contact', icon: <Tent />, direction: 'left' },
 ];
 
 const Navbar = () => {

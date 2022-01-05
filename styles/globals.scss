@@ -15,6 +15,10 @@ body {
   scroll-behavior: smooth;
 }
 
+.hide-scroll {
+  overflow: hidden !important;
+}
+
 ::placeholder {
   font-weight: 300;
 }
