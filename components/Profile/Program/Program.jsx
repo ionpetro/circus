@@ -70,6 +70,14 @@ const Program = () => {
     fetchAppointmentsForUser();
   }, [appointments, user]);
 
+  useEffect(() => {
+    if (showModal) {
+      document.body.classList.add('hide-scroll');
+    } else {
+      document.body.classList.remove('hide-scroll');
+    }
+  }, [showModal]);
+
   // disable the slot if another slot is book
   // for that specific day
   const checkIfDisabled = (day, slot) => {

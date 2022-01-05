@@ -143,6 +143,19 @@ const FestivalCard = ({ festival }) => {
                 READ MORE
               </a>
             )}
+            {festival.resultsLink && (
+              <>
+                <div className={styles.spacing} />
+
+                <div className={styles.button}>
+                  <Link href={festival.resultsLink}>
+                    <a target="_blank" rel="noreferrer">
+                      <UiButton>RESULTS</UiButton>
+                    </a>
+                  </Link>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

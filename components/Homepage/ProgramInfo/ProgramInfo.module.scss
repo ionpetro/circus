@@ -1,0 +1,166 @@
+@import '../../../styles/variables';
+@import '../../../styles/colors';
+
+.compWrap {
+  max-width: 992px;
+  margin: 24px;
+
+  @media #{$desktop-large} {
+    margin: 60px auto 60px auto;
+  }
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  text-align: center;
+  svg {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.days {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media #{$tablet} {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media #{$desktop-medium} {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.dayWrapper {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background: $grey;
+  z-index: 2;
+  padding: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.day {
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 12px;
+  }
+}
+
+.title {
+  font-weight: 300;
+}
+
+.slots {
+  display: grid;
+  gap: 16px;
+}
+
+.slot {
+  border: 1px solid $white;
+  padding: 12px 8px;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px dashed $white;
+  }
+}
+
+.slotHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h5 {
+    margin-right: 10px;
+    letter-spacing: 1px;
+  }
+}
+
+.trainer {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+.trainerName {
+  display: flex;
+  align-items: center;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  & > :nth-child(1) {
+    margin-right: 8px;
+  }
+
+  span {
+    font-weight: 300;
+    font-size: 16px;
+  }
+}
+
+.time {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  font-weight: 200;
+}
+
+.modal {
+  width: 90%;
+  height: 85%;
+  max-width: 1200px;
+  position: fixed;
+  z-index: 12;
+  border: 1px solid $white;
+  background-color: $grey;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 24px;
+  overflow-y: scroll;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  svg {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.modalTime {
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.8px;
+}
+
+.trainers {
+  gap: 16px;
+  margin-top: 24px;
+  display: flex;
+}
