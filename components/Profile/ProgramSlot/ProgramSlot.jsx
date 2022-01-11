@@ -14,7 +14,6 @@ const ProgramSlot = ({
   planLockEnabled,
   disabled,
 }) => {
-  const bookingsPerSlotAllowed = 8;
   const [bookings, setBookings] = useState([]);
   const [substitutions, setSubstitutions] = useState([]);
   const { user } = useContext(UserContext);
@@ -26,9 +25,9 @@ const ProgramSlot = ({
     const apps = appointments
       .filter((appointment) => appointment.slot.id === slot.id)
       .sort((a, b) => a.created_at > b.created_at);
-    setBookings(apps.slice(0, bookingsPerSlotAllowed));
-    if (apps.length > bookingsPerSlotAllowed) {
-      setSubstitutions(apps.slice(bookingsPerSlotAllowed));
+    setBookings(apps.slice(0, slot.availability));
+    if (apps.length > slot.availability) {
+      setSubstitutions(apps.slice(slot.availability));
     } else {
       setSubstitutions([]);
     }
@@ -124,7 +123,7 @@ const ProgramSlot = ({
         </div>
       </div>
       <div className={`${styles.subText} ${styles.availableSlots}`}>
-        Available: {bookingsPerSlotAllowed - bookings.length} slots
+        Available: {slot.availability - bookings.length} slots
       </div>
     </div>
   );

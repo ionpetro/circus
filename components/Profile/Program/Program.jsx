@@ -8,7 +8,6 @@ import UiSpinner from '../../Ui/UiSpinner/UiSpinner';
 import ProgramDetails from '../ProgramDetails/ProgramDetails';
 import ProgramNotice from '../ProgramNotice/ProgramNotice';
 import ClawnIcon from '../../../public/assets/svgs/Clawn.svg';
-import Link from 'next/link';
 import { daysUntilDate } from '../../../utils/utilities';
 import { useRouter } from 'next/router';
 
@@ -16,7 +15,7 @@ const Program = () => {
   const currentDay = new Date().toLocaleDateString('en-us', {
     weekday: 'long',
   });
-  const threshold = 10;
+  const paymentThreshold = 10;
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -32,7 +31,7 @@ const Program = () => {
   const fetchSlots = async () => {
     try {
       const response = await axiosInstance.get(
-        `${process.env.NEXT_PUBLIC_BACKEND}/slots?&_sort=created_at`
+        `${process.env.NEXT_PUBLIC_BACKEND}/slots?&_sort=order`
       );
       setSlots(response);
     } catch (e) {}
@@ -78,7 +77,7 @@ const Program = () => {
     }
   }, [showModal]);
 
-  // disable the slot if another slot is book
+  // disable the slot if another slot is booked
   // for that specific day
   const checkIfDisabled = (day, slot) => {
     let appointmentsForDay = appointmentsForUser.filter(
@@ -122,10 +121,10 @@ const Program = () => {
     setShowModal(true);
   };
 
+  // user has payment_due and that is passed
   if (
     user?.payment_due &&
-    daysUntilDate(user?.payment_due) < 0 &&
-    daysUntilDate(user?.payment_due) < -threshold
+    daysUntilDate(user?.payment_due) < -paymentThreshold
   ) {
     return (
       <div className={styles.payDue}>

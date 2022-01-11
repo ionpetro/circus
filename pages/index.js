@@ -53,7 +53,7 @@ export default function Home({ cmsData, slots, error }) {
 export async function getServerSideProps(context) {
   try {
     const cmsData = await instance(`${strapiUrl}/home-page`);
-    const slots = await instance(`${strapiUrl}/slots?_sort=created_at`);
+    const slots = await instance(`${strapiUrl}/slots?_sort=order`);
     return {
       props: {
         cmsData,
