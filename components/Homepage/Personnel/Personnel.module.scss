@@ -20,6 +20,6 @@
   grid-template-columns: 1fr;
 
   @media #{$desktop-medium} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

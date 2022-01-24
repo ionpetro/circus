@@ -5,6 +5,8 @@ import boursi from '/public/assets/images/boursi.png';
 import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.jpg';
+import nirgianakis from '/public/assets/images/nirgianakis.jpg';
+import menelaou from '/public/assets/images/menelaou.jpg';
 import styles from './Personnel.module.scss';
 
 const members = [
@@ -44,6 +46,24 @@ const members = [
     imageSrc: limperis.src,
     slogan: "If you park outside my front door, i'm lifting your car",
     instaLink: 'https://www.instagram.com/giannis_limperis/',
+    color: 'yellow',
+  },
+  {
+    id: 5,
+    name: 'Giannis Nirgianakis',
+    position: 'Trainer',
+    imageSrc: nirgianakis.src,
+    slogan: 'Coach, athlete, sugar addicted',
+    instaLink: 'https://www.instagram.com/john_nirgianakis/',
+    color: 'yellow',
+  },
+  {
+    id: 6,
+    name: 'Dimitris menelaou',
+    position: 'Trainer',
+    imageSrc: menelaou.src,
+    slogan: "Of course it's heavy, it's iron",
+    instaLink: 'https://www.instagram.com/dimitris_menelaou/',
     color: 'yellow',
   },
 ];
