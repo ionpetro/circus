@@ -7,7 +7,7 @@ import RecordsForm from '../RecordsForm/RecordsForm';
 import UiSpinner from '../../Ui/UiSpinner/UiSpinner';
 
 const Records = ({ userId }) => {
-  const [records, setRecords] = useState([]);
+  const [records, setRecords] = useState();
   const [loading, setLoading] = useState(true);
   const [options, setOptions] = useState([]);
   const [showForm, setShowForm] = useState(false);

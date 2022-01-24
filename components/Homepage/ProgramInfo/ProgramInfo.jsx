@@ -137,7 +137,12 @@ const ProgramInfo = ({ slots }) => {
             ))}
         </div>
       </section>
-      {showModal && <SlotModal />}
+      {showModal && (
+        <>
+          <SlotModal />
+          <div className={styles.modalOverlay} />
+        </>
+      )}
     </div>
   );
 };

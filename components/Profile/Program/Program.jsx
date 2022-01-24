@@ -186,7 +186,10 @@ const Program = () => {
           </div>
         ))}
       {showModal && (
-        <ProgramDetails setShowModal={setShowModal} modalDay={modalDay} />
+        <>
+          <ProgramDetails setShowModal={setShowModal} modalDay={modalDay} />
+          <div className={styles.modalOverlay} />
+        </>
       )}
     </div>
   );
