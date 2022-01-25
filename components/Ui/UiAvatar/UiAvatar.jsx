@@ -2,12 +2,20 @@ import React from 'react';
 import styles from './UiAvatar.module.scss';
 import Image from 'next/image';
 import User from '../../../public/assets/svgs/user.svg';
+import { useRouter } from 'next/router';
 
-// size can be small, large
+// size can be small, large, xlarge
 
-const UiAvatar = ({ size, imgUrl }) => {
+const UiAvatar = ({ id, size, imgUrl }) => {
+  const router = useRouter();
+
   return (
-    <div className={`${styles.avatar} ${styles[size]}`}>
+    <div
+      className={`${styles.avatar} ${styles[size]}`}
+      tabIndex={0}
+      role={'button'}
+      onClick={id ? () => router.push(`/users/${id}`) : () => {}}
+    >
       {imgUrl ? (
         <Image
           unoptimized

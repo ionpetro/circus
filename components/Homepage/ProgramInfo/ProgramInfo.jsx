@@ -52,7 +52,7 @@ const ProgramInfo = ({ slots }) => {
               <div className={styles.trainers}>
                 {currentSlot.trainers.map((trainer) => (
                   <div key={trainer.id} className={styles.trainerName}>
-                    <UiAvatar imgUrl={trainer.imageUrl} />{' '}
+                    <UiAvatar id={trainer.id} imgUrl={trainer.imageUrl} />{' '}
                     <h5>
                       {trainer.firstname} {trainer.lastname}
                     </h5>
@@ -91,7 +91,11 @@ const ProgramInfo = ({ slots }) => {
             <div>
               {slot.trainers.map((trainer) => (
                 <div key={trainer.id} className={styles.trainerName}>
-                  <UiAvatar size={'small'} imgUrl={trainer.imageUrl} />{' '}
+                  <UiAvatar
+                    id={trainer.id}
+                    size={'small'}
+                    imgUrl={trainer.imageUrl}
+                  />{' '}
                   <span>
                     {trainer.firstname} {trainer.lastname}
                   </span>
