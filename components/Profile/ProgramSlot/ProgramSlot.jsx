@@ -24,7 +24,7 @@ const ProgramSlot = ({
   useEffect(() => {
     const apps = appointments
       .filter((appointment) => appointment.slot.id === slot.id)
-      .sort((a, b) => a.created_at > b.created_at);
+      .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
     setBookings(apps.slice(0, slot.availability));
     if (apps.length > slot.availability) {
       setSubstitutions(apps.slice(slot.availability));
