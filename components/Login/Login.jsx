@@ -7,7 +7,6 @@ import UiInput from '../Ui/UiInput/UiInput';
 import UiButton from '../Ui/UiButton/UiButton';
 import axiosInstance from '../../utils/http-client';
 import { isValidEmail } from '../../utils/validations';
-import Cookie from 'js-cookie';
 import Router from 'next/router';
 import UserContext from '../../contexts/UserContext';
 import Navbar from '../Shared/Navbar/Navbar';
@@ -33,12 +32,12 @@ const Login = () => {
     }
 
     try {
-      const response = await axiosInstance.post(
+      const { jwt, user } = await axiosInstance.post(
         `${process.env.NEXT_PUBLIC_BACKEND}/auth/local`,
         { identifier: email, password: password }
       );
-      Cookie.set('token', response.jwt);
-      userContext.setUser(response.user);
+      window.localStorage.setItem('token', jwt);
+      userContext.setUser(user);
       setEmail('');
       setPassword('');
       Router.push('/profile');

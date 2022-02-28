@@ -3,7 +3,7 @@ import UiAvatar from '../../Ui/UiAvatar/UiAvatar';
 import pages from '../../../utils/profile-pages';
 import Pencil from '../../../public/assets/svgs/pencil.svg';
 import UserContext from '../../../contexts/UserContext';
-import Cookie from 'js-cookie';
+
 import Router from 'next/router';
 import styles from './UserInfo.module.scss';
 
@@ -11,7 +11,7 @@ const UserInfo = ({ page, setPage }) => {
   const { user, setUser } = useContext(UserContext);
 
   const logout = () => {
-    Cookie.remove('token');
+    window.localStorage.removeItem('token');
     setUser(null);
     Router.push('/');
   };

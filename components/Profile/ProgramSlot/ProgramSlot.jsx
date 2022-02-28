@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import UiAvatar from '../../Ui/UiAvatar/UiAvatar';
 import axiosInstance from '../../../utils/http-client';
 import UserContext from '../../../contexts/UserContext';
-import Cookie from 'js-cookie';
+
 import styles from './ProgramSlot.module.scss';
 
 const ProgramSlot = ({
@@ -19,7 +19,7 @@ const ProgramSlot = ({
   const { user } = useContext(UserContext);
   // basic plan check
   const planLocked = planLockEnabled && !activeAppId;
-  const token = Cookie.get('token');
+  const token = window.localStorage.getItem('token');
 
   useEffect(() => {
     const apps = appointments

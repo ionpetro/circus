@@ -6,7 +6,6 @@ import axiosInstance from '../../../utils/http-client';
 import styles from './RecordsForm.module.scss';
 import Medal from '/public/assets/svgs/Medal.svg';
 import UserContext from '../../../contexts/UserContext';
-import Cookie from 'js-cookie';
 
 const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
   const { user } = useContext(UserContext);
@@ -27,7 +26,7 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
   const addOrUpdateRecord = async (e) => {
     e.preventDefault();
     let response;
-    const token = Cookie.get('token');
+    const token = window.localStorage.getItem('token');
     const [record] = records.filter((record) => record.game.id === form.game);
 
     try {

@@ -8,7 +8,6 @@ import Footer from '../Shared/Footer/Footer';
 import UiSpinner from '../Ui/UiSpinner/UiSpinner';
 import styles from './ResetPassword.module.scss';
 import { useRouter } from 'next/router';
-import Cookie from 'js-cookie';
 import UserContext from '../../contexts/UserContext';
 
 const ResetPassword = () => {
@@ -34,7 +33,7 @@ const ResetPassword = () => {
           passwordConfirmation: form.conPassword,
         }
       );
-      Cookie.set('token', response.jwt);
+      window.localStorage.setItem('token', response.jwt);
       userContext.setUser(response.user);
       setLoading(false);
       router.push('/profile');

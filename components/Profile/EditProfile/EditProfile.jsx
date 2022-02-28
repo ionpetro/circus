@@ -5,7 +5,7 @@ import UserContext from '../../../contexts/UserContext';
 import UiInput from '../../Ui/UiInput/UiInput';
 import UiTag from '../../Ui/UiTag/UiTag';
 import UiButton from '../../Ui/UiButton/UiButton';
-import Cookie from 'js-cookie';
+
 import UiUpload from '../../Ui/UiUpload/UiUpload';
 import Back from '/public/assets/svgs/back.svg';
 import UiSpinner from '../../Ui/UiSpinner/UiSpinner';
@@ -67,7 +67,7 @@ const EditProfile = ({ setPage }) => {
     const data = imageUrl ? { ...form, imageUrl } : { ...form };
 
     try {
-      const token = Cookie.get('token');
+      const token = window.localStorage.getItem('token');
 
       const response = await axiosInstance.put(
         `${process.env.NEXT_PUBLIC_BACKEND}/users/${user?.id}`,

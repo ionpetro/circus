@@ -1,7 +1,6 @@
 import '../styles/globals.scss';
 import UserContext from '../contexts/UserContext';
 import { useEffect, useState } from 'react';
-import Cookie from 'js-cookie';
 import axiosInstance from '../utils/http-client';
 import { useRouter } from 'next/router';
 import Script from 'next/script';
@@ -36,13 +35,13 @@ function MyApp({ Component, pageProps }) {
       );
       setUser(user);
     } catch (e) {
-      Cookie.remove('token');
+      window.localStorage.removeItem('token');
       setUser(null);
     }
   };
 
   useEffect(() => {
-    const token = Cookie.get('token');
+    const token = window.localStorage.getItem('token');
 
     if (token) {
       setUserData(token);

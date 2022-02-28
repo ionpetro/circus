@@ -9,7 +9,7 @@ import axiosInstance from '../../utils/http-client';
 import { isValidEmail, matchSecretCode } from '../../utils/validations';
 import Router from 'next/router';
 import UserContext from '../../contexts/UserContext';
-import Cookie from 'js-cookie';
+
 import UiTag from '../Ui/UiTag/UiTag';
 import Navbar from '../Shared/Navbar/Navbar';
 
@@ -59,7 +59,7 @@ const Register = () => {
         `${process.env.NEXT_PUBLIC_BACKEND}/auth/local/register`,
         { username, email, password, category }
       );
-      Cookie.set('token', jwt);
+      window.localStorage.setItem('token', jwt);
       userContext.setUser(user);
       setForm({});
       Router.push('/profile');
