@@ -65,10 +65,17 @@ const ProgramSlot = ({
     }
   };
 
+  // exclude monday from disable checking
+  const validForAction = () => {
+    if (slot.day === 'Monday') {
+      return true;
+    } else return !(disabled || planLocked);
+  };
+
   const handleSlotClick = () => {
     // booked another slot this day
     // or can not book due to basic plan
-    if (disabled || planLocked) {
+    if (!validForAction()) {
       return;
     }
 
@@ -84,7 +91,7 @@ const ProgramSlot = ({
   return (
     <div
       className={`${styles.compWrap} ${activeAppId && styles.activeOption} ${
-        (disabled || planLocked) && styles.disabledOption
+        !validForAction() && styles.disabledOption
       } `}
       role={'button'}
       tabIndex={0}

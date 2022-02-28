@@ -26,7 +26,15 @@ const Program = () => {
   const [slotsPerDay, setSlotsPerDay] = useState(undefined);
   const [error, setError] = useState(undefined);
   const { user } = useContext(UserContext);
-  const planLock = user?.plan === 'basic' && appointmentsForUser.length === 2;
+
+  // exclude Monday from program disabling
+  const planLock = () => {
+    let count = 0;
+    appointmentsForUser.forEach((app) => {
+      if (app.slot.day !== 'Monday') count++;
+    });
+    return user?.plan === 'basic' && count === 2;
+  };
 
   const fetchSlots = async () => {
     try {
@@ -178,7 +186,7 @@ const Program = () => {
                   setError={setError}
                   setAppointments={setAppointments}
                   activeAppId={activeAppId(slot)}
-                  planLockEnabled={planLock}
+                  planLockEnabled={planLock()}
                   disabled={checkIfDisabled(day, slot)}
                 />
               ))}
