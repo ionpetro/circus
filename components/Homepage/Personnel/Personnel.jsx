@@ -7,6 +7,7 @@ import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.jpg';
 import nirgianakis from '/public/assets/images/nirgianakis.jpg';
 import menelaou from '/public/assets/images/menelaou.jpg';
+import soc from '/public/assets/images/soc.jpg';
 import styles from './Personnel.module.scss';
 
 const members = [
@@ -28,6 +29,15 @@ const members = [
       'Berry eater. BV player. Art history student.\n' +
       'Funny when in a room with notsofunny people. Still counts.',
     instaLink: 'https://instagram.com/paraskevyo',
+    color: 'red',
+  },
+  {
+    id: 7,
+    name: 'Socrates rizos',
+    position: 'Co-owner',
+    imageSrc: soc.src,
+    slogan: 'Protein shake? Do you mean whiskey?',
+    instaLink: 'https://www.instagram.com/iamsocratesrizos/',
     color: 'red',
   },
   {
