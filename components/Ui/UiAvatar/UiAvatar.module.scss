@@ -1,6 +1,10 @@
 @import '../../../styles/colors';
 @import '../../../styles/variables';
 
+.compWrap {
+  position: relative;
+}
+
 .avatar {
   cursor: pointer;
   position: relative;
@@ -91,5 +95,63 @@
       width: 60px;
       height: 60px;
     }
+  }
+}
+
+.hero {
+  border-color: gold;
+}
+
+.wreath {
+  pointer-events: none;
+}
+
+.wreathsmall {
+  position: absolute;
+  top: 62%;
+  left: 33%;
+  transform: translate(-50%, -50%) scale(0.5);
+
+  @media #{$desktop-large} {
+    top: 62%;
+    left: 50%;
+  }
+}
+
+.wreathmedium {
+  position: absolute;
+  top: 63%;
+  left: 33%;
+  transform: translate(-50%, -50%) scale(0.5);
+
+  @media #{$desktop-large} {
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+  }
+}
+
+.wreathlarge {
+  position: absolute;
+  top: 59%;
+  left: 43%;
+  transform: translate(-50%, -50%) scale(1.3);
+
+  @media #{$desktop-large} {
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.6);
+  }
+}
+
+.wreathxlarge {
+  position: absolute;
+  top: 62%;
+  left: 45%;
+  transform: translate(-50%, -50%) scale(2);
+  @media #{$desktop-large} {
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2.5);
   }
 }

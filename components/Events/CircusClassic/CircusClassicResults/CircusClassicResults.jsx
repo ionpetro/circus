@@ -103,7 +103,10 @@ const CircusClassicResults = () => {
               <td className={styles.rank}>{getRank(index + 1)}</td>
               {
                 <td className={styles.user}>
-                  <UiAvatar imgUrl={record.user?.imageUrl} />
+                  <UiAvatar
+                    imgUrl={record.user?.imageUrl}
+                    isHero={record.user?.vip}
+                  />
                   {record.user ? record.user.username : record.name}
                 </td>
               }

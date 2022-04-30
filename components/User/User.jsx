@@ -28,7 +28,11 @@ const User = ({ user }) => {
         </div>
         <div className={styles.content}>
           <div className={styles.avatar}>
-            <UiAvatar imgUrl={user.imageUrl} size={'xlarge'} />
+            <UiAvatar
+              imgUrl={user.imageUrl}
+              size={'xlarge'}
+              isHero={user.vip}
+            />
           </div>
           <div className={styles.userInfo}>
             <div className={styles.fullName}>

@@ -67,7 +67,11 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
               <div>
                 {users.map((user) => (
                   <div className={styles.user} key={user.id}>
-                    <UiAvatar id={user.id} imgUrl={user.imageUrl} />
+                    <UiAvatar
+                      id={user.id}
+                      imgUrl={user.imageUrl}
+                      isHero={user.vip}
+                    />
                     <div>{renderName(user)}</div>
                   </div>
                 ))}

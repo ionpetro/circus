@@ -47,7 +47,11 @@ const LeaderboardTable = ({ records }) => {
           >
             <td className={styles.rank}>{getRank(index + 1)}</td>
             <td className={styles.user}>
-              <UiAvatar id={record.user?.id} imgUrl={record.user?.imageUrl} />
+              <UiAvatar
+                id={record.user?.id}
+                imgUrl={record.user?.imageUrl}
+                isHero={record.user?.vip}
+              />
               {record.user.username}
             </td>
             <td className={styles.score}>

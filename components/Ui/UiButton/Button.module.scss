@@ -99,6 +99,7 @@ $desktop-button-height: 50px;
     .icon {
       position: relative;
       z-index: 1;
+      display: flex;
 
       svg {
         margin-right: 4px;

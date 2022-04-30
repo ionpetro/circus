@@ -49,7 +49,11 @@ const Navbar = () => {
         {user ? (
           <Link href={'/profile'}>
             <a>
-              <UiAvatar size={'small'} imgUrl={user?.imageUrl} />
+              <UiAvatar
+                size={'small'}
+                imgUrl={user?.imageUrl}
+                isHero={user?.vip}
+              />
             </a>
           </Link>
         ) : (

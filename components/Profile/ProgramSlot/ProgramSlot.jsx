@@ -107,7 +107,11 @@ const ProgramSlot = ({
             <div className={styles.bookings}>
               {bookings.map((booking) => (
                 <div title={booking.user.username} key={booking.id}>
-                  <UiAvatar imgUrl={booking.user.imageUrl} size={'small'} />
+                  <UiAvatar
+                    imgUrl={booking.user.imageUrl}
+                    size={'small'}
+                    isHero={booking.user.vip}
+                  />
                 </div>
               ))}
             </div>
@@ -122,6 +126,7 @@ const ProgramSlot = ({
                   <UiAvatar
                     imgUrl={substitution.user.imageUrl}
                     size={'small'}
+                    isHero={substitution.user.vip}
                   />
                 </div>
               ))}

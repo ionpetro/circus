@@ -19,7 +19,7 @@ const UserInfo = ({ page, setPage }) => {
   return (
     <div className={styles.userProfile}>
       <div className={styles.avatarWrapper}>
-        <UiAvatar size={'large'} imgUrl={user?.imageUrl} />
+        <UiAvatar size={'large'} imgUrl={user?.imageUrl} isHero={user?.vip} />
         {page !== pages.USER && (
           <div
             className={styles.editWrapper}
