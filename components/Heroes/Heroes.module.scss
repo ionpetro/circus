@@ -1,0 +1,46 @@
+@import '/styles/colors';
+@import '/styles/variables';
+
+.compWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.wrapper {
+  margin: 20px 26px 0 26px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media #{$desktop-large} {
+    width: 100%;
+    max-width: 992px;
+    margin: 40px auto 0 auto;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  width: fit-content;
+  margin: auto;
+  gap: 20px;
+  align-items: center;
+
+  & > :nth-child(3) {
+    transform: scaleX(-1);
+  }
+}
+
+.subheader {
+  margin-top: 12px;
+  text-align: center;
+  font-style: italic;
+  color: #888888;
+}
