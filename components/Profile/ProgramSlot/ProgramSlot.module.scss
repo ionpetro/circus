@@ -44,6 +44,11 @@
   }
 }
 
+.vip {
+  border: 1px solid gold !important;
+  box-shadow: 0 0 10px gold;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -54,6 +59,10 @@
     font-size: 0.8em;
     letter-spacing: 1px;
   }
+}
+
+.vipText {
+  color: gold !important;
 }
 
 .time {

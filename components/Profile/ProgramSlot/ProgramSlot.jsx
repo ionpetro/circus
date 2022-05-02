@@ -14,6 +14,7 @@ const ProgramSlot = ({
   planLockEnabled,
   disabled,
 }) => {
+  console.log(slot.vip);
   const [bookings, setBookings] = useState([]);
   const [substitutions, setSubstitutions] = useState([]);
   const { user } = useContext(UserContext);
@@ -79,6 +80,12 @@ const ProgramSlot = ({
       return;
     }
 
+    // only vip users can book for vip slots
+    if (!user.vip && slot.vip) {
+      setError('Oups! Not a vip member');
+      return;
+    }
+
     // the slot is active, so proceed with cancel
     if (activeAppId) {
       deleteSlot(activeAppId);
@@ -92,15 +99,17 @@ const ProgramSlot = ({
     <div
       className={`${styles.compWrap} ${activeAppId && styles.activeOption} ${
         !validForAction() && styles.disabledOption
-      } `}
+      } ${slot.vip && styles.vip}`}
       role={'button'}
       tabIndex={0}
       onClick={handleSlotClick}
     >
       <div>
         <div className={styles.header}>
-          <h5>{slot.type}</h5>
-          <span className={styles.time}>{slot.time}</span>
+          <h5 className={`${slot.vip && styles.vipText}`}>{slot.type}</h5>
+          <span className={`${styles.time} ${slot.vip && styles.vipText}`}>
+            {slot.time}
+          </span>
         </div>
         <div className={styles.body}>
           <div className={styles.main}>
@@ -134,7 +143,11 @@ const ProgramSlot = ({
           </div>
         </div>
       </div>
-      <div className={`${styles.subText} ${styles.availableSlots}`}>
+      <div
+        className={`${styles.subText} ${styles.availableSlots} ${
+          slot.vip && styles.vipText
+        }`}
+      >
         Available: {slot.availability - bookings.length} slots
       </div>
     </div>

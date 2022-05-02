@@ -64,7 +64,7 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
             <div key={`${time}${users.id}`} className={styles.slot}>
               <div>{time}</div>
               <hr />
-              <div>
+              <div className={styles.users}>
                 {users.map((user) => (
                   <div className={styles.user} key={user.id}>
                     <UiAvatar
