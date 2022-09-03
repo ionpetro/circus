@@ -5,7 +5,7 @@ const Map = () => {
   const googleMap = useRef(null);
 
   useEffect(() => {
-    const uluru = { lat: 38.02223108963978, lng: 23.737017582604235 };
+    const uluru = { lat: 38.02822454465449, lng: 23.74315751687735 };
 
     const loader = new Loader({
       apiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY,

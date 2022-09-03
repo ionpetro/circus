@@ -18,7 +18,7 @@ const Contact = () => {
         <div className={styles.info}>
           <h3>Location</h3>
           <div className={styles.infoBlock}>
-            <p>Dimitrakopoulou 18, Athina 111 41</p>
+            <p>Olvias 5, Athina 111 42</p>
             <a href={mapUrl} target={'_blank'} rel={'noreferrer'}>
               Open in maps
             </a>
