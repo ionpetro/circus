@@ -7,6 +7,7 @@ import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.jpg';
 import nirgianakis from '/public/assets/images/nirgianakis.jpg';
 import menelaou from '/public/assets/images/menelaou.jpg';
+import chris from '/public/assets/images/chris.jpg';
 import soc from '/public/assets/images/soc.jpg';
 import styles from './Personnel.module.scss';
 
@@ -74,6 +75,15 @@ const members = [
     imageSrc: menelaou.src,
     slogan: "Of course it's heavy, it's iron",
     instaLink: 'https://www.instagram.com/dimitris_menelaou/',
+    color: 'yellow',
+  },
+  {
+    id: 7,
+    name: 'Chris Kostas',
+    position: 'Trainer',
+    imageSrc: chris.src,
+    slogan: 'Just like the previous set, but now stronger!',
+    instaLink: 'https://www.instagram.com/kris_kostas/',
     color: 'yellow',
   },
 ];
