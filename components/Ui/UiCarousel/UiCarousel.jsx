@@ -2,19 +2,13 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css'; // requires a loader
 import styles from './UiCarousel.module.scss';
-// import Image from 'next/image';
 import Arrow from '../../../public/assets/svgs/arrow.svg';
 
 const UiCarousel = ({ media }) => {
   const images = () => {
     return media.map((image) => (
       <div key={image.id}>
-        <img
-          src={image.image.url}
-          alt={image.title}
-          // width={image.image.width}
-          // height={image.image.height}
-        />
+        <img src={image.image.url} alt={image.title} />
         <div className={'legend'}>
           <h3>{image.title}</h3>
           {image.description && <p>{image.description}</p>}

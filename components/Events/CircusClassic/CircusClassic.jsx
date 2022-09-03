@@ -7,6 +7,7 @@ import CircusClassicHeader from './CircusClassicHeader/CircusClassicHeader';
 import CircusClassicAbout from './CircusClassicAbout/CircusClassicAbout';
 import CircusClassicHosts from './CircusClassicHosts/CircusClassicHosts';
 import CircusClassicResults from './CircusClassicResults/CircusClassicResults';
+import CircusClassicPhotos from './CircusClassicPhotos/CircusClassicPhotos';
 
 const CircusClassic = () => {
   return (
@@ -47,10 +48,7 @@ const CircusClassic = () => {
             </div>
           </div>
           <div className={styles.content} id={'photos'}>
-            <h4>PHOTO GALLERY</h4>
-            <div className={styles.empty}>
-              The photo gallery will be uploaded after the event
-            </div>
+            <CircusClassicPhotos />
           </div>
         </div>
       </div>
