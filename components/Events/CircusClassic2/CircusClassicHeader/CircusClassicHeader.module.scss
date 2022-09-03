@@ -1,0 +1,48 @@
+@import 'styles/variables';
+@import 'styles/colors';
+
+.date {
+  font-weight: 300;
+}
+
+.title {
+  color: $red;
+  @media #{$desktop-large} {
+    font-size: 2em;
+  }
+}
+
+.info {
+  margin-top: 8px;
+  gap: 24px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+
+  svg {
+    margin-right: 12px;
+  }
+
+  @media #{$desktop-large} {
+    font-size: unset;
+  }
+}
+
+.svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  path {
+    fill: $white;
+  }
+
+  @media #{$desktop-large} {
+    width: 24px;
+    height: 24px;
+  }
+}

@@ -1,14 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Footer from '../../Shared/Footer/Footer';
-import styles from './CircusClassic.module.scss';
-import Navbar from '../../Shared/Navbar/Navbar';
-import CircusClassicHeader from './CircusClassicHeader/CircusClassicHeader';
+import styles from './CircusClassic2.module.scss';
 import CircusClassicAbout from './CircusClassicAbout/CircusClassicAbout';
 import CircusClassicHosts from './CircusClassicHosts/CircusClassicHosts';
+import CircusClassicHeader from './CircusClassicHeader/CircusClassicHeader';
 import CircusClassicResults from './CircusClassicResults/CircusClassicResults';
+import Navbar from '../../Shared/Navbar/Navbar';
 
-const CircusClassic = () => {
+const CircusClassic2 = () => {
   return (
     <div className={styles.compWrap}>
       <div className={styles.navbar}>
@@ -23,7 +23,7 @@ const CircusClassic = () => {
             objectFit={'cover'}
             alt={'contest image'}
             src={
-              'https://res.cloudinary.com/ionpetro/image/upload/v1631822417/production/assets/240845733_812512286078690_3538823464416521435_n_8151c737bc_85fdd99368.jpg'
+              'https://res.cloudinary.com/ionpetro/image/upload/v1662239923/production/assets/295530316_10225886513343701_4866315061951243281_n_mjeuvw.jpg'
             }
           />
         </div>
@@ -59,4 +59,4 @@ const CircusClassic = () => {
   );
 };
 
-export default CircusClassic;
+export default CircusClassic2;
