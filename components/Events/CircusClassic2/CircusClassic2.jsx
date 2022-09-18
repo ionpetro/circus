@@ -5,7 +5,6 @@ import styles from './CircusClassic2.module.scss';
 import CircusClassicAbout from './CircusClassicAbout/CircusClassicAbout';
 import CircusClassicHosts from './CircusClassicHosts/CircusClassicHosts';
 import CircusClassicHeader from './CircusClassicHeader/CircusClassicHeader';
-import CircusClassicResults from './CircusClassicResults/CircusClassicResults';
 import Navbar from '../../Shared/Navbar/Navbar';
 
 const CircusClassic2 = () => {
@@ -38,7 +37,10 @@ const CircusClassic2 = () => {
             <CircusClassicHosts />
           </div>
           <div className={styles.content} id={'results'}>
-            <CircusClassicResults />
+            <h4>RESULTS</h4>
+            <div className={styles.empty}>
+              The results will be announced after the event ends
+            </div>
           </div>
           <div className={styles.content} id={'aftermovie'}>
             <h4>AFTERMOVIE</h4>
