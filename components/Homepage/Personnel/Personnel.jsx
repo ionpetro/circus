@@ -5,7 +5,7 @@ import boursi from '/public/assets/images/boursi.png';
 import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.jpg';
-import nirgianakis from '/public/assets/images/nirgianakis.jpg';
+import barka from '/public/assets/images/barka.jpg';
 import menelaou from '/public/assets/images/menelaou.jpg';
 import chris from '/public/assets/images/chris.jpg';
 import soc from '/public/assets/images/soc.jpg';
@@ -61,11 +61,11 @@ const members = [
   },
   {
     id: 5,
-    name: 'Giannis Nirgianakis',
+    name: 'Adrianna Barka',
     position: 'Trainer',
-    imageSrc: nirgianakis.src,
-    slogan: 'Coach, athlete, sugar addicted',
-    instaLink: 'https://www.instagram.com/john_nirgianakis/',
+    imageSrc: barka.src,
+    slogan: 'Fooling around',
+    instaLink: 'https://www.instagram.com/antrianna_mp/',
     color: 'yellow',
   },
   {
