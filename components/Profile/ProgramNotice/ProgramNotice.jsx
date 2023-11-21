@@ -6,25 +6,24 @@ import WarningIcon from '../../../public/assets/svgs/exclamation-triangle-solid.
 import { daysUntilDate } from '../../../utils/utilities';
 
 const ProgramNotice = ({ paymentDue }) => {
-  const threshold = 10;
+  const threshold = 5;
   const daysUntilExpire = daysUntilDate(paymentDue);
 
-  // we have more than 10 days until expire
+  // we have more than 5 days until expire
   if (daysUntilExpire > threshold) {
     return null;
   }
 
-  // we have 1 - 10 days until expire
+  // we have 1 - 5 days until expire
   if (daysUntilExpire > 0) {
     return (
       <div className={styles.compWrap}>
         <div className={styles.wrapper}>
           <InfoIcon />
-          <p>{`You have ${
-            daysUntilExpire === 1
-              ? `${daysUntilExpire} day`
-              : `${daysUntilExpire} days`
-          } until payment`}</p>
+          <p>{`You have ${daysUntilExpire === 1
+            ? `${daysUntilExpire} day`
+            : `${daysUntilExpire} days`
+            } until payment`}</p>
         </div>
       </div>
     );
@@ -43,34 +42,33 @@ const ProgramNotice = ({ paymentDue }) => {
   }
 
   // we have passed the expiration (negative number)
-  if (daysUntilExpire < 0 && daysUntilExpire > -5) {
+  if (daysUntilExpire < 0) {
     return (
       <div className={styles.compWrap}>
         <div className={styles.wrapper}>
           <WarningIcon />
-          <p>{`You are ${
-            Math.abs(daysUntilExpire) === 1
-              ? `${Math.abs(daysUntilExpire)} day`
-              : `${Math.abs(daysUntilExpire)} days`
-          } late to pay`}</p>
+          <p>{`You are ${Math.abs(daysUntilExpire) === 1
+            ? `${Math.abs(daysUntilExpire)} day`
+            : `${Math.abs(daysUntilExpire)} days`
+            } late to pay. Soon the program will lock for you`}</p>
         </div>
       </div>
     );
   }
 
   // we have passed the expiration (negative number)
-  if (daysUntilExpire < 0 && daysUntilExpire <= -5) {
-    return (
-      <div className={styles.compWrap}>
-        <div className={styles.wrapper}>
-          <BombIcon />
-          <p>{`You are ${Math.abs(
-            daysUntilExpire
-          )} days late to pay. Soon the program will lock for you`}</p>
-        </div>
-      </div>
-    );
-  }
+  // if (daysUntilExpire < 0 && daysUntilExpire <= -5) {
+  //   return (
+  //     <div className={styles.compWrap}>
+  //       <div className={styles.wrapper}>
+  //         <BombIcon />
+  //         <p>{`You are ${Math.abs(
+  //           daysUntilExpire
+  //         )} days late to pay. Soon the program will lock for you`}</p>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return null;
 };

@@ -15,7 +15,7 @@ const Program = () => {
   const currentDay = new Date().toLocaleDateString('en-us', {
     weekday: 'long',
   });
-  const paymentThreshold = 10;
+  const paymentThreshold = 5;
   const router = useRouter();
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
@@ -42,7 +42,7 @@ const Program = () => {
         `${process.env.NEXT_PUBLIC_BACKEND}/slots?&_sort=order`
       );
       setSlots(response);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const fetchAppointments = async () => {
@@ -51,7 +51,7 @@ const Program = () => {
         `${process.env.NEXT_PUBLIC_BACKEND}/appointments?_limit=-1`
       );
       setAppointments(response);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   const fetchAppointmentsForUser = async () => {
@@ -60,7 +60,7 @@ const Program = () => {
         `${process.env.NEXT_PUBLIC_BACKEND}/appointments?user=${user.id}`
       );
       setAppointmentsForUser(response);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   useEffect(() => {
@@ -138,7 +138,7 @@ const Program = () => {
       <div className={styles.payDue}>
         <ClawnIcon />
         <p>
-          You are more than 10 days late to your payment. Contact{' '}
+          You are more than 5 days late to your payment. Contact{' '}
           <a
             href={'https://www.instagram.com/johnboursi/'}
             target={'_blank'}
