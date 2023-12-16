@@ -14,7 +14,6 @@ const ProgramSlot = ({
   planLockEnabled,
   disabled,
 }) => {
-  console.log(slot.vip);
   const [bookings, setBookings] = useState([]);
   const [substitutions, setSubstitutions] = useState([]);
   const { user } = useContext(UserContext);
@@ -97,9 +96,8 @@ const ProgramSlot = ({
 
   return (
     <div
-      className={`${styles.compWrap} ${activeAppId && styles.activeOption} ${
-        !validForAction() && styles.disabledOption
-      } ${slot.vip && styles.vip}`}
+      className={`${styles.compWrap} ${activeAppId && styles.activeOption} ${!validForAction() && styles.disabledOption
+        } ${slot.vip && styles.vip}`}
       role={'button'}
       tabIndex={0}
       onClick={handleSlotClick}
@@ -115,14 +113,16 @@ const ProgramSlot = ({
           <div className={styles.main}>
             <div className={styles.bookings}>
               {bookings.map((booking) => (
-                <div title={booking.user.username} key={booking.id}>
-                  <UiAvatar
-                    imgUrl={booking.user.imageUrl}
-                    size={'small'}
-                    isHero={booking.user.vip}
-                  />
-                </div>
-              ))}
+                <div key={booking.id}>
+                  {booking.user && (
+                    <div title={booking.user.username}>
+                      <UiAvatar
+                        imgUrl={booking.user.imageUrl}
+                        size={'small'}
+                        isHero={booking.user.vip}
+                      />
+                    </div>)}
+                </div>))}
             </div>
           </div>
           <div className={styles.subs}>
@@ -144,13 +144,12 @@ const ProgramSlot = ({
         </div>
       </div>
       <div
-        className={`${styles.subText} ${styles.availableSlots} ${
-          slot.vip && styles.vipText
-        }`}
+        className={`${styles.subText} ${styles.availableSlots} ${slot.vip && styles.vipText
+          }`}
       >
         Available: {slot.availability - bookings.length} slots
       </div>
-    </div>
+    </div >
   );
 };
 

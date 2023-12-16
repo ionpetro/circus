@@ -115,7 +115,7 @@ const Program = () => {
   const activeAppId = (slot) => {
     const appointmentFound = appointments.find(
       (appointment) =>
-        appointment?.slot.id === slot.id && appointment?.user.id === user?.id
+        appointment?.slot?.id === slot.id && appointment?.user?.id === user?.id
     );
     if (appointmentFound) {
       return appointmentFound.id;
