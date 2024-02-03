@@ -4,10 +4,10 @@ import PersonnelCard from '../PersonnelCard/PersonnelCard';
 import boursi from '/public/assets/images/boursi.png';
 import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
-import limperis from '/public/assets/images/limperis.jpg';
-import barka from '/public/assets/images/barka.jpg';
-import chris from '/public/assets/images/chris.jpg';
-import soc from '/public/assets/images/soc.jpg';
+import limperis from '/public/assets/images/limperis.png';
+import barka from '/public/assets/images/barka.png';
+import chris from '/public/assets/images/chris.png';
+import soc from '/public/assets/images/soc.png';
 import styles from './Personnel.module.scss';
 
 const members = [
@@ -87,8 +87,21 @@ const Personnel = () => {
         <p>Train next to these monsters</p>
       </div>
       <div className={styles.members}>
-        {members.map((member) => (
+        {members.map((member) => (member.position === 'Co-owner' &&
           <PersonnelCard
+            key={member.id}
+            name={member.name}
+            position={member.position}
+            imageSrc={member.imageSrc}
+            slogan={member.slogan}
+            instaLink={member.instaLink}
+            color={member.color}
+          />
+        ))}
+      </div>
+      <div className={styles.members2}>
+        {members.map((member) => (member.position !== 'Co-owner' &&
+          < PersonnelCard
             key={member.id}
             name={member.name}
             position={member.position}
