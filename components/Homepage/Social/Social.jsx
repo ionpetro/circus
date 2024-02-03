@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import axiosInstance from '../../../utils/http-client';
 import styles from './Social.module.scss';
 import Stars from '../../../public/assets/svgs/stars.svg';
-import socialBack from '../../../public/assets/images/socialBack.jpg';
+import socialBack from '../../../public/assets/images/social-back-new.jpg';
 import logo from '../../../public/assets/images/logo.jpg';
 import Image from 'next/image';
 import SocialCard from '../SocialCard/SocialCard';
 import { instaUrl } from '../../../utils/links';
 import UiSpinner from '../../Ui/UiSpinner/UiSpinner';
+import UiButton from '../../Ui/UiButton/UiButton';
 
 const Social = () => {
   const mediaCount = 8;
@@ -74,10 +75,7 @@ const Social = () => {
           {loading ? (
             <UiSpinner />
           ) : error ? (
-            <div className={styles.error}>
-              Something went wrong with Instagram 😔 Click the insta handle
-              above to visit the official page!
-            </div>
+            <div><a href={instaUrl} target={'_blank'} rel={'noreferrer'}><UiButton onClick={() => { }}>Visit Instagram</UiButton></a></div>
           ) : (
             <div className={styles.media}>
               {mediaArray.slice(0, mediaCount).map((media) => (
@@ -88,7 +86,7 @@ const Social = () => {
         </div>
       </div>
       <div className={styles.transitionBot} />
-    </section>
+    </section >
   );
 };
 
