@@ -2,14 +2,14 @@
 @import '../../../styles/variables';
 
 .compWrap {
-  background: linear-gradient(to right, $red, $yellow);
+  background: $grey;
   padding: 2px 12px;
 }
 
 .text {
   margin: auto;
   text-align: center;
-  color: $grey;
+  color: $white;
   max-width: 860px;
 
   p {
@@ -23,7 +23,7 @@
   }
 
   a {
-    color: $grey;
+    color: $yellow;
     font-weight: bold;
   }
 }

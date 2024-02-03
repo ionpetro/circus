@@ -2,7 +2,7 @@ import React from 'react';
 import UiButton from '../../Ui/UiButton/UiButton';
 import Link from 'next/link';
 import LeaderboardIcon from '/public/assets/svgs/leaderboard.svg';
-import facilities from '../../../public/assets/images/facilities.jpeg';
+import facilities from '../../../public/assets/images/facilities-new.jpg';
 import styles from './Hero.module.scss';
 import WreathSmall from '/public/assets/svgs/wreath-small.svg';
 import Image from 'next/image';
@@ -13,7 +13,6 @@ const Hero = () => {
     <div className={styles.compWrap}>
       <Navbar />
       <Image
-        unoptimized
         alt={'facilities'}
         src={facilities.src}
         layout={'fill'}
