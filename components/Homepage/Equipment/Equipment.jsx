@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Equipment.module.scss';
 import Image from 'next/image';
 import Dumbbell from '../../../public/assets/svgs/dumbbell.svg';
-import equipment from '../../../public/assets/images/equipment.png';
+import equipment from '../../../public/assets/images/equipment-new.jpg';
 import UiCarousel from '../../Ui/UiCarousel/UiCarousel';
 
 const Equipment = ({ description, media }) => {
