@@ -6,7 +6,6 @@ import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.jpg';
 import barka from '/public/assets/images/barka.jpg';
-import menelaou from '/public/assets/images/menelaou.jpg';
 import chris from '/public/assets/images/chris.jpg';
 import soc from '/public/assets/images/soc.jpg';
 import styles from './Personnel.module.scss';
@@ -66,15 +65,6 @@ const members = [
     imageSrc: barka.src,
     slogan: 'Fooling around',
     instaLink: 'https://www.instagram.com/antrianna_mp/',
-    color: 'yellow',
-  },
-  {
-    id: 6,
-    name: 'Dimitris menelaou',
-    position: 'Trainer',
-    imageSrc: menelaou.src,
-    slogan: "Of course it's heavy, it's iron",
-    instaLink: 'https://www.instagram.com/dimitris_menelaou/',
     color: 'yellow',
   },
   {
