@@ -38,6 +38,7 @@
 .edit {
   width: 12px;
   height: 12px;
+
   path {
     fill: $white;
   }
@@ -50,7 +51,7 @@
   justify-content: center;
   text-align: left;
 
-  & > div {
+  &>div {
     display: flex;
     align-items: center;
 
@@ -71,16 +72,26 @@
   }
 }
 
+.planWrapper {
+  display: flex;
+  align-items: center;
+}
+
 .plan {
   padding: 2px 4px;
   font-size: 14px;
   border-radius: 4px;
   margin: 0 12px;
+
   @media #{$desktop-large} {
     font-size: 16px;
     padding: 4px 8px;
     margin: 12px 0;
   }
+}
+
+.locker {
+  padding-left: 4px;
 }
 
 .basic {
@@ -101,6 +112,7 @@
 
 .mobileOnly {
   display: none;
+
   @media #{$desktop-large} {
     display: unset;
   }

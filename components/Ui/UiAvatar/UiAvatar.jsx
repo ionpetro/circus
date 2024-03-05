@@ -17,7 +17,7 @@ const UiAvatar = ({ id, size, imgUrl, isHero }) => {
         className={`${styles.avatar} ${styles[size]} ${isHero && styles.hero}`}
         tabIndex={0}
         role={'button'}
-        onClick={id ? () => router.push(`/users/${id}`) : () => {}}
+        onClick={id ? () => router.push(`/users/${id}`) : () => { }}
       >
         {imgUrl ? (
           <Image

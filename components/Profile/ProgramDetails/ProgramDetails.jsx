@@ -66,13 +66,15 @@ export default function ProgramDetails({ setShowModal, modalDay }) {
               <hr />
               <div className={styles.users}>
                 {users.map((user) => (
-                  <div className={styles.user} key={user.id}>
-                    <UiAvatar
+                  <div className={styles.user} key={user?.id}>
+                    {user && <UiAvatar
                       id={user.id}
                       imgUrl={user.imageUrl}
                       isHero={user.vip}
-                    />
+                      hasLocker={user.locker}
+                    />}
                     <div>{renderName(user)}</div>
+                    {user?.locker && <div className={styles.locker}>🔒</div>}
                   </div>
                 ))}
               </div>

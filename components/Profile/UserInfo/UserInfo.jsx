@@ -32,8 +32,11 @@ const UserInfo = ({ page, setPage }) => {
       <div className={styles.userInfo}>
         <div>
           <h4>@{user?.username}</h4>
-          <div className={`${styles.plan} ${styles[user?.plan]}`}>
-            {user?.plan} <span className={styles.mobileOnly}>plan</span>
+          <div className={styles.planWrapper}>
+            <div className={`${styles.plan} ${styles[user?.plan]}`}>
+              {user?.plan} <span className={styles.mobileOnly}>plan</span>
+            </div>
+            {user?.locker && <div className={styles.locker}>🔒</div>}
           </div>
         </div>
         <a className={styles.logout} onClick={logout}>
