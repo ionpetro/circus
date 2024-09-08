@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import UserData from './UserData/UserData';
 import styles from './User.module.scss';
 import axiosInstance from '/utils/http-client';
 import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
 import UiAvatar from '../Ui/UiAvatar/UiAvatar';
-import Strongman from '../../public/assets/svgs/Error.svg';
 import Image from 'next/image';
 
 const User = ({ user }) => {
   const [events, setEvents] = useState([]);
-
+  const [records, setRecords] = useState([]);
   const [event, setEvent] = useState('');
 
   const date = new Date(user.created_at);
 
-  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_sort=score:DESC,user.category:ASC&accepted=true`;
+  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_sort=score:ASC,user.category:ASC&accepted=true`;
   const eventId = 2;
-  const category = 'total';
 
   const fetchEvents = async () => {
     try {
@@ -32,9 +31,11 @@ const User = ({ user }) => {
 
   const fetchRecords = async () => {
     try {
-      const response = await axiosInstance.get(`${recordsApi}&game=${eventId}`);
+      const response = await axiosInstance.get(
+        `${recordsApi}&game=${eventId}&user=${user.id}`
+      );
 
-      console.log(response);
+      setRecords(response);
     } catch (e) {
       console.log(e);
     }
@@ -83,7 +84,9 @@ const User = ({ user }) => {
               })} ${date.getFullYear()}`}
             </div>
           </div>
-          <div className={styles.body}>test</div>
+          <div className={styles.body}>
+            <UserData records={records} events={events} />
+          </div>
         </div>
       </div>
       <Footer simple={true} />
