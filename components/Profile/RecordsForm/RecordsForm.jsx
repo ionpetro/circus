@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import UiInput from '../../Ui/UiInput/UiInput';
 import UiSelect from '../../Ui/UiSelect/UiSelect';
 import UiButton from '../../Ui/UiButton/UiButton';
@@ -6,6 +6,7 @@ import axiosInstance from '../../../utils/http-client';
 import styles from './RecordsForm.module.scss';
 import Medal from '/public/assets/svgs/Medal.svg';
 import UserContext from '../../../contexts/UserContext';
+import { transformDateShort } from '../../../utils/utilities';
 
 const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
   const { user } = useContext(UserContext);
@@ -32,9 +33,9 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
     try {
       if (record) {
         // the game already exists, so we update it
-        response = await axiosInstance.put(
-          `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users/${record.id}?user=${user.id}`,
-          { score: form.score, accepted: null },
+        response = await axiosInstance.post(
+          `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?user=${user.id}`,
+          { ...form, user: user.id },
           { headers: { Authorization: `Bearer ${token}` } }
         );
       } else {
@@ -54,6 +55,10 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
     }
   };
 
+  useEffect(async () => {
+    console.log(records);
+  }, []);
+
   return (
     <form className={styles.form} onSubmit={(e) => addOrUpdateRecord(e)}>
       <div className={styles.notice}>
@@ -69,7 +74,28 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
         <Medal />
         Rejected
       </div>
-      {error && <div className={styles.error}>{error}</div>}
+
+      {records.filter((record) => record.game.id === form.game).length !==
+        0 && (
+        <div>
+          <h4>Past Records</h4>
+          <div className={styles.records}>
+            {records
+              .filter((record) => record.game.id === form.game)
+              .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+              .map((record) => (
+                <div className={styles.record} key={record.created_at}>
+                  <div>{transformDateShort(record.created_at)}</div>
+                  <div>
+                    {'💪 '}
+                    {record.score} {record.game.unit}
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      )}
+      <h4>Create new</h4>
       <div className={styles.inputs}>
         <UiSelect
           onChange={(e) => setForm({ ...form, game: gameId(e.target.value) })}
@@ -87,6 +113,7 @@ const RecordsForm = ({ options, setShowForm, records, setRecords }) => {
           placeholder={'Please be honest'}
           onChange={(e) => setForm({ ...form, score: e.target.value })}
         />
+        {error && <div className={styles.error}>{error}</div>}
       </div>
       <div className={styles.actions}>
         <a onClick={() => setShowForm(false)} className={styles.cancel}>

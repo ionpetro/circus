@@ -9,6 +9,28 @@ import Silver from '../../../public/assets/svgs/Silver.svg';
 import Bronze from '../../../public/assets/svgs/Bronze.svg';
 
 const LeaderboardTable = ({ records }) => {
+  // gets the latest approved record for each user
+  // and displays it to a table
+
+  const latestRecords = Array.from(
+    records
+      .reduce((map, obj) => {
+        const userId = obj.user.id;
+        const existingObj = map.get(userId);
+
+        // Compare and keep the latest `created_at`
+        if (
+          !existingObj ||
+          new Date(obj.created_at) > new Date(existingObj.created_at)
+        ) {
+          map.set(userId, obj);
+        }
+
+        return map;
+      }, new Map())
+      .values()
+  );
+
   const { user } = useContext(UserContext);
 
   const getRank = (index) => {
@@ -38,7 +60,7 @@ const LeaderboardTable = ({ records }) => {
         <th className={styles.mobileHide}>Category</th>
       </tr>
       {records.length > 0 &&
-        records.map((record, index) => (
+        latestRecords.map((record, index) => (
           <tr
             key={record.id}
             className={`${styles.body} ${
