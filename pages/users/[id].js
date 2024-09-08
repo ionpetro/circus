@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   let users;
   try {
     users = await instance(`${strapiUrl}/users`);
-  } catch (e) {}
+  } catch (e) { }
 
   let paths = [];
 
@@ -36,7 +36,7 @@ export async function getStaticProps({ params }) {
   let user;
   try {
     user = await instance(`${strapiUrl}/users/${params.id}`);
-  } catch (e) {}
+  } catch (e) { }
 
   if (!user) {
     return {

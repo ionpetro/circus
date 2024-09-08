@@ -1,11 +1,17 @@
 @import '../../../styles/colors';
 @import '../../../styles/variables';
 
+
 .form {
   display: flex;
   flex-direction: column;
 
-  & > select,
+  h4 {
+    margin-bottom: 24px;
+  }
+
+
+  &>select,
   input {
     margin-bottom: 32px;
   }
@@ -21,23 +27,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 36px;
 
   @media #{$desktop-medium} {
     font-size: unset;
   }
 
-  & > svg {
+  &>svg {
     margin: 8px 8px 8px 8px;
   }
 
-  & > svg:nth-child(1) {
+  &>svg:nth-child(1) {
     path {
       fill: green;
     }
   }
 
-  & > svg:nth-child(3) {
+  &>svg:nth-child(3) {
     path {
       fill: red;
     }
@@ -78,7 +84,7 @@
     justify-content: flex-end;
   }
 
-  & > div {
+  &>div {
     margin: 0 0 0 20px;
   }
 }
@@ -88,4 +94,22 @@
   font-weight: 300;
   color: $white;
   text-transform: unset;
+}
+
+.records {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12px;
+  margin-top: 16px;
+  margin-bottom: 36px;
+}
+
+.record {
+  border: 1px solid $white;
+  padding: 12px;
+
+  &> :nth-child(1) {
+    padding-bottom: 8px;
+    font-weight: 600;
+  }
 }

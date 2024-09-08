@@ -69,7 +69,7 @@ const Records = ({ userId }) => {
           options={options}
           setShowForm={setShowForm}
         />
-      ) : loading ? (
+      ) : loading || !records ? (
         <UiSpinner />
       ) : (
         <RecordsList records={records} />

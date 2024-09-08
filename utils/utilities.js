@@ -1,4 +1,4 @@
-const transformDate = (date) => {
+export const transformDate = (date) => {
   let options = {
     weekday: 'long',
     year: 'numeric',
@@ -10,6 +10,23 @@ const transformDate = (date) => {
   if (date) {
     return new Date(date)
       .toLocaleTimeString('en-us', options)
+      .split(',')
+      .join('');
+  }
+  return null;
+};
+
+export const transformDateShort = (date) => {
+  let options = {
+    // weekday: 'long',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+
+  };
+  if (date) {
+    return new Date(date)
+      .toLocaleDateString('en-us', options)
       .split(',')
       .join('');
   }
