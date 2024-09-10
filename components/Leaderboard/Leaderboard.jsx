@@ -16,7 +16,7 @@ const Leaderboard = () => {
   const [category, setCategory] = useState('total');
   const delay = 10; //seconds
 
-  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_sort=score:DESC,user.category:ASC&accepted=true`;
+  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_limit=-1&_sort=score:DESC,user.category:ASC&accepted=true`;
 
   // initial load
   useEffect(() => {
@@ -64,7 +64,7 @@ const Leaderboard = () => {
         category === 'total'
           ? await axiosInstance.get(`${recordsApi}&game=${event.id}`)
           : await axiosInstance.get(
-              `${recordsApi}&game=${event.id}&user.category=${category}&_limit=-1`
+              `${recordsApi}&game=${event.id}&user.category=${category}`
             );
       setRecords(response);
     } catch (e) {
