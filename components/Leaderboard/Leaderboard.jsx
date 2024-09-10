@@ -64,7 +64,7 @@ const Leaderboard = () => {
         category === 'total'
           ? await axiosInstance.get(`${recordsApi}&game=${event.id}`)
           : await axiosInstance.get(
-              `${recordsApi}&game=${event.id}&user.category=${category}`
+              `${recordsApi}&game=${event.id}&user.category=${category}&_limit=-1`
             );
       setRecords(response);
     } catch (e) {

@@ -14,7 +14,7 @@ const User = ({ user }) => {
 
   const date = new Date(user.created_at);
 
-  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_sort=score:ASC,user.category:ASC&accepted=true`;
+  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_limit=-1&_sort=score:ASC,user.category:ASC&accepted=true`;
 
   const fetchEvents = async () => {
     try {
