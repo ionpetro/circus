@@ -54,7 +54,7 @@
     letter-spacing: 1px;
   }
 
-  & > div,
+  &>div,
   h4 {
     margin-bottom: 12px;
   }
@@ -62,7 +62,7 @@
 
 .tabs {
   display: flex;
-  margin: 32px 0 12px 0;
+  margin: 32px 0 42px 0;
 
   @media #{$desktop-large} {
     margin: 12px 0 40px 0;
@@ -70,15 +70,33 @@
 }
 
 .tab {
+  display: flex;
+  align-items: center;
   margin-right: 20px;
   cursor: pointer;
+
+  span {
+    font-size: 18px;
+    display: none;
+  }
+
+  @media #{$desktop-medium} {
+    span {
+      display: block;
+    }
+  }
 }
 
 .activeTab {
   color: #f2d15e;
-  text-decoration: underline;
 }
 
 .page {
   width: 100%;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  padding-right: 8px;
 }

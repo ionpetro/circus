@@ -59,7 +59,7 @@ const UserData = ({ records, events, event, setEvent }) => {
           onChange={onEventChange}
         />
       )}
-      <ResponsiveContainer width={700} height={500}>
+      <ResponsiveContainer width={'100%'} height={400}>
         <CartesianGrid strokeDasharray="3 3" />
 
         <BarChart width={730} height={250} data={latestRecords}>
