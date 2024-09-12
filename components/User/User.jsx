@@ -14,8 +14,7 @@ const User = ({ user }) => {
 
   const date = new Date(user.created_at);
 
-  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_sort=score:ASC,user.category:ASC&accepted=true`;
-  const eventId = 2;
+  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_limit=-1&_sort=score:ASC,user.category:ASC&accepted=true`;
 
   const fetchEvents = async () => {
     try {
@@ -32,7 +31,7 @@ const User = ({ user }) => {
   const fetchRecords = async () => {
     try {
       const response = await axiosInstance.get(
-        `${recordsApi}&game=${eventId}&user=${user.id}`
+        `${recordsApi}&game=${event.id}`
       );
 
       setRecords(response);
@@ -43,8 +42,11 @@ const User = ({ user }) => {
 
   useEffect(() => {
     fetchEvents();
-    fetchRecords();
   }, []);
+
+  useEffect(() => {
+    fetchRecords();
+  }, [event]);
 
   return (
     <div className={styles.compWrap}>
@@ -85,7 +87,12 @@ const User = ({ user }) => {
             </div>
           </div>
           <div className={styles.body}>
-            <UserData records={records} events={events} />
+            <UserData
+              records={records}
+              events={events}
+              event={event}
+              setEvent={setEvent}
+            />
           </div>
         </div>
       </div>
