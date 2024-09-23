@@ -11,9 +11,11 @@ const Contests = ({ description, contests }) => {
         <h2>CONTESTS</h2>
         <p>{description}</p>
         <div className={styles.festivals}>
-          {contests.map((contest) => (
-            <FestivalCard key={contest.id} festival={contest} />
-          ))}
+          {contests
+            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+            .map((contest) => (
+              <FestivalCard key={contest.id} festival={contest} />
+            ))}
         </div>
       </div>
     </section>

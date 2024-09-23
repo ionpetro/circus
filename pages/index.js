@@ -33,15 +33,15 @@ export default function Home({ cmsData, slots, error }) {
       <Hero />
       <Marquee />
       <History history={cmsData.history} />
-      <ProgramInfo slots={slots} />
-      <Equipment
-        description={cmsData.equipmentDescription}
-        media={cmsData.galleries}
-      />
       <Contests
         description={cmsData.contestsDescription}
         contests={cmsData.contests}
       />
+      <Equipment
+        description={cmsData.equipmentDescription}
+        media={cmsData.galleries}
+      />
+      <ProgramInfo slots={slots} />
       <Social />
       <Personnel />
       <Contact />
