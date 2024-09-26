@@ -62,7 +62,7 @@ $desktop-container-height: 100%;
 
 .content {
   position: relative;
-  padding: 26px;
+  padding: 26px 32px 26px 26px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -72,10 +72,14 @@ $desktop-container-height: 100%;
 
   &Row {
     @media #{$desktop-medium} {
-      flex-direction: row;
       padding: 36px;
     }
   }
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
 }
 
 .label {

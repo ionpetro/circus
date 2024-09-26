@@ -12,7 +12,7 @@ const Contests = ({ description, contests }) => {
         <p>{description}</p>
         <div className={styles.festivals}>
           {contests
-            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
             .map((contest) => (
               <FestivalCard key={contest.id} festival={contest} />
             ))}

@@ -28,74 +28,76 @@ const FestivalCard = ({ festival }) => {
     return (
       <div className={`${styles.containerActive}`}>
         <div className={styles.borderActive} />
-        <div className={`${styles.content} ${styles.contentRow}`}>
+        <div className={`${styles.content}`}>
           <div className={`${styles.label} ${styles.activeLabel}`}>
             <Live />
             <span className={'uppercase'}>OPEN</span>
           </div>
-          <div className={`${styles.image} ${styles.imageActiveImage}`}>
-            {festival.image ? (
-              <Image
-                unoptimized
-                width={festival.image.width}
-                height={festival.image.height}
-                src={festival.image.url}
-                alt={'festival'}
-              />
-            ) : (
-              <Circus />
-            )}
-          </div>
-          <div>
-            <p className={styles.countdown}>
-              {countdown.expired ? (
-                <span>Expired</span>
+          <div className={`${styles.flexRow}`}>
+            <div className={`${styles.image} ${styles.imageActiveImage}`}>
+              {festival.image ? (
+                <Image
+                  unoptimized
+                  width={festival.image.width}
+                  height={festival.image.height}
+                  src={festival.image.url}
+                  alt={'festival'}
+                />
               ) : (
-                <span>
-                  {countdown.days} <span className={styles.identifier}>d</span>{' '}
-                  {countdown.hours} <span className={styles.identifier}>h</span>{' '}
-                  {countdown.minutes}{' '}
-                  <span className={styles.identifier}>m</span>{' '}
-                  {countdown.seconds}{' '}
-                  <span className={styles.identifier}>s</span>
-                </span>
+                <Circus />
               )}
-            </p>
-            {festival.date && <p className={styles.date}>{date}</p>}
-            <h3 className={`uppercase ${styles.redColor}`}>{festival.title}</h3>
-            <div
-              className={styles.description}
-              dangerouslySetInnerHTML={{ __html: marked(festival.description) }}
-            />
-            {festival.readMoreLink && (
-              <a
-                href={festival.readMoreLink}
-                target={'_blank'}
-                rel="noreferrer"
-              >
-                READ MORE
-              </a>
-            )}
-            <div className={styles.spacing} />
-            {festival.competeLink && (
-              <div className={styles.button}>
-                <Link href={festival.competeLink}>
-                  <a target="_blank" rel="noreferrer">
-                    <UiButton>COMPETE</UiButton>
-                  </a>
-                </Link>
-              </div>
-            )}
-            {festival.resultsLink && (
-              <div className={styles.button}>
-                <Link href={festival.resultsLink}>
-                  <a target="_blank" rel="noreferrer">
-                    <UiButton>RESULTS</UiButton>
-                  </a>
-                </Link>
-              </div>
-            )}
+            </div>
+            <div>
+              <p className={styles.countdown}>
+                {countdown.expired ? (
+                  <span>Expired</span>
+                ) : (
+                  <span>
+                    {countdown.days}{' '}
+                    <span className={styles.identifier}>d</span>{' '}
+                    {countdown.hours}{' '}
+                    <span className={styles.identifier}>h</span>{' '}
+                    {countdown.minutes}{' '}
+                    <span className={styles.identifier}>m</span>{' '}
+                    {countdown.seconds}{' '}
+                    <span className={styles.identifier}>s</span>
+                  </span>
+                )}
+              </p>
+              {festival.date && <p className={styles.date}>{date}</p>}
+              <h3 className={`uppercase ${styles.redColor}`}>
+                {festival.title}
+              </h3>
+            </div>
           </div>
+          <div
+            className={styles.description}
+            dangerouslySetInnerHTML={{ __html: marked(festival.description) }}
+          />
+          {festival.readMoreLink && (
+            <a href={festival.readMoreLink} target={'_blank'} rel="noreferrer">
+              READ MORE
+            </a>
+          )}
+          <div className={styles.spacing} />
+          {festival.competeLink && (
+            <div className={styles.button}>
+              <Link href={festival.competeLink}>
+                <a target="_blank" rel="noreferrer">
+                  <UiButton>COMPETE</UiButton>
+                </a>
+              </Link>
+            </div>
+          )}
+          {festival.resultsLink && (
+            <div className={styles.button}>
+              <Link href={festival.resultsLink}>
+                <a target="_blank" rel="noreferrer">
+                  <UiButton>RESULTS</UiButton>
+                </a>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -121,14 +123,18 @@ const FestivalCard = ({ festival }) => {
                 <Circus />
               )}
             </div>
-            <h3
-              className={`uppercase ${
-                active ? styles.redColor : styles.whiteColor
-              }`}
-            >
-              {festival.title}
-            </h3>
+            <div>
+              {festival.date && <p className={styles.date}>{date}</p>}
+              <h3
+                className={`uppercase ${
+                  active ? styles.redColor : styles.whiteColor
+                }`}
+              >
+                {festival.title}
+              </h3>
+            </div>
           </div>
+
           <div className={styles.description}>
             <div
               className={styles.description}
