@@ -61,11 +61,11 @@ const Footer = ({ hasMarquee, simple = false }) => {
               BoredGamers
             </a>{' '}
             <a
-              href={'https://www.instagram.com/ionpetro/'}
+              href={'https://x.com/ionpetropoulos'}
               target={'_blank'}
               rel={'noreferrer'}
             >
-              fan
+              fan @ionpetropoulos
             </a>
           </span>
         </div>
