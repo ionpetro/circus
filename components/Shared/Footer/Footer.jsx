@@ -48,7 +48,7 @@ const Footer = ({ hasMarquee, simple = false }) => {
         )}
         <div className={styles.legal}>
           <span className={styles.copyWrite}>
-            © 2021 Circus. All rights reserved.
+            © {new Date().getFullYear()} Circus. All rights reserved.
           </span>
           <span className={styles.inscription}>
             Developed with ❤️ by a{' '}
