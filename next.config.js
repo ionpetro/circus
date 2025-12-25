@@ -24,6 +24,7 @@ const moduleExports = {
       'scontent.cdninstagram.com',
       'video.cdninstagram.com',
     ],
+    disableStaticImages: true,
   },
   env: {
     SECRET_CODE: process.env.SECRET_CODE,
@@ -32,6 +33,10 @@ const moduleExports = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
+    });
+    config.module.rules.push({
+      test: /\.(png|jpe?g|gif|webp)$/i,
+      type: 'asset/resource',
     });
     return config;
   },

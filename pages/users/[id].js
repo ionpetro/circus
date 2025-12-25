@@ -24,7 +24,9 @@ export async function getStaticPaths() {
 
   let paths = [];
 
-  users.forEach((user) => paths.push({ params: { id: `${user.id}` } }));
+  if (users && Array.isArray(users)) {
+    users.forEach((user) => paths.push({ params: { id: `${user.id}` } }));
+  }
 
   return {
     paths,
