@@ -41,7 +41,7 @@ const Social = () => {
       <Image
         unoptimized
         alt={'circus facilities'}
-        src={socialBack.src}
+        src={socialBack}
         className={styles.image}
         layout={'fill'}
         objectFit={'cover'}
@@ -62,7 +62,7 @@ const Social = () => {
               className={styles.instaLogo}
               width={80}
               height={80}
-              src={logo.src}
+              src={logo}
             />
             <span className={styles.handle}>
               <a href={instaUrl} target={'_blank'} rel={'noreferrer'}>

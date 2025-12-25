@@ -14,10 +14,11 @@ const Hero = () => {
       <Navbar />
       <Image
         alt={'facilities'}
-        src={facilities.src}
+        src={facilities}
         layout={'fill'}
         objectFit={'cover'}
         objectPosition={'center'}
+        unoptimized
       />
       <div className={styles.filter} />
       <div className={styles.transition} />

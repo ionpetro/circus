@@ -12,7 +12,7 @@ const Equipment = ({ description, media }) => {
         unoptimized
         alt={'equipment'}
         className={styles.image}
-        src={equipment.src}
+        src={equipment}
         layout={'fill'}
         objectFit={'cover'}
         objectPosition={'center'}
