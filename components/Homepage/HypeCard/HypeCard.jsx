@@ -27,7 +27,7 @@ const HypeCard = ({ hype }) => {
       </div>
       <div
         className={styles.hoverBack}
-        style={{ backgroundImage: `url(${linesBig.src}` }}
+        style={{ backgroundImage: `url(${linesBig})` }}
       />
     </div>
   );
