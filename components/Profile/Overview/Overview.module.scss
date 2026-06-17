@@ -1,0 +1,67 @@
+@import '../../../styles/colors';
+@import '../../../styles/variables';
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+
+  @media #{$desktop-medium} {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid $white;
+  padding: 16px;
+  min-height: 112px;
+}
+
+.label {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: $dark-grey;
+  margin-bottom: 12px;
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: $red;
+}
+
+.unit {
+  margin-left: 4px;
+  font-size: 16px;
+  font-weight: 300;
+  color: $white;
+}
+
+.sub {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 300;
+  color: $light-grey;
+}
+
+.empty {
+  font-size: 24px;
+  color: $light-grey;
+}
+
+.highlight {
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 300;
+
+  span {
+    color: $red;
+    font-weight: 700;
+  }
+}
