@@ -18,17 +18,17 @@ const Leaderboard = () => {
 
   const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_limit=-1&_sort=score:DESC,user.category:ASC&accepted=true`;
 
-  // initial load
+  // initial load — fetchEvents sets the first event, which triggers the
+  // filter effect below; fetching here too would send game=undefined (500)
   useEffect(() => {
     fetchEvents();
-    if (events) {
-      fetchRecords();
-    }
   }, []);
 
-  // filter apply
+  // filter apply (guard against the initial empty event → game=undefined 500)
   useEffect(() => {
-    fetchRecords();
+    if (event?.id) {
+      fetchRecords();
+    }
   }, [event, category]);
 
   // freeze functionality

@@ -14,6 +14,7 @@ const LeaderboardTable = ({ records }) => {
 
   const latestRecords = Array.from(
     records
+      .filter((obj) => obj.user) // skip orphaned records whose user was deleted
       .reduce((map, obj) => {
         const userId = obj.user.id;
         const existingObj = map.get(userId);
@@ -47,7 +48,7 @@ const LeaderboardTable = ({ records }) => {
   };
 
   const getCategoryDisplayValue = (category) => {
-    return categories.find((cat) => cat.title === category).display;
+    return categories.find((cat) => cat.title === category)?.display;
   };
 
   return (
@@ -78,7 +79,7 @@ const LeaderboardTable = ({ records }) => {
             </td>
             <td className={styles.score}>
               {record.score}{' '}
-              <span className={styles.unit}>{record.game.unit}</span>
+              <span className={styles.unit}>{record.game?.unit}</span>
             </td>
             <td className={styles.mobileHide}>
               {transformRecordDate(record.updated_at)}
