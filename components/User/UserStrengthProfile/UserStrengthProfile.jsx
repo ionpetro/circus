@@ -10,12 +10,9 @@ import {
 import styles from './UserStrengthProfile.module.scss';
 
 const UserStrengthProfile = ({ data }) => {
+  // a radar needs at least three axes to be meaningful — otherwise render nothing
   if (!data || data.length < 3) {
-    return (
-      <div className={styles.empty}>
-        Compete in at least three events to unlock your strength profile.
-      </div>
-    );
+    return null;
   }
 
   return (

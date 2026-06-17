@@ -9,20 +9,16 @@ import {
 } from 'recharts';
 import styles from './UserProgress.module.scss';
 
-const UserProgress = ({ data, title, unit }) => {
+const UserProgress = ({ data, title, unit, possessive = 'Your' }) => {
+  // not enough points to draw a meaningful line — render nothing
   if (!data || data.length < 2) {
-    return (
-      <div className={styles.empty}>
-        Log at least two {title ? `${title} ` : ''}records to see your progress
-        over time.
-      </div>
-    );
+    return null;
   }
 
   return (
     <div className={styles.wrap}>
       <h4 className={styles.heading}>
-        Your progress{title ? ` — ${title}` : ''}
+        {possessive} progress{title ? ` — ${title}` : ''}
         {unit && <span className={styles.unit}> ({unit})</span>}
       </h4>
       <ResponsiveContainer width={'100%'} height={300}>

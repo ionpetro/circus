@@ -10,18 +10,14 @@ import {
 } from 'recharts';
 import styles from './UserBests.module.scss';
 
-const UserBests = ({ data }) => {
+const UserBests = ({ data, possessive = 'Your' }) => {
   if (!data || !data.length) {
-    return (
-      <div className={styles.empty}>
-        No records yet — your bests will show here once you log some.
-      </div>
-    );
+    return null;
   }
 
   return (
     <div className={styles.wrap}>
-      <h4 className={styles.heading}>Your best vs gym best</h4>
+      <h4 className={styles.heading}>{possessive} best vs gym best</h4>
       <ResponsiveContainer width={'100%'} height={Math.max(200, data.length * 56)}>
         <BarChart
           data={data}

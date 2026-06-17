@@ -1,52 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import UserData from './UserData/UserData';
+import React from 'react';
+import UserDashboard from './UserDashboard/UserDashboard';
 import styles from './User.module.scss';
-import axiosInstance from '/utils/http-client';
 import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
 import UiAvatar from '../Ui/UiAvatar/UiAvatar';
 import Image from 'next/image';
 
 const User = ({ user }) => {
-  const [events, setEvents] = useState([]);
-  const [records, setRecords] = useState([]);
-  const [event, setEvent] = useState('');
-
   const date = new Date(user.created_at);
-
-  const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_limit=-1&_sort=score:ASC,user.category:ASC&accepted=true`;
-
-  const fetchEvents = async () => {
-    try {
-      const eventsResponse = await axiosInstance.get(
-        `${process.env.NEXT_PUBLIC_BACKEND}/games`
-      );
-      setEvents(eventsResponse);
-      setEvent(eventsResponse[0]);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  const fetchRecords = async () => {
-    try {
-      const response = await axiosInstance.get(
-        `${recordsApi}&game=${event.id}`
-      );
-
-      setRecords(response);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  useEffect(() => {
-    fetchEvents();
-  }, []);
-
-  useEffect(() => {
-    fetchRecords();
-  }, [event]);
 
   return (
     <div className={styles.compWrap}>
@@ -87,11 +48,9 @@ const User = ({ user }) => {
             </div>
           </div>
           <div className={styles.body}>
-            <UserData
-              records={records}
-              events={events}
-              event={event}
-              setEvent={setEvent}
+            <UserDashboard
+              user={user}
+              possessive={`${user.username}'s`}
             />
           </div>
         </div>
