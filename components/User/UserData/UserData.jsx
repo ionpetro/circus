@@ -26,6 +26,7 @@ const UserData = ({ records, events, event, setEvent }) => {
 
   const latestRecords = Array.from(
     records
+      .filter((obj) => obj.user) // skip orphaned records whose user was deleted
       .reduce((map, obj) => {
         const userId = obj.user.id;
         const existingObj = map.get(userId);
