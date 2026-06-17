@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import axiosInstance from '/utils/http-client';
 
 import UserData from '../../User/UserData/UserData';
+import UserProgress from '../../User/UserProgress/UserProgress';
+import UserStrengthProfile from '../../User/UserStrengthProfile/UserStrengthProfile';
+import UserBests from '../../User/UserBests/UserBests';
 import { transformRecordDate } from '../../../utils/utilities';
 import styles from './Overview.module.scss';
 
@@ -10,6 +13,7 @@ const Overview = ({ user }) => {
   const [records, setRecords] = useState([]);
   const [event, setEvent] = useState('');
   const [myRecords, setMyRecords] = useState([]);
+  const [allRecords, setAllRecords] = useState([]);
 
   const recordsApi = `${process.env.NEXT_PUBLIC_BACKEND}/pivot-games-users?_limit=-1&_sort=score:ASC,user.category:ASC&accepted=true`;
 
@@ -37,6 +41,16 @@ const Overview = ({ user }) => {
     }
   };
 
+  // all accepted records across every event — powers the cross-event charts
+  const fetchAllRecords = async () => {
+    try {
+      const response = await axiosInstance.get(recordsApi);
+      setAllRecords(response);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   const fetchMyRecords = async () => {
     try {
       const response = await axiosInstance.get(
@@ -50,6 +64,7 @@ const Overview = ({ user }) => {
 
   useEffect(() => {
     fetchEvents();
+    fetchAllRecords();
   }, []);
 
   useEffect(() => {
@@ -89,6 +104,49 @@ const Overview = ({ user }) => {
   const myEventRecord = latestBy(
     records.filter((r) => r.user && r.user.id === user?.id)
   );
+
+  // ---- chart data ----
+  // 1) progression: the user's accepted scores for the selected event over time
+  const progression = myAccepted
+    .filter((r) => r.game.id === event?.id)
+    .sort((a, b) => new Date(a.created_at) - new Date(b.created_at))
+    .map((r) => ({
+      date: transformRecordDate(r.created_at),
+      score: Number(r.score),
+    }));
+
+  // 2) + 3) per-event gym best vs the user's best (assumes higher score = better)
+  const byGame = {};
+  allRecords
+    .filter((r) => r.game && r.user)
+    .forEach((r) => {
+      const id = r.game.id;
+      if (!byGame[id]) {
+        byGame[id] = {
+          title: r.game.title,
+          unit: r.game.unit,
+          gymBest: 0,
+          mine: 0,
+        };
+      }
+      const score = Number(r.score);
+      if (score > byGame[id].gymBest) byGame[id].gymBest = score;
+      if (r.user.id === user?.id && score > byGame[id].mine) {
+        byGame[id].mine = score;
+      }
+    });
+  const myGames = Object.values(byGame).filter((g) => g.mine > 0);
+
+  const radarData = myGames.map((g) => ({
+    event: g.title,
+    you: g.gymBest ? Math.round((g.mine / g.gymBest) * 100) : 0,
+  }));
+
+  const bestsData = myGames.map((g) => ({
+    event: g.title,
+    you: g.mine,
+    gym: g.gymBest,
+  }));
 
   return (
     <div>
@@ -139,6 +197,16 @@ const Overview = ({ user }) => {
           </span>
         </p>
       )}
+
+      <UserProgress
+        data={progression}
+        title={event?.title}
+        unit={event?.unit}
+      />
+
+      <UserStrengthProfile data={radarData} />
+
+      <UserBests data={bestsData} />
 
       <UserData
         records={records}
