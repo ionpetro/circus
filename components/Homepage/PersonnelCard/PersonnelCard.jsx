@@ -23,11 +23,13 @@ const PersonnelCard = ({
             height={260}
           />
         </div>
-        <div className={styles.instagram}>
-          <a href={instaLink} target={'_blank'} rel={'noreferrer'}>
-            <Insta />
-          </a>
-        </div>
+        {instaLink && (
+          <div className={styles.instagram}>
+            <a href={instaLink} target={'_blank'} rel={'noreferrer'}>
+              <Insta />
+            </a>
+          </div>
+        )}
       </div>
       <h4 className={`uppercase ${styles.name}`}>{name}</h4>
       <div className={`${styles.position} ${styles[color]}`}>

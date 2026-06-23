@@ -5,9 +5,11 @@ import boursi from '/public/assets/images/boursi.png';
 import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.png';
-import barka from '/public/assets/images/barka.png';
 import chris from '/public/assets/images/chris.png';
 import soc from '/public/assets/images/soc.png';
+import anastasia from '/public/assets/images/anastasia.png';
+import alkmini from '/public/assets/images/alkmini.png';
+import thomas from '/public/assets/images/thomas.png';
 import styles from './Personnel.module.scss';
 
 const members = [
@@ -18,6 +20,15 @@ const members = [
     imageSrc: boursi,
     slogan: '💪 Strongman\n' + '🌱 Vegan',
     instaLink: 'https://www.instagram.com/johnboursi/',
+    color: 'red',
+  },
+  {
+    id: 6,
+    name: 'Chris Kostas',
+    position: 'Co-owner',
+    imageSrc: chris,
+    slogan: 'Just like the previous set, but now stronger!',
+    instaLink: 'https://www.instagram.com/kris_kostas/',
     color: 'red',
   },
   {
@@ -59,21 +70,27 @@ const members = [
     color: 'yellow',
   },
   {
-    id: 5,
-    name: 'Adrianna Barka',
+    id: 8,
+    name: 'Αναστασία Φωκά',
     position: 'Trainer',
-    imageSrc: barka,
-    slogan: 'Fooling around',
-    instaLink: 'https://www.instagram.com/antrianna_mp/',
+    imageSrc: anastasia,
+    slogan: 'Less drama, more yoga',
     color: 'yellow',
   },
   {
-    id: 7,
-    name: 'Chris Kostas',
+    id: 9,
+    name: 'Αλκμηνη Τορρενς',
     position: 'Trainer',
-    imageSrc: chris,
-    slogan: 'Just like the previous set, but now stronger!',
-    instaLink: 'https://www.instagram.com/kris_kostas/',
+    imageSrc: alkmini,
+    slogan: '..baby one more rep!',
+    color: 'yellow',
+  },
+  {
+    id: 10,
+    name: 'Θωμάς Χαραμαράς',
+    position: 'Trainer',
+    imageSrc: thomas,
+    slogan: "Because carrying groceries in one trip wasn't challenging enough!",
     color: 'yellow',
   },
 ];
