@@ -2,7 +2,6 @@ import React from 'react';
 import Clawn from '/public/assets/svgs/Clawn.svg';
 import PersonnelCard from '../PersonnelCard/PersonnelCard';
 import boursi from '/public/assets/images/boursi.png';
-import paraskeuh from '/public/assets/images/paraskeuh.png';
 import nikos from '/public/assets/images/nikos.png';
 import limperis from '/public/assets/images/limperis.png';
 import chris from '/public/assets/images/chris.png';
@@ -29,17 +28,6 @@ const members = [
     imageSrc: chris,
     slogan: 'Just like the previous set, but now stronger!',
     instaLink: 'https://www.instagram.com/kris_kostas/',
-    color: 'red',
-  },
-  {
-    id: 2,
-    name: 'Paraskeuh Stamatopoulou',
-    position: 'Co-owner',
-    imageSrc: paraskeuh,
-    slogan:
-      'Berry eater. BV player. Art history student.\n' +
-      'Funny when in a room with notsofunny people. Still counts.',
-    instaLink: 'https://instagram.com/paraskevyo',
     color: 'red',
   },
   {
@@ -76,6 +64,7 @@ const members = [
     imageSrc: anastasia,
     slogan: 'Less drama, more yoga',
     color: 'yellow',
+    grayscale: true,
   },
   {
     id: 9,
@@ -84,6 +73,7 @@ const members = [
     imageSrc: alkmini,
     slogan: '..baby one more rep!',
     color: 'yellow',
+    grayscale: true,
   },
   {
     id: 10,
@@ -92,6 +82,7 @@ const members = [
     imageSrc: thomas,
     slogan: "Because carrying groceries in one trip wasn't challenging enough!",
     color: 'yellow',
+    grayscale: true,
   },
 ];
 
@@ -126,6 +117,7 @@ const Personnel = () => {
             slogan={member.slogan}
             instaLink={member.instaLink}
             color={member.color}
+            grayscale={member.grayscale}
           />
         ))}
       </div>

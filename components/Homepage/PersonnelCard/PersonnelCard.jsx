@@ -10,6 +10,7 @@ const PersonnelCard = ({
   instaLink,
   imageSrc,
   color,
+  grayscale,
 }) => {
   return (
     <div className={styles.compWrap}>
@@ -21,6 +22,7 @@ const PersonnelCard = ({
             src={imageSrc}
             width={260}
             height={260}
+            style={grayscale ? { filter: 'grayscale(1)' } : undefined}
           />
         </div>
         {instaLink && (
