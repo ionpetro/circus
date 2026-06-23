@@ -64,7 +64,6 @@ const members = [
     imageSrc: anastasia,
     slogan: 'Less drama, more yoga',
     color: 'yellow',
-    grayscale: true,
   },
   {
     id: 9,
@@ -73,7 +72,6 @@ const members = [
     imageSrc: alkmini,
     slogan: '..baby one more rep!',
     color: 'yellow',
-    grayscale: true,
   },
   {
     id: 10,
@@ -82,7 +80,6 @@ const members = [
     imageSrc: thomas,
     slogan: "Because carrying groceries in one trip wasn't challenging enough!",
     color: 'yellow',
-    grayscale: true,
   },
 ];
 
@@ -117,7 +114,6 @@ const Personnel = () => {
             slogan={member.slogan}
             instaLink={member.instaLink}
             color={member.color}
-            grayscale={member.grayscale}
           />
         ))}
       </div>
